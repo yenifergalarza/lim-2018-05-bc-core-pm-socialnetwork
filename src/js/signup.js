@@ -12,7 +12,7 @@ signUp.addEventListener('click', () => {
     console.log('password bien')
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(() => {
-        window.location.assign('index.html')
+        window.location.assign('signin.html')
       })
       .catch(function (error) {
         // Handle Errors here.
@@ -32,5 +32,5 @@ signUp.addEventListener('click', () => {
 });
 
 goLogin.addEventListener('click', () => {
-  window.location.assign('index.html')
+  window.location.assign('signin.html')
 })

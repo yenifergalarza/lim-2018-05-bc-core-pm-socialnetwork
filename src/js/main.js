@@ -1,18 +1,18 @@
-var mainApp = {};
-(() => {
-  var firebase = appFireBase;
-  var uid = null; 
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      // User is signed in.
-      uid = user.uid;
-    }else{
-      uid = null;
-      window.location.replace('login.html')
-    }
-  });
-  var logOut = () => {
-    firebase.auth().signOut();
-  }
-  mainApp.logOut = logOut;
-})()
+(function ($) {
+  "use strict";
+
+
+
+  //  [ Focus input ]
+  $('.input100').each(function () {
+    $(this).on('blur', function () {
+      if ($(this).val().trim() != "") {
+        $(this).addClass('has-val');
+      }
+      else {
+        $(this).removeClass('has-val');
+      }
+    })
+  })
+
+})(jQuery);

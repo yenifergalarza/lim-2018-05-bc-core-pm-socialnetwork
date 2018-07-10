@@ -159,7 +159,7 @@
     height: 100vh;
     width: 100%;
     margin: 0 auto;
-    background: url("../images/brain.jpeg") center center no-repeat;
+    background: url("../img/brain.jpeg") center center no-repeat;
     background-size: cover;
   }
 
@@ -542,4 +542,3 @@
     padding-right: 35px;
   }
 }
-
