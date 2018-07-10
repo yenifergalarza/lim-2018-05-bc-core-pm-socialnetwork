@@ -15,16 +15,9 @@ más comentado.
 
 ## Introducción
 
-Una emprendedora nos ha encargado crear una red social. No nos da mucho detalle
-sobre qué tipo de red social quiere, sólo nos dice que creemos la mejor que
-podamos, y que luego la convenzamos de lanzarla al mercado. Nos da ciertos temas
-en los que le gustaría invertir:
+ En la sociedad actual limeña el uso de redes sociales afecto a la comunidad volviéndola así una sociedad globalizada , con muchísimo más acceso a recursos informativos y/o virtuales de toda clase  en donde la educación , que es un pilar fundamental juega un papel importantísimo en el desarrollo de esta. Así que tiene que adaptarse .entonces debería dar roles más activos a los estudiantes respecto a su aprendizaje y a los profesores docentes respecto al alcance de su enseñanza. Así que esta problemática que en realidad es un nuevo recurso donde la accesibilidad y flexibilidad  deben ser clave. Por ello indistintamente de donde se ubique cualquier interesado en aprender tengan un “espacio” virtual donde intercambiar conocimientos
+De esta manera logramos establecer un objetivo claro ,aumentar la flexibilidad y accesibilidad a nuestra red social educativa .además mediante el uso de encuestas ubicamos el perfil de nuestro usuario objetivo (jóvenes entre 19-25 años que hace uso de las redes sociales en un periodo de 5 a 10 años que está satisfecho con las redes sociales en general ) y en la segunda encuesta que es para ubicar los temas y rumbo que tomara la página web , ganando por mayoría tecnología ,donde está valorado las publicaciones de texto y de igual modo publicar post es la actividad más valorada ,seguida de tener contactos y sea dirigida para un público en general 
 
-* Alimentación
-* Feminismo
-* Educación
-* Salud
-* Energías Renovables
 
 ## Objetivos
 
@@ -37,6 +30,38 @@ Algunos objetivos específicos:
 * Entender las necesidades de los usuarios para los que crearás el producto y que ayudarás a resolver.
 * Poner en juego tu creatividad para generar ideas que lleven a una solución original y valiosa del problema.
 * Cuentas con el apoyo de tus compañeras, debes trabajar en equipo buscando _feedback_ constante.
+## descisiones de diseño
+### Entregables
+#### 1) Definición del producto
+
+En el `README.md` debes colocar cómo conociste el mercado de las redes sociales, cómo descubriste las necesidades de los usuarios, y cómo llegaste a la definición final de tu producto. Si tienes fotos de entrevistas, cuestionarios y/o sketches
+(bocetos) compártelos. Es importante que detalles:
+
+* Cuáles son los elementos básicos que tiene una red social.
+* Quiénes son los principales usuarios de producto.
+* Cómo descubriste las necesidades de los usuarios.
+* Qué problema resuelve el producto para estos usuarios.
+* Cuáles son los objetivos de estos usuarios en relación con el producto.
+* Cuáles son las principales funcionalidades del producto y cuál es su prioridad.
+* Cómo verificaste que el producto les está resolviendo sus problemas.
+* Cómo te asegurarás que estos usuarios usen este producto.
+
+Para poder llegar a estas definiciones te recomendamos revisar: benchmarks, entrevistas con usuarios y tests de usabilidad.
+
+#### 2) Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
+
+### wireframe de alta fidelidad
+![cel](https://user-images.githubusercontent.com/39390011/42542344-25b73e0a-846c-11e8-920f-2ffbc8659434.PNG)
+![loginiphone](https://user-images.githubusercontent.com/39390011/42542348-2c37d12c-846c-11e8-98c2-33aa3d7c6c61.PNG)
+![loginipad](https://user-images.githubusercontent.com/39390011/42542349-2c7b005a-846c-11e8-98d7-3a3b46e6e2ed.PNG)
+![loginmac](https://user-images.githubusercontent.com/39390011/42542360-3806d598-846c-11e8-9835-41b48bec27a3.PNG)
+
+#### 3) Implementación de la Interfaz de Usuario
+
+La idea para este proyecto es que el producto a desarrollar siga los
+lineamientos propuestos en el diseño de la interfaz de usuario. Asegúrate a lo
+largo de la implementación que los elementos propuestos están siendo
+implementados correctamente. (Hint: testing)
 
 ## Consideraciones generales
 
@@ -244,47 +269,6 @@ El proyecto será _entregado_ subiendo tu código a GitHub (`commit`/`push`) y l
 interfaz será desplegada usando GitHub pages u otro servicio de hosting que
 puedas haber encontrado en el camino.
 
-### Entregables
-
-#### 1) Definición del producto
-
-En el `README.md` debes colocar cómo conociste el mercado de las redes sociales, cómo descubriste las necesidades de los usuarios, y cómo llegaste a la definición final de tu producto. Si tienes fotos de entrevistas, cuestionarios y/o sketches
-(bocetos) compártelos. Es importante que detalles:
-
-* Cuáles son los elementos básicos que tiene una red social.
-* Quiénes son los principales usuarios de producto.
-* Cómo descubriste las necesidades de los usuarios.
-* Qué problema resuelve el producto para estos usuarios.
-* Cuáles son los objetivos de estos usuarios en relación con el producto.
-* Cuáles son las principales funcionalidades del producto y cuál es su prioridad.
-* Cómo verificaste que el producto les está resolviendo sus problemas.
-* Cómo te asegurarás que estos usuarios usen este producto.
-
-Para poder llegar a estas definiciones te recomendamos revisar: benchmarks, entrevistas con usuarios y tests de usabilidad.
-
-#### 2) Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
-
-Debes definir cuál será el flujo que seguirá el usuario dentro de tu producto y
-con eso deberás diseñar la Interfaz de Usuario (UI - por sus siglas en inglés) de
-esta red social que siga este flujo. Para esto debes utilizar la herramienta de
-diseño visual de tu preferencia. Nosotros te recomendamos [Figma](https://www.figma.com/) dado que es una
-herramienta que funciona en el navegador y puedes crear una cuenta gratis. Sin
-embargo, eres libre de utilizar otros editores gráficos como Adobe XD, Illustrator,
-Photoshop, PowerPoint, Keynote, etc.
-
-Este diseño debe representar la solución que se implementará finalmente en
-código. 
-
-Tu diseño debe seguir los fundamentos de visual design, como: contraste,
-alineación, jerarquía, entre otros. Tip: revisa el contenido de UX de la unidad
-de visual design.
-
-#### 3) Implementación de la Interfaz de Usuario
-
-La idea para este proyecto es que el producto a desarrollar siga los
-lineamientos propuestos en el diseño de la interfaz de usuario. Asegúrate a lo
-largo de la implementación que los elementos propuestos están siendo
-implementados correctamente. (Hint: testing)
 
 ## Evaluación
 
