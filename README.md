@@ -15,28 +15,86 @@ más comentado.
 
 ## Introducción
 
-Una emprendedora nos ha encargado crear una red social. No nos da mucho detalle
-sobre qué tipo de red social quiere, sólo nos dice que creemos la mejor que
-podamos, y que luego la convenzamos de lanzarla al mercado. Nos da ciertos temas
-en los que le gustaría invertir:
+ En la sociedad actual limeña el uso de redes sociales afecto a la comunidad volviéndola así una sociedad globalizada , con muchísimo más acceso a recursos informativos y/o virtuales de toda clase  en donde la educación , que es un pilar fundamental juega un papel importantísimo en el desarrollo de esta. Así que tiene que adaptarse .entonces debería dar roles más activos a los estudiantes respecto a su aprendizaje y a los profesores docentes respecto al alcance de su enseñanza. Así que esta problemática que en realidad es un nuevo recurso donde la accesibilidad y flexibilidad  deben ser clave. Por ello indistintamente de donde se ubique cualquier interesado en aprender tengan un "espacio" virtual donde intercambiar conocimientos
+De esta manera logramos establecer un objetivo claro ,aumentar la flexibilidad y accesibilidad a nuestra red social educativa .además mediante el uso de encuestas ubicamos el perfil de nuestro usuario objetivo (jóvenes entre 19-25 años que hace uso de las redes sociales en un periodo de 5 a 10 años que está satisfecho con las redes sociales en general ) y en la segunda encuesta que es para ubicar los temas y rumbo que tomara la página web , ganando por mayoría tecnología ,donde está valorado las publicaciones de texto y de igual modo publicar post es la actividad más valorada ,seguida de tener contactos y sea dirigida para un público en general 
 
-* Alimentación
-* Feminismo
-* Educación
-* Salud
-* Energías Renovables
+# Desarrollo del producto
 
-## Objetivos
+## User research
 
-El objetivo principal de aprendizaje de este proyecto es construir un sitio web
-[_responsive_](https://github.com/Laboratoria/curricula-js/tree/master/topics/css/02-responsive)
-con más de una vista (página), y en el que podamos leer y escribir datos.
+### 1) Entrevistas y encuestas
 
-Algunos objetivos específicos:
+Realizamos dos encuestas 
+La primera general y la segunda fue especifica para saber las necesidades del usuario 
 
-* Entender las necesidades de los usuarios para los que crearás el producto y que ayudarás a resolver.
-* Poner en juego tu creatividad para generar ideas que lleven a una solución original y valiosa del problema.
-* Cuentas con el apoyo de tus compañeras, debes trabajar en equipo buscando _feedback_ constante.
+![3f614b86-d25f-4aea-bc49-c605ab832232](https://user-images.githubusercontent.com/39390011/42594951-57993a54-8516-11e8-94b6-8a81083883b3.jpg)
+![4e6414ff-005a-4c11-b5ed-e38842e33293](https://user-images.githubusercontent.com/39390011/42594949-57390116-8516-11e8-9d8f-db1154dd0520.jpg)
+
+Los resultados de la primera encuesta
+
+![image](https://user-images.githubusercontent.com/36829304/42596011-c62df204-8519-11e8-98ba-ccfb888d5a38.png)
+
+
+![e9ba1a9f-4798-4527-91a8-8c59fa594c40](https://user-images.githubusercontent.com/39390011/42594953-57d3829a-8516-11e8-9b86-28fcfb0d2caa.jpg)
+
+![c033a62d-7239-4e60-8755-45ae6e3be0a2](https://user-images.githubusercontent.com/39390011/42594948-56a260da-8516-11e8-97bb-fa8ab46483dd.jpg)
+
+![2d5379fe-8057-4581-be03-95e3d0c7ec48](https://user-images.githubusercontent.com/39390011/42594950-576451fe-8516-11e8-824e-567b5c415674.jpg)
+
+Los resultados de la segunda entrevista
+
+Este cuestionario se oriento especificamente a la tematica de redes sociales educativas
+
+![image 1](https://user-images.githubusercontent.com/36829304/42596145-4489e9f0-851a-11e8-853a-10c3e60a4cea.png)
+
+![a193a679-1cd0-4b4b-9cc7-286d6c6ae7e7](https://user-images.githubusercontent.com/39390011/42595989-b5949984-8519-11e8-912c-978b29df1f3b.jpg)
+
+![305f836c-68b6-4c16-9413-167440277fac](https://user-images.githubusercontent.com/39390011/42595990-b5c3e6b2-8519-11e8-8eb0-bed121f281bc.jpg)
+
+![4c3e328e-fdb2-4b50-8e6c-706fa71ae48a](https://user-images.githubusercontent.com/39390011/42595988-b574dacc-8519-11e8-9ffb-732cad70dd46.jpg)
+
+
+***
+
+## Sketch, mockup y prototipado
+
+### 1) Diseño de la Interfaz de Usuario
+ 
+#### 1.1) Prototipo de Baja fidelidad
+
+Sketch vista Mobile
+
+![dff03d09-71d0-413f-983d-1624c846069c](https://user-images.githubusercontent.com/39390011/42594190-145aaa68-8514-11e8-8b29-6a64441590d7.jpg)
+
+Sketch vista Desktop
+
+![1ddac442-6cd9-49a9-9836-756b9bc4343f](https://user-images.githubusercontent.com/39390011/42594192-14825eb4-8514-11e8-8032-d403902264a3.jpg)
+
+
+#### 2.2) Wireframe de alta fidelidad
+
+Vista preliminar en dispositivo movil (iphoneSE)
+
+![cel](https://user-images.githubusercontent.com/39390011/42542344-25b73e0a-846c-11e8-920f-2ffbc8659434.PNG)
+
+Vista del login en dispositivo movil 
+
+![loginiphone](https://user-images.githubusercontent.com/39390011/42542348-2c37d12c-846c-11e8-98c2-33aa3d7c6c61.PNG)
+
+Vista del login en dispositivo (ipad)
+
+![loginipad](https://user-images.githubusercontent.com/39390011/42542349-2c7b005a-846c-11e8-98d7-3a3b46e6e2ed.PNG)
+
+Vista del login en en ordenador
+
+![loginmac](https://user-images.githubusercontent.com/39390011/42542360-3806d598-846c-11e8-9835-41b48bec27a3.PNG)
+
+<!-- #### 3) Implementación de la Interfaz de Usuario
+
+La idea para este proyecto es que el producto a desarrollar siga los
+lineamientos propuestos en el diseño de la interfaz de usuario. Asegúrate a lo
+largo de la implementación que los elementos propuestos están siendo
+implementados correctamente. (Hint: testing)
 
 ## Consideraciones generales
 
@@ -244,47 +302,6 @@ El proyecto será _entregado_ subiendo tu código a GitHub (`commit`/`push`) y l
 interfaz será desplegada usando GitHub pages u otro servicio de hosting que
 puedas haber encontrado en el camino.
 
-### Entregables
-
-#### 1) Definición del producto
-
-En el `README.md` debes colocar cómo conociste el mercado de las redes sociales, cómo descubriste las necesidades de los usuarios, y cómo llegaste a la definición final de tu producto. Si tienes fotos de entrevistas, cuestionarios y/o sketches
-(bocetos) compártelos. Es importante que detalles:
-
-* Cuáles son los elementos básicos que tiene una red social.
-* Quiénes son los principales usuarios de producto.
-* Cómo descubriste las necesidades de los usuarios.
-* Qué problema resuelve el producto para estos usuarios.
-* Cuáles son los objetivos de estos usuarios en relación con el producto.
-* Cuáles son las principales funcionalidades del producto y cuál es su prioridad.
-* Cómo verificaste que el producto les está resolviendo sus problemas.
-* Cómo te asegurarás que estos usuarios usen este producto.
-
-Para poder llegar a estas definiciones te recomendamos revisar: benchmarks, entrevistas con usuarios y tests de usabilidad.
-
-#### 2) Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
-
-Debes definir cuál será el flujo que seguirá el usuario dentro de tu producto y
-con eso deberás diseñar la Interfaz de Usuario (UI - por sus siglas en inglés) de
-esta red social que siga este flujo. Para esto debes utilizar la herramienta de
-diseño visual de tu preferencia. Nosotros te recomendamos [Figma](https://www.figma.com/) dado que es una
-herramienta que funciona en el navegador y puedes crear una cuenta gratis. Sin
-embargo, eres libre de utilizar otros editores gráficos como Adobe XD, Illustrator,
-Photoshop, PowerPoint, Keynote, etc.
-
-Este diseño debe representar la solución que se implementará finalmente en
-código. 
-
-Tu diseño debe seguir los fundamentos de visual design, como: contraste,
-alineación, jerarquía, entre otros. Tip: revisa el contenido de UX de la unidad
-de visual design.
-
-#### 3) Implementación de la Interfaz de Usuario
-
-La idea para este proyecto es que el producto a desarrollar siga los
-lineamientos propuestos en el diseño de la interfaz de usuario. Asegúrate a lo
-largo de la implementación que los elementos propuestos están siendo
-implementados correctamente. (Hint: testing)
 
 ## Evaluación
 
@@ -415,7 +432,7 @@ Otras:
 * [Mobile First - ZURB](https://zurb.com/word/mobile-first)
 * [Mobile First Is NOT Mobile Only - Nielsen Norman Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
 * [Offline first manifesto](http://offlinefirst.org/)
-
+ -->
 ***
 
 ## Checklist
