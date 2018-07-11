@@ -183,6 +183,7 @@
     background: #000c;
     border-radius: 10px;
     overflow: hidden;
+    display: flex;
   }
 
 
@@ -190,8 +191,10 @@
   [ Form ]*/
 
   .login-form {
+    display: grid;
     width: 100%;
     height: auto;
+    align-content: center;
   }
 
   .login-form-title {
@@ -479,7 +482,7 @@
     display: block;
     font-family: Poppins-Bold;
     font-size: 59px;
-    color: #cecece;
+    color: #ffffff;
     line-height: 1.2;
   }
   .container-description{
@@ -487,7 +490,7 @@
   }
   .paragraph p{
     color: #ffffff;
-    font-size: 16px;
+    font-size: 24px;
     text-align: justify;
   }
   .right{
@@ -528,7 +531,7 @@
 }
 @media only screen and (min-width: 1024px) {
   .paragraph p {
-    font-size: 20px;
+    font-size: 26px;
   }
   
 }
