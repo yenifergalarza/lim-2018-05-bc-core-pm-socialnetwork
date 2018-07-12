@@ -21,6 +21,8 @@ const createUser = (email, password, repeatPassword) => {
   }
 };
 
+window.createUser = createUser;
+
 const signInUser = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
     window.location.assign('main.html')
