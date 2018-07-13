@@ -9,5 +9,5 @@ signUp.addEventListener('click', () => {
 });
 
 goLogin.addEventListener('click', () => {
-  window.location.assign('signin.html')
+  window.location.assign('index.html')
 })
