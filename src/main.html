@@ -8,13 +8,15 @@
   <link rel="icon" type="image/png" href="img/icons/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Stylesheets -->
-  <link rel="stylesheet" type="text/css" media="screen" href="css/wall.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="css/ionicons.min.css" />
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link href="https://unpkg.com/ionicons@4.2.4/dist/css/ionicons.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="css/ionicons.min.css" /> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
     cro ssorigin="anonymous">
   <link href="css/emoji.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/wall.css" />
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
@@ -42,7 +44,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="index.html">
-            <img class="logo" src="images/logo.png" alt="logo" />
+            <img class="logo" src="img/logo.png" alt="logo" />
           </a>
         </div>
 
@@ -61,7 +63,7 @@
           </ul>
           <form class="navbar-form navbar-right hidden-sm">
             <div class="form-group">
-              <i class="icon ion-android-search"></i>
+              <i class="icon ion-ios-search"></i>
               <input type="text" class="form-control" placeholder="Search friends, photos, videos">
             </div>
           </form>
@@ -75,14 +77,11 @@
   <div id="page-contents">
     <div class="container">
       <div class="row">
-
-        <!-- Newsfeed Common Side Bar Left
-            ================================================= -->
-        <div class="col-md-3 static">
+        <div class="col-md-3 static slide-bar-left">
           <div class="profile-card">
-            <img src="images/users/user-1.jpg" alt="user" class="profile-photo" />
+            <img src="img/users/user-1.jpg" alt="user" class="profile-photo" />
             <h5>
-              <a href="timeline.html" class="text-white">Sarah Cruiz</a>
+              <a href="timeline.html" class="text-white">Valeria Biaggi</a>
             </h5>
             <a href="#" class="text-white">
               <i class="ion ion-android-person-add"></i> 1,299 followers</a>
@@ -102,19 +101,19 @@
               </div>
             </li>
             <li>
-              <i class="icon ion-ios-people-outline"></i>
+              <i class="icon ion-md-people"></i>
               <div>
                 <a href="newsfeed-friends.html">Friends</a>
               </div>
             </li>
             <li>
-              <i class="icon ion-chatboxes"></i>
+              <i class="icon ion-md-chatboxes"></i>
               <div>
                 <a href="newsfeed-messages.html">Messages</a>
               </div>
             </li>
             <li>
-              <i class="icon ion-images"></i>
+              <i class="icon ion-md-images"></i>
               <div>
                 <a href="newsfeed-images.html">Images</a>
               </div>
@@ -128,6 +127,7 @@
           </ul>
           <!--chat block ends-->
         </div>
+
         <div class="col-md-7">
 
           <!-- Post Create Box
@@ -136,7 +136,7 @@
             <div class="row">
               <div>
                 <div class="form-group">
-                  <img src="images/users/user-1.jpg" alt="" class="profile-photo-md" />
+                  <img src="img/users/user-1.jpg" alt="" class="profile-photo-md" />
                   <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
                 </div>
               </div>
@@ -145,12 +145,12 @@
                   <ul class="publishing-tools list-inline">
                     <li>
                       <a href="#">
-                        <i class="ion-compose"></i>
+                        <i class="ion-ios-create"></i>
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <i class="ion-images"></i>
+                        <i class="ion-md-images"></i>
                       </a>
                     </li>
                     <li>
@@ -160,7 +160,7 @@
                     </li>
                     <li>
                       <a href="#">
-                        <i class="ion-map"></i>
+                        <i class="ion-md-map"></i>
                       </a>
                     </li>
                   </ul>

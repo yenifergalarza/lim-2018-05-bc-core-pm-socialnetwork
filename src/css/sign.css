@@ -166,7 +166,7 @@
   .container-login {
     width: 320px;  
     height: 100vh;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -506,9 +506,6 @@
     visibility: visible;
     opacity: 1;
   } */
-  .container-login{
-    height: auto;
-  }
   .input100{
     font-size: 16px;
     height: 55px
@@ -530,6 +527,9 @@
   }
 }
 @media only screen and (min-width: 1024px) {
+  /* .container-login{
+    height: auto;
+  } */
   .paragraph p {
     font-size: 26px;
   }
@@ -538,7 +538,7 @@
 @media only screen and (min-width: 1280px) {
   .container-login{
     width: 500px;
-    height: 700px;
+    /* height: 700px; */
   }
   .wrap-login{
     padding-left: 35px;
