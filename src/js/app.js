@@ -1,8 +1,8 @@
-const createUser = (email, password, repeatPassword) => {
+window.createUser = (email, password, repeatPassword) => {
   if (password === repeatPassword) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(() => {
-        window.location.assign('signin.html')
+        window.location.assign('index.html')
       })
       .catch(function (error) {
         // Handle Errors here.
@@ -19,9 +19,9 @@ const createUser = (email, password, repeatPassword) => {
     console.log('Your password doesnt mach');
     alert('Your password doesnt mach');
   }
-}
+};
 
-const signInUser = (email, password) => {
+window.signInUser = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
     window.location.assign('main.html')
   })
@@ -36,9 +36,9 @@ const signInUser = (email, password) => {
       }
       console.log(error);
     });
-}
+};
 
-const resetPassword = (email, password) => {
+window.resetPassword = (email, password) => {
   firebase.auth().sendPasswordResetEmail(
     getEmail.value)
     .then(function () {
@@ -56,9 +56,9 @@ const resetPassword = (email, password) => {
       }
       console.log(error);
     });
-}
+};
 
-const loginWithGoogle = () => {
+window.loginWithGoogle = () => {
   // Using a popup.
   var provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope('profile');
@@ -70,9 +70,9 @@ const loginWithGoogle = () => {
     var user = result.user;
     window.location.assign('main.html')
   });
-}
+};
 
-const loginWithFacebook = () => {
+window.loginWithFacebook = () => {
   // Sign in using a popup.
   var provider = new firebase.auth.FacebookAuthProvider();
   provider.addScope('user_birthday');
@@ -83,9 +83,9 @@ const loginWithFacebook = () => {
     var user = result.user;
     window.location.assign('main.html')
   });
-}
+};
 
-const loginWithTwitter = () => {
+window.loginWithTwitter = () => {
   // Using a popup.
   var provider = new firebase.auth.TwitterAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function (result) {
@@ -96,4 +96,19 @@ const loginWithTwitter = () => {
     var user = result.user;
     window.location.assign('main.html')
   });
-}
+};
+
+(function ($) {
+  "use strict";
+  //  [ Focus input ]
+  $('.input100').each(function () {
+    $(this).on('blur', function () {
+      if ($(this).val().trim() != "") {
+        $(this).addClass('has-val');
+      }
+      else {
+        $(this).removeClass('has-val');
+      }
+    })
+  })
+})(jQuery);
