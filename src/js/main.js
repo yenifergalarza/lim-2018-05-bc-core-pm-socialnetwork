@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var mainApp = {};
 (() => {
   var firebase = appFireBase;
@@ -16,3 +17,15 @@ var mainApp = {};
   }
   mainApp.logOut = logOut;
 })()
+=======
+document.querySelector('#log-out').addEventListener('click', (e) => {
+  console.log('holaaaa')
+  firebase.auth().signOut().then( function(){
+    if (e.preventDefault) {
+      window.location.assign('signin.html')
+    }
+  }).catch( function(error){
+
+  });
+})
+>>>>>>> b4c81ee146b23db134de6ad91ae915667d69165a
