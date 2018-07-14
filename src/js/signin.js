@@ -6,7 +6,15 @@ const loginGoogle = document.querySelector('#login-google');
 const loginFacebook = document.querySelector('#login-facebook');
 const loginTwitter = document.querySelector('#login-twitter');
 const forgotPassword = document.querySelector('#forgot-Password');
+window.onload =()=>{
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      window.location.assign('main.html')
+    } else {
 
+    }
+  });
+}
 register.addEventListener('click', (e) => {
   if (e.preventDefault) {
     window.location.assign('signup.html')

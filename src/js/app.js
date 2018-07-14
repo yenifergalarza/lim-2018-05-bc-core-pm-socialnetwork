@@ -1,7 +1,8 @@
-const createUser = (email, password, repeatPassword) => {
+window.createUser = (email, password, repeatPassword) => {
   if (password === repeatPassword) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(() => {
+<<<<<<< HEAD
         // const re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
         // if(re.test(email) && password.indexOf(" ")>-1){
 
@@ -19,6 +20,9 @@ const createUser = (email, password, repeatPassword) => {
           }
 
         })
+=======
+        window.location.assign('index.html')
+>>>>>>> b90cb14dd3281ec6ea274bfb49d293ce01fbcc02
       })
       .catch(function (error) {
         // Handle Errors here.
@@ -36,8 +40,12 @@ const createUser = (email, password, repeatPassword) => {
     alert('Your password doesnt mach');
   }
 
+<<<<<<< HEAD
 };
 const signInUser = (email, password) => {
+=======
+window.signInUser = (email, password) => {
+>>>>>>> b90cb14dd3281ec6ea274bfb49d293ce01fbcc02
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
     window.location.assign('main.html')
   })
@@ -54,8 +62,14 @@ const signInUser = (email, password) => {
     });
 };
 
+<<<<<<< HEAD
 const resetPassword = (email, password) => {
   firebase.auth().sendPasswordResetEmail(getEmail.value)
+=======
+window.resetPassword = (email, password) => {
+  firebase.auth().sendPasswordResetEmail(
+    getEmail.value)
+>>>>>>> b90cb14dd3281ec6ea274bfb49d293ce01fbcc02
     .then(function () {
       firebase.auth.EmailAuthProvider.credential(email, password);
       alert("Password Reset Email Sent")
@@ -73,7 +87,7 @@ const resetPassword = (email, password) => {
     });
 };
 
-const loginWithGoogle = () => {
+window.loginWithGoogle = () => {
   // Using a popup.
   var provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope('profile');
@@ -87,7 +101,7 @@ const loginWithGoogle = () => {
   });
 };
 
-const loginWithFacebook = () => {
+window.loginWithFacebook = () => {
   // Sign in using a popup.
   var provider = new firebase.auth.FacebookAuthProvider();
   provider.addScope('email');
@@ -102,7 +116,7 @@ const loginWithFacebook = () => {
   });
 };
 
-const loginWithTwitter = () => {
+window.loginWithTwitter = () => {
   // Using a popup.
   var provider = new firebase.auth.TwitterAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function (result) {
@@ -128,6 +142,7 @@ const loginWithTwitter = () => {
       }
     })
   })
+<<<<<<< HEAD
 
   /* // [ Validate ]
    var input = $('.validate-input .input100');
@@ -176,4 +191,6 @@ const loginWithTwitter = () => {
      $(thisAlert).removeClass('alert-validate');
    } */
 
+=======
+>>>>>>> b90cb14dd3281ec6ea274bfb49d293ce01fbcc02
 })(jQuery);
