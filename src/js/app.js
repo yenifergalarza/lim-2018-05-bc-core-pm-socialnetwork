@@ -2,50 +2,26 @@ window.createUser = (email, password, repeatPassword) => {
   if (password === repeatPassword) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(() => {
-<<<<<<< HEAD
-        // const re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
-        // if(re.test(email) && password.indexOf(" ")>-1){
-
-        //   // window.location.assign('signin.html')
-        //   alert("La direccion de email es correcta")
-
-        // }else{
-        //   alert("La direccion de email es icorrecta no debe contener espacios")
-        // }
-        firebase.auth().onAuthStateChanged(function (user) {
-          if (user.emailVerified === false) {
-            user.sendEmailVerification(() => {
-              window.location.assign('signin.html')
-            })
-          }
-
-        })
-=======
         window.location.assign('index.html')
->>>>>>> b90cb14dd3281ec6ea274bfb49d293ce01fbcc02
       })
       .catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        if (errorCode == 'auth/invalid-email') {
-          alert('The email in invalid');
-        } else if (errorCode == 'auth/user-not-found') {
-          alert('The email is not exists');
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          alert(errorMessage);
         }
-
-      })
+        console.log(error);
+      });
   } else {
     console.log('Your password doesnt mach');
     alert('Your password doesnt mach');
   }
-
-<<<<<<< HEAD
 };
-const signInUser = (email, password) => {
-=======
+
 window.signInUser = (email, password) => {
->>>>>>> b90cb14dd3281ec6ea274bfb49d293ce01fbcc02
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
     window.location.assign('main.html')
   })
@@ -62,14 +38,9 @@ window.signInUser = (email, password) => {
     });
 };
 
-<<<<<<< HEAD
-const resetPassword = (email, password) => {
-  firebase.auth().sendPasswordResetEmail(getEmail.value)
-=======
 window.resetPassword = (email, password) => {
   firebase.auth().sendPasswordResetEmail(
     getEmail.value)
->>>>>>> b90cb14dd3281ec6ea274bfb49d293ce01fbcc02
     .then(function () {
       firebase.auth.EmailAuthProvider.credential(email, password);
       alert("Password Reset Email Sent")
@@ -104,14 +75,12 @@ window.loginWithGoogle = () => {
 window.loginWithFacebook = () => {
   // Sign in using a popup.
   var provider = new firebase.auth.FacebookAuthProvider();
-  provider.addScope('email');
-  provider.addScope('user_friends');
+  provider.addScope('user_birthday');
   firebase.auth().signInWithPopup(provider).then(function (result) {
-    // The firebase.User instance:
+    // This gives you a Facebook Access Token.
+    var token = result.provider.accessToken;
+    // The signed-in user info.
     var user = result.user;
-    // The Facebook firebase.auth.AuthCredential containing the Facebook
-    // access token:
-    var credential = result.credential;
     window.location.assign('main.html')
   });
 };
@@ -142,55 +111,33 @@ window.loginWithTwitter = () => {
       }
     })
   })
-<<<<<<< HEAD
-
-  /* // [ Validate ]
-   var input = $('.validate-input .input100');
-   
-   $('.validate-form').on('submit', function () {
-     var check = true;
-   
-     for (var i = 0; i < input.length; i++) {
-       if (validate(input[i]) == false) {
-         showValidate(input[i]);
-         check = false;
-       }
-     }
-     return check;
-   });
-   
-   
-   $('.validate-form .input100').each(function () {
-     $(this).focus(function () {
-       hideValidate(this);
-     });
-   });
-   
-   function validate(input) {
-     if ($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
-       if ($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-         return false;
-       }
-     }
-     else {
-       if ($(input).val().trim() == '') {
-         return false;
-       }
-     }
-   }
-   
-   function showValidate(input) {
-     var thisAlert = $(input).parent();
-   
-     $(thisAlert).addClass('alert-validate');
-   }
-   
-   function hideValidate(input) {
-     var thisAlert = $(input).parent();
-   
-     $(thisAlert).removeClass('alert-validate');
-   } */
-
-=======
->>>>>>> b90cb14dd3281ec6ea274bfb49d293ce01fbcc02
 })(jQuery);
+
+window.writeUserData = (userId, name, email, imageUrl) => {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture : imageUrl
+  });
+};
+
+window.writeNewPost=(uid, body)=> {
+  // A post entry.
+  var postData = {
+    uid: uid,
+    body: body,
+  };
+
+  // Get a key for a new Post.
+  var newPostKey = firebase.database().ref().child('posts').push().key;
+
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  updates['/posts/' + newPostKey] = postData;
+  updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+
+  firebase.database().ref().update(updates);
+  return newPostKey;
+};
+
+
