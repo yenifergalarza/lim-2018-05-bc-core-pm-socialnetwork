@@ -291,3 +291,12 @@
     display: block;
   }
 }
+
+/* Estilos para los posts */
+#newPost{
+  border: 1px solid;
+}
+.contenidoPost{
+  margin: 2px;
+
+}
