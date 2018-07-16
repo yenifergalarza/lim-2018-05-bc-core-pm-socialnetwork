@@ -57,17 +57,21 @@ window.resetPassword = (email, password) => {
       console.log(error);
     });
 };
-
+window.writeUserData = (userId, name, email, imageUrl) => {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture : imageUrl
+  });
+};
 window.loginWithGoogle = () => {
   // Using a popup.
   var provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope('profile');
   provider.addScope('email');
   firebase.auth().signInWithPopup(provider).then(function (result) {
-    // This gives you a Google Access Token.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
     var user = result.user;
+    writeUserData(user.uid, user.displayName, user.email, user.photoURL);
     window.location.assign('main.html')
   });
 };
@@ -113,19 +117,14 @@ window.loginWithTwitter = () => {
   })
 })(jQuery);
 
-window.writeUserData = (userId, name, email, imageUrl) => {
-  firebase.database().ref('users/' + userId).set({
-    username: name,
-    email: email,
-    profile_picture : imageUrl
-  });
-};
+
 
 window.writeNewPost=(uid, body)=> {
   // A post entry.
   var postData = {
     uid: uid,
     body: body,
+    // countLikes:countLikes,
   };
 
   // Get a key for a new Post.

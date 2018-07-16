@@ -1,3 +1,6 @@
+const username = document.getElementById("name");
+const photo = document.getElementById("photo");
+
 document.querySelector('#log-out').addEventListener('click', (e) => {
   console.log('holaaaa')
   firebase.auth().signOut().then(function () {
@@ -131,7 +134,19 @@ function attachSticky() {
   });
 
 }
+window.onload=()=>{
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log(user);
+      username.innerHTML = `Bienvenida ${user.displayName}`;
+      username.innerHTML = `Bienvenida ${user.photoURL}`;
 
+    } else {
+      console.log('No user is signed in.');
+      
+    }
+  });
+}
 // Disable Sticky Feature in Mobile
 $(window).on("resize", function () {
 
@@ -156,7 +171,7 @@ $(window).on("resize", function () {
 });
 
 // Fuction for map initialization
-function initMap() {
+/* function initMap() {
   var uluru = { lat: 12.927923, lng: 77.627108 };
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
@@ -171,10 +186,9 @@ function initMap() {
     position: uluru,
     map: map
   });
-}
+} */
 
 // Desarrollo de La publicacion de Post
-
 const buttonPublish = document.getElementById("buttonPublish")
 const postEntrada = document.getElementById('exampleTextarea');
 const dataBase = document.querySelector("#create-post");
@@ -184,7 +198,9 @@ function reload_page() {
   window.location.reload();
 };
 
-buttonPublish.addEventListener('click', () => {
+
+buttonPublish.addEventListener('click', (event) => {
+
   if (postEntrada.value !== "") {
     const userId = firebase.auth().currentUser.uid;
     const newPost = writeNewPost(userId, postEntrada.value);
@@ -195,9 +211,13 @@ buttonPublish.addEventListener('click', () => {
     const buttonDelete = document.createElement("input");
     buttonDelete.setAttribute("value", "Delete");
     buttonDelete.setAttribute("type", "button");
+    buttonDelete.setAttribute("id", delete);
+
     const buttonLike = document.createElement("input");
     buttonLike.setAttribute("value", "Me gusta");
     buttonLike.setAttribute("type", "button");
+    const cantidadLikes = document.createElement("span");
+    // cantidadLikes.style.display="none";
     const contenidoPost = document.createElement('div');
     contenidoPost.className = 'contenidoPost';
     const textoPost = document.createElement('textarea')
@@ -206,42 +226,65 @@ buttonPublish.addEventListener('click', () => {
     textoPost.disabled = true;
 
     buttonDelete.addEventListener('click', () => {
-
       firebase.database().ref().child('/user-posts/' + userId + newPost).remove();
       firebase.database().ref().child('/posts/' + userId + newPost).remove();
-
-      //   while(posts.firstChild) posts.removeChild(posts.firstChild);
-
+      while (posts.firstChild) posts.removeChild(posts.firstChild);
       alert('The user is deleted successfully!');
       reload_page();
-
     });
+    if (event.target.id == newPost) {
+      document.querySelector("#contenidoPost").disabled = false;
+      buttonUpdate.addEventListener('click', () => {
 
-    buttonUpdate.addEventListener('click', () => {
-      textoPost.disabled = false;
-      const newUpdate = document.getElementById(newPost);
+        const newUpdate = document.getElementById(newPost);
+        const nuevoPost = {
+          body: newUpdate.value,
+        };
+
+        const updatesUser = {};
+        const updatesPost = {};
+
+        updatesUser['/user-posts/' + userId + '/' + newPost] = nuevoPost;
+        /* updatesPost['/posts/' + newPost] = nuevoPost; */
+        firebase.database().ref().update(updatesUser);
+        firebase.database().ref().update(updatesPost);
+      });
+    }
+    let count_click = 0;
+    buttonLike.addEventListener('click', () => {
+
+      count_click += 1;
+      // cantidadLikes.style.display="block";
+      cantidadLikes.innerHTML = "A " + count_click + " le gustan este post"
       const nuevoPost = {
-        body: newUpdate.value,
+        body: postEntrada.value,
+        countLikes:count_click,
       };
 
       const updatesUser = {};
       const updatesPost = {};
 
       updatesUser['/user-posts/' + userId + '/' + newPost] = nuevoPost;
-/*       updatesPost['/posts/' + newPost] = nuevoPost; */
+      /* updatesPost['/posts/' + newPost] = nuevoPost; */
       firebase.database().ref().update(updatesUser);
       firebase.database().ref().update(updatesPost);
-    });
+    })
 
     contenidoPost.appendChild(textoPost);
     contenidoPost.appendChild(buttonUpdate);
     contenidoPost.appendChild(buttonDelete);
     contenidoPost.appendChild(buttonLike);
+    contenidoPost.appendChild(cantidadLikes);
     posts.appendChild(contenidoPost);
     postEntrada.value = "";
-
   } else {
     alert("Ingresar texto a publicar")
   }
-
+});
+document.getElementById("delete").addEventListener('click', () => {
+  firebase.database().ref().child('/user-posts/' + userId + newPost).remove();
+  firebase.database().ref().child('/posts/' + userId + newPost).remove();
+  while (posts.firstChild) posts.removeChild(posts.firstChild);
+  alert('The user is deleted successfully!');
+  reload_page();
 });
