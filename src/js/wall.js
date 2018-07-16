@@ -3,8 +3,7 @@ processing = () => {
   document.querySelector('#spinner-wrapper').style.display = 'none';
 }
 //window.onload = () => { processing() }
-window.onload = setTimeout(processing, 4000);
-
+window.onload = setTimeout(processing, 400);
 
 document.querySelector('#log-out').addEventListener('click', (e) => {
   console.log('holaaaa')
@@ -15,7 +14,7 @@ document.querySelector('#log-out').addEventListener('click', (e) => {
   }).catch(function (error) {
 
   });
-});
+})
 
 // Desarrollo de La publicacion de Post
 
@@ -28,12 +27,28 @@ function reload_page() {
   window.location.reload();
 };
 
-() => {
+buttonPublish.addEventListener('click', () => {
+  if (postEntrada.value !== '') {
+    const userId = firebase.auth().currentUser.uid;
+    // writeNewPost(userId, postEntrada.value);
+    writeNewPost(userId, postEntrada.value);
+    postEntrada.value = '';
+    // paintNewPost(userId, newPost);
+    reload_page();
+  } else {
+    alert('Ingresar texto a publicar')
+  }
+
+
+});
+
+window.onload = (() => {
   // if (postEntrada.value !== '') {
   let userId = firebase.auth().currentUser.uid;
   // let postId = writeNewPost(userId, postEntrada.value);
   // const newPost = writeNewPost(userId, postEntrada.value);
-  firebase.database().ref().child('user-posts').child(userId).once('value', postKey => {
+  const dbRefPostUser = firebase.database().ref().child('user-posts').child(userId);
+  dbRefPostUser.once('value', postKey => {
     postKey.forEach(keys => {
       let postId = keys.key;
       keys.forEach(body => {
@@ -47,8 +62,7 @@ function reload_page() {
         // buttonDelete.setAttribute('type', 'button');
         const buttonLike = document.createElement('i');
         buttonLike.setAttribute('class', 'far fa-heart post-icon');
-        // buttonLike.setAttribute('value', 'Me gusta');
-        // buttonLike.setAttribute('type', 'button');
+
         const contenidoPost = document.createElement('div');
         contenidoPost.className = 'contenidoPost';
         const textoPost = document.createElement('textarea')
@@ -102,58 +116,15 @@ function reload_page() {
       });
     })
   })
-  /* console.log(firebase.database().ref().child('user-posts').child(userId).key)
-    var dbRefPost = firebase.database().ref().child('user-posts');
-    var dbRefPostUser = dbRefPost.child(userId);
-    dbRefPostUser.on('child_added', snap => {
-      snap.forEach(body => {
-        const buttonUpdate = document.createElement('input');
-        buttonUpdate.setAttribute('value', 'Update');
-        buttonUpdate.setAttribute('type', 'button');
-        const buttonDelete = document.createElement('input');
-        buttonDelete.setAttribute('value', 'Delete');
-        buttonDelete.setAttribute('type', 'button');
-        const buttonLike = document.createElement('input');
-        buttonLike.setAttribute('value', 'Me gusta');
-        buttonLike.setAttribute('type', 'button');
-        const contenidoPost = document.createElement('div');
-        contenidoPost.className = 'contenidoPost';
-        const textoPost = document.createElement('textarea')
-        textoPost.setAttribute('id', '');
-        textoPost.innerHTML = body.val();
-        // textoPost.innerHTML = postEntrada.value;
-        textoPost.disabled = true;
 
-        
+})
 
-        contenidoPost.appendChild(textoPost);
-        contenidoPost.appendChild(buttonUpdate);
-        contenidoPost.appendChild(buttonDelete);
-        contenidoPost.appendChild(buttonLike);
-        posts.appendChild(contenidoPost);
-        // postEntrada.value = '';
-      });
-    }); */
-  // } else {
-  //   alert('Ingresar texto a publicar')
-  // }
-}
-
-
-
-buttonPublish.addEventListener('click', () => {
-  if (postEntrada.value !== '') {
-    const userId = firebase.auth().currentUser.uid;
-    // writeNewPost(userId, postEntrada.value);
-    writeNewPost(userId, postEntrada.value);
-    postEntrada.value = '';
-    // paintNewPost(userId, newPost);
-    reload_page();
-  } else {
-    alert('Ingresar texto a publicar')
-  }
-
-
-});
-
-
+/* dbRefPostUser.on('child_changed', postKey => {
+  posts.innerHTML = '';
+  postKey.forEach(keys => {
+    let postId = keys.key;
+    keys.forEach(body => {
+      const postChanged = document.getElementById(postId)
+      postChanged.innerHTML = body.val()
+    })
+  }) */
