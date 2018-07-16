@@ -10,7 +10,7 @@ const forgotPassword = document.querySelector('#forgot-Password');
 window.onload =()=>{
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      window.location.assign("main.html")
+      window.location.assign('wall.html')
     } else {
       console.log('No user is signed in.');
       
