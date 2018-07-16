@@ -23,8 +23,8 @@ window.createUser = (email, password, repeatPassword) => {
 
 window.signInUser = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-    window.location.assign('main.html')
-  })
+      window.location.assign('main.html')
+    })
     .catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -40,7 +40,7 @@ window.signInUser = (email, password) => {
 
 window.resetPassword = (email, password) => {
   firebase.auth().sendPasswordResetEmail(
-    getEmail.value)
+      getEmail.value)
     .then(function () {
       firebase.auth.EmailAuthProvider.credential(email, password);
       alert("Password Reset Email Sent")
@@ -98,17 +98,27 @@ window.loginWithTwitter = () => {
   });
 };
 
-(function ($) {
-  "use strict";
-  //  [ Focus input ]
-  $('.input100').each(function () {
-    $(this).on('blur', function () {
-      if ($(this).val().trim() != "") {
-        $(this).addClass('has-val');
-      }
-      else {
-        $(this).removeClass('has-val');
-      }
-    })
-  })
-})(jQuery);
+
+window.writeUserData = (userId, name, email, imageUrl) => {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture: imageUrl
+  });
+};
+
+window.writeNewPost = (uid, body) => {
+  // A post entry.
+  var postData = {body: body};
+
+  // Get a key for a new Post.
+  var newPostKey = firebase.database().ref().child('posts').push().key;
+
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  updates['/posts/' + newPostKey] = postData;
+  updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+
+  firebase.database().ref().update(updates);
+  return newPostKey;
+};
