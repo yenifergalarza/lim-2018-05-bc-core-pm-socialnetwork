@@ -189,7 +189,8 @@ window.onload = () => {
                             <h5>
                               <a href="timeline.html" id="name"class="text-white">${user.displayName}</a>
                             </h5>'
-                            <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>`
+                            <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
+                          `
       let userId = firebase.auth().currentUser.uid;
       firebase.database().ref().child('user-posts').child(userId).once('value', postKey => {
         postKey.forEach(keys => {
