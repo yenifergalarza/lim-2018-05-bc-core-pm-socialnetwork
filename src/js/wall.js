@@ -72,7 +72,6 @@ window.onload = () => {
             textoPost.disabled = true;
 
             buttonDelete.classList.add('btn-delete');
-            buttonUpdate.classList.add('btn-update');
             buttonLike.classList.add('btn-like');
 
             let aux = 0;
