@@ -162,8 +162,6 @@ const postEntrada = document.querySelector('#exampleTextarea');
 const dataBase = document.querySelector('#create-post');
 const posts = document.querySelector('#posts');
 const profile = document.getElementById('profile')
-const username = document.getElementById("name");
-const photo = document.getElementById("photo");
 let count_click = 0;
 
 function reload_page() {
