@@ -107,9 +107,12 @@ window.writeUserData = (userId, name, email, imageUrl) => {
   });
 };
 
-window.writeNewPost = (uid, body) => {
+window.writeNewPost = (uid, body,countlike) => {
   // A post entry.
-  var postData = {body: body};
+  var postData = {
+    body: body,
+    countlike:countlike,
+  };
 
   // Get a key for a new Post.
   var newPostKey = firebase.database().ref().child('posts').push().key;
