@@ -161,8 +161,11 @@ const buttonPublish = document.querySelector('#buttonPublish')
 const postEntrada = document.querySelector('#exampleTextarea');
 const dataBase = document.querySelector('#create-post');
 const posts = document.querySelector('#posts');
+const profile = document.getElementById('profile')
 const username = document.getElementById("name");
-// const photo = document.getElementById("photo");
+const photo = document.getElementById("photo");
+let count_click = 0;
+
 function reload_page() {
   window.location.reload();
 };
@@ -171,10 +174,9 @@ buttonPublish.addEventListener('click', () => {
   if (postEntrada.value !== '') {
     const userId = firebase.auth().currentUser.uid;
     // writeNewPost(userId, postEntrada.value);
-    writeNewPost(userId, postEntrada.value,count_click);
+    writeNewPost(userId, postEntrada.value, count_click);
     postEntrada.value = '';
     // paintNewPost(userId, newPost);
-    reload_page();
   } else {
     alert('Ingresar texto a publicar')
   }
@@ -185,8 +187,11 @@ buttonPublish.addEventListener('click', () => {
 window.onload = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      username.innerHTML = `${user.displayName}`;
-      // username.innerHTML = `Bienvenida ${user.photoURL}`;
+      profile.innerHTML = `<img src="${user.photoURL}" alt="user" class="profile-photo" />
+                            <h5>
+                              <a href="timeline.html" id="name"class="text-white">${user.displayName}</a>
+                            </h5>'
+                            <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>`
       let userId = firebase.auth().currentUser.uid;
       firebase.database().ref().child('user-posts').child(userId).once('value', postKey => {
         postKey.forEach(keys => {
@@ -242,7 +247,6 @@ window.onload = () => {
               firebase.database().ref().update(updatesUser);
               firebase.database().ref().update(updatesPost);
             });
-            let count_click = 0;
 
             buttonLike.addEventListener('click', () => {
 
@@ -251,12 +255,12 @@ window.onload = () => {
               cantidadLikes.innerHTML = "A " + count_click + " le gustan este post";
               const nuevoPost = {
                 body: postEntrada.value,
-                countlike:count_click,
+                countlike: count_click,
               };
-      
+
               const updatesUser = {};
               const updatesPost = {};
-      
+
               updatesUser['/user-posts/' + userId + '/' + postId] = nuevoPost;
               updatesPost['/posts/' + postId] = nuevoPost;
               firebase.database().ref().update(updatesUser);
@@ -271,6 +275,6 @@ window.onload = () => {
           });
         })
       })
-    } 
+    }
   })
 }
