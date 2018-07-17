@@ -57,9 +57,6 @@ window.resetPassword = (email, password) => {
       console.log(error);
     });
 };
-<<<<<<< HEAD
-
-=======
 window.writeUserData = (userId, name, email, imageUrl) => {
   firebase.database().ref('users/' + userId).set({
     username: name,
@@ -67,7 +64,6 @@ window.writeUserData = (userId, name, email, imageUrl) => {
     profile_picture : imageUrl
   });
 };
->>>>>>> 4d10930aaeec1a2bbb2087f4d7e8063270196a52
 window.loginWithGoogle = () => {
   // Using a popup.
   var provider = new firebase.auth.GoogleAuthProvider();
@@ -106,22 +102,6 @@ window.loginWithTwitter = () => {
   });
 };
 
-<<<<<<< HEAD
-(function ($) {
-  "use strict";
-  //  [ Focus input ]
-  $('.input100').each(function () {
-    $(this).on('blur', function () {
-      if ($(this).val().trim() != "") {
-        $(this).addClass('has-val');
-      }
-      else {
-        $(this).removeClass('has-val');
-      }
-    })
-  })
-})(jQuery);
-=======
 
 window.writeUserData = (userId, name, email, imageUrl) => {
   firebase.database().ref('users/' + userId).set({
@@ -188,4 +168,3 @@ window.writeNewPost = (uid, body,countlike) => {
   // ...
 }); */
 // }
->>>>>>> 4d10930aaeec1a2bbb2087f4d7e8063270196a52
