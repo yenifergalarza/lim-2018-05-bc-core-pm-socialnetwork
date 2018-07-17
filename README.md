@@ -99,10 +99,19 @@ Orientándonos a los estudiantes, tener una red social educativa  donde puedan c
 Elaboramos 5 user personas
 
 ![sujeto1](https://user-images.githubusercontent.com/39390011/42730646-12c6a6c2-87bf-11e8-9448-315417b00874.PNG)
+
+sujeto1 audio: https://drive.google.com/open?id=1GG1ploQzASs7DU7WKSx2Yntg8DE82QcG
+
 ![sujeto2](https://user-images.githubusercontent.com/39390011/42730647-12f3a050-87bf-11e8-85cb-01d61a32880f.PNG)
+
+sujeto2 audio:https://drive.google.com/open?id=1M8tUYJ3igS1Fpu5itP-osQTrNRhJ6cQj
+
 ![sujeto3](https://user-images.githubusercontent.com/39390011/42730648-130e529c-87bf-11e8-810b-db82233a94e5.PNG)
 
 ![sujeto4](https://user-images.githubusercontent.com/39390011/42730644-1285f99c-87bf-11e8-84be-29e642733783.PNG)
+
+sujeto 4 audio: https://drive.google.com/open?id=1BCaby2FKH3ZP844y5vvlJHmxLOwRDFsm
+
 ![sujeto5](https://user-images.githubusercontent.com/39390011/42730645-12ab0584-87bf-11e8-9211-ad980d787f96.PNG)
 
 ## IDEACIÓN
@@ -112,6 +121,7 @@ En esta etapa utilizaras herramientas como:
 Benchmarking
 ## PROTOTIPADO
 En esta etapa elaboramos un prototipo que nos permita probar nuestras ideas con usuarios para saber si estamos resolviendo satisfaciendo sus necesidades con nuestro producto.
+
 ## Sketch, mockup y prototipado
 ### 1) Diseño de la Interfaz de Usuario
  
