@@ -278,6 +278,16 @@
   .create-post .tools ul.publishing-tools li a:hover {
     color: #27aae1;
   }
+<<<<<<< HEAD
+=======
+  .contenidoPost{
+    margin: 25px 2px;
+  }
+  .post-icon{
+    margin: 10px;
+    cursor: pointer;
+  }
+>>>>>>> 4d10930aaeec1a2bbb2087f4d7e8063270196a52
 }
 
 @media only screen and (min-width: 480px) {
@@ -289,5 +299,19 @@
 @media only screen and (min-width: 992px) {
   .slide-bar-left{
     display: block;
+<<<<<<< HEAD
   }
 }
+=======
+    position: fixed;
+  }
+  .wall{
+    margin-left: 300px;
+  }
+}
+
+/* Estilos para los posts */
+#newPost{
+  border: 1px solid;
+}
+>>>>>>> 4d10930aaeec1a2bbb2087f4d7e8063270196a52
