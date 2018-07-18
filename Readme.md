@@ -55,7 +55,7 @@ Este cuestionario se orientó específicamente a la temática de redes sociales 
 
 ![305f836c-68b6-4c16-9413-167440277fac](https://user-images.githubusercontent.com/39390011/42595990-b5c3e6b2-8519-11e8-8eb0-bed121f281bc.jpg)
 
-![4c3e328e-fdb2-4b50-8e6c-706fa71ae48a](https://user-images.githubusercontent.com/39390011/42595988-b574dacc-8519-11e8-9ffb-732cad70dd46.jpg
+![4c3e328e-fdb2-4b50-8e6c-706fa71ae48a](https://user-images.githubusercontent.com/39390011/42595988-b574dacc-8519-11e8-9ffb-732cad70dd46.jpg)
 
 
 ## SÍNTESIS Y DEFINICIÓN
