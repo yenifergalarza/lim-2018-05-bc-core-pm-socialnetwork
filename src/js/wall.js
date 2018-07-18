@@ -63,9 +63,9 @@ window.onload = () => {
 
         posts.innerHTML += `<div>
             <textarea class="form-control" id="${postId}" disabled>${keys.val().body}</textarea>
-            <i dataU-postId="${postId}" class="far fa-edit post-icon btn-update"></i>
-            <i data-postId="${postId}" class="far fa-trash-alt  post-icon btn-delete"></i>
-            <i data-postId="${postId}" class="far fa-heart post-icon btn-like"></i>
+            <i  class="far fa-edit post-icon btn-update"></i>
+            <i data-postId="${postId}" class="far fa-trash-alt post-icon btn-delete"></i>
+            <i  class="far fa-heart post-icon btn-like"></i>
             <span id="countLikes">${keys.val().countLike}</span>
             </div>
           `
@@ -75,16 +75,40 @@ window.onload = () => {
           let postId = keys.key;
           // console.log(keys.val().body)
           createPost(postId, keys);
+
+        let aux = 0;
+          document.querySelector('.btn-update').addEventListener('click', () => {
+            if (aux === 0) {
+              document.querySelector('.form-control').disabled = false;
+              aux = 1;
+            } else {
+              document.querySelector('.form-control').disabled = true;
+              aux = 0;
+            }
+            const newUpdate = document.querySelector('.form-control');
+            const nuevoPost = {
+              body: newUpdate.value,
+            };
+
+            const updatesUser = {};
+            const updatesPost = {};
+
+            updatesUser['/user-posts/' + userId + '/' + postId] = nuevoPost;
+            updatesPost['/posts/' + postId] = nuevoPost;
+            firebase.database().ref().update(updatesUser);
+            firebase.database().ref().update(updatesPost);
+          });
+ 
+
         })
-       
       }
       dbRefPost.once('value', postKey => {
         hola2(postKey);
-        // console.log(document.querySelectorAll('.btn-delete'))
+        console.log(document.querySelectorAll('.btn-delete'))
         const buttonsDelete = document.querySelectorAll('.btn-delete');
-        // console.log(buttonsDelete)
+        console.log(buttonsDelete)
         buttonsDelete.forEach(button => {
-          // console.log(button);
+          console.log(button);
           button.addEventListener('click', () => {
             const postId = button.getAttribute('data-postId')
             dbRefPost.child(postId).remove();
@@ -99,36 +123,6 @@ window.onload = () => {
             reload_page();
           });
         })
-        console.log(document.querySelectorAll('.btn-update'))
-        const buttonsUpdate = document.querySelectorAll('.btn-update');
-        console.log(buttonsUpdate)
-        buttonsUpdate.forEach(button => {
-          console.log(button);
-          button.addEventListener('click', () => {
-            const postId = button.getAttribute('dataU-postId')
-            let aux=0;
-            if (aux === 0) {
-              document.querySelector('.btn-update').disabled = false;
-              aux = 1;
-            } else {
-              document.querySelector('.btn-update').disabled = true;
-              aux = 0;
-            }
-            const newUpdate = document.querySelector('.btn-update');
-            const nuevoPost = {
-              body: newUpdate.value,
-            };
-
-            const updatesUser = {};
-            const updatesPost = {};
-
-            updatesUser['/user-posts/' + userId + '/' + postId] = nuevoPost;
-            updatesPost['/posts/' + postId] = nuevoPost;
-            firebase.database().ref().update(updatesUser);
-            firebase.database().ref().update(updatesPost);
-          })
-        });
-
       })
 
       /*  dbRefPost.once('value', postKey => {
