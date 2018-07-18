@@ -39,9 +39,9 @@ firebase.auth().onAuthStateChanged(function (user) {
   if (firebase.auth().currentUser.isAnonymous === true) {
     document.querySelector('.create-post').style.display = 'none';
     document.querySelector('.profile-card').style.display = 'none';
-    window.onload = () => {
+    // window.onload = () => {
       // firebase.auth().onAuthStateChanged(function (user) {
-      // if (user) {
+      if (user) {
       const dbRefPost = firebase.database().ref().child('posts');
 
       const hola2 = (postKey) => {
@@ -98,9 +98,9 @@ firebase.auth().onAuthStateChanged(function (user) {
       // })
     }
   } else {
-    window.onload = () => {
+    // window.onload = () => {
       // firebase.auth().onAuthStateChanged(function (user) {
-      // if (user) {
+      if (user) {
       profile.innerHTML = `<img src="${user.photoURL}" alt="user" class="profile-photo" />
                               <h5>
                                 <a href="timeline.html" id="name"class="text-white">${user.displayName}</a>
@@ -206,8 +206,8 @@ firebase.auth().onAuthStateChanged(function (user) {
         })
 
       })
-      // }
+      }
       // })
-    }
+    // }
   }
 })
