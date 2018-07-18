@@ -301,7 +301,13 @@
   .wall{
     margin-left: 300px;
   }
+  .col-md-3 {
+    width: 18%;
 }
+}
+/* @media only screen and (min-width: 1024px) {
+
+} */
 
 /* Estilos para los posts */
 #newPost{
