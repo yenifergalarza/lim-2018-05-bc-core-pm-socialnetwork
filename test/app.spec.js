@@ -1,10 +1,10 @@
 describe('data', () => {
 
-  it('debería exponer función createUser en objeto global', () => {
-    assert.isFunction(createUser);
+  it('debería exponer función computeUsersStats en objeto global', () => {
+    assert.isFunction(computeUsersStats);
   });
 
-  /* describe('computeUsersStats(users, progress, courses)', () => {
+  describe('computeUsersStats(users, progress, courses)', () => {
 
     const cohort = fixtures.cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw');
     const courses = Object.keys(cohort.coursesIndex);
@@ -55,5 +55,4 @@ describe('data', () => {
 
 
   });
- */
 });
