@@ -56,59 +56,98 @@ window.onload = () => {
         <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
       `
       }
-
       let userId = firebase.auth().currentUser.uid;
       const dbRefPost = firebase.database().ref().child('user-posts').child(userId);
       const createPost = (postId, keys) => {
 
         posts.innerHTML += `<div>
             <textarea class="form-control" id="${postId}" disabled>${keys.val().body}</textarea>
-            <i  class="far fa-edit post-icon btn-update"></i>
-            <i data-postId="${postId}" class="far fa-trash-alt post-icon btn-delete"></i>
-            <i  class="far fa-heart post-icon btn-like"></i>
-            <span id="countLikes">${keys.val().countLike}</span>
+            <i  dataU-postId="${postId}" class="far fa-edit post-icon btn-update"></i>
+            <i  data-postId="${postId}" class="far fa-trash-alt post-icon btn-delete"></i>
+            <i  dataL-postId="${postId}" class="far fa-heart post-icon btn-like"></i>
+            <span  class="countLikes">${keys.val().countLike}</span>
+            <span class="hidden count_click_likes">${keys.val().countLike}</span>
             </div>
           `
       }
-      const hola2 = (postKey) => {
+      const paintPost = (postKey) => {
+        console.log(postKey)
         postKey.forEach(keys => {
           let postId = keys.key;
           // console.log(keys.val().body)
           createPost(postId, keys);
+          let aux = 0;
+          // console.log(document.querySelectorAll('.btn-update'))
+          const buttonsUpdate = document.querySelectorAll('.btn-update');
+          buttonsUpdate.forEach(button => {
+            // console.log(button);
+            button.addEventListener('click', () => {
+              const postId = button.getAttribute('dataU-postId')
+              if (aux === 0) {
+                document.getElementById(postId).disabled = false;
+                aux = 1;
+              } else {
+                document.getElementById(postId).disabled = true;
+                aux = 0;
+              }
+              const newUpdate = document.getElementById(postId);
+              const nuevoPost = {
+                body: newUpdate.value,
+                countlike: count_click,
+              };
 
-        let aux = 0;
-          document.querySelector('.btn-update').addEventListener('click', () => {
-            if (aux === 0) {
-              document.querySelector('.form-control').disabled = false;
-              aux = 1;
-            } else {
-              document.querySelector('.form-control').disabled = true;
-              aux = 0;
-            }
-            const newUpdate = document.querySelector('.form-control');
-            const nuevoPost = {
-              body: newUpdate.value,
-            };
+              const updatesUser = {};
+              const updatesPost = {};
 
-            const updatesUser = {};
-            const updatesPost = {};
+              updatesUser['/user-posts/' + userId + '/' + postId] = nuevoPost;
+              updatesPost['/posts/' + postId] = nuevoPost;
+              firebase.database().ref().update(updatesUser);
+              firebase.database().ref().update(updatesPost);
 
-            updatesUser['/user-posts/' + userId + '/' + postId] = nuevoPost;
-            updatesPost['/posts/' + postId] = nuevoPost;
-            firebase.database().ref().update(updatesUser);
-            firebase.database().ref().update(updatesPost);
-          });
- 
 
+
+            })
+
+          })
+
+
+          const buttonsLike = document.querySelectorAll('.btn-like');
+          console.log(buttonsLike)
+
+          buttonsLike.forEach(button => {
+            button.addEventListener('click', () => {
+              //count_click += 1;
+              const postId = button.getAttribute('dataL-postId')
+              let contador_click = document.querySelector('#' + postId + ' .count_click_likes').innerHTML;
+              contador_click === "undefined" ? contador_click = 0 : "";
+              contador_click = parseInt(contador_click, 10) + 1;
+              document.querySelector('#' + postId + ' .count_click_likes').innerHTML = contador_click;
+              // document.querySelector('#'+postId+' .countLikes').style.dislay='bloque'
+              document.querySelector('#' + postId + ' .countLikes').innerHTML = "A " + contador_click + " le gustan este post";
+
+              const nuevoPost = {
+                body: keys.val().body,
+                countlike: contador_click,
+              };
+
+              const updatesUser = {};
+              const updatesPost = {};
+
+              updatesUser['/user-posts/' + userId + '/' + postId] = nuevoPost;
+              updatesPost['/posts/' + postId] = nuevoPost;
+              firebase.database().ref().update(updatesUser);
+              firebase.database().ref().update(updatesPost);
+
+            });
+          })
         })
       }
       dbRefPost.once('value', postKey => {
-        hola2(postKey);
-        console.log(document.querySelectorAll('.btn-delete'))
+        paintPost(postKey);
+        // console.log(document.querySelectorAll('.btn-delete'))
         const buttonsDelete = document.querySelectorAll('.btn-delete');
-        console.log(buttonsDelete)
         buttonsDelete.forEach(button => {
-          console.log(button);
+          // console.log(button);
           button.addEventListener('click', () => {
             const postId = button.getAttribute('data-postId')
             dbRefPost.child(postId).remove();
@@ -118,43 +157,13 @@ window.onload = () => {
 
             alert('The user is deleted successfully!');
             dbRefPost.on('value', postKey => {
-              hola2(postKey)
+              paintPost(postKey)
             })
             reload_page();
           });
         })
       })
 
-      /*  dbRefPost.once('value', postKey => {
-         hola2(postKey);
-         console.log(document.querySelectorAll('.btn-Like'))
-         const buttonsLike = document.querySelectorAll('.btn-Like');
-         buttonsLike.forEach(button => {
-           button.addEventListener('click', () => {
-             const postId = button.getAttribute('dataL-postId')
-             count_click += 1;
-             document.getElementById('countLikes').innerHTML = "A " + count_click + " le gustan este post";
-     
-             const nuevoPost = {
-               body: keys.val().body,
-               countLike: count_click,
-             };
-     
-             const updatesUser = {};
-             const updatesPost = {};
-     
-             updatesUser['/user-posts/' + userId + '/' + postId] = nuevoPost;
-             updatesPost['/posts/' + postId] = nuevoPost;
-             firebase.database().ref().update(updatesUser);
-             firebase.database().ref().update(updatesPost);
-             dbRefPost.on('value', postKey => {
-               hola2(postKey)
-             })
-             reload_page();
-           });
-         })
- 
-       }) */
     }
   })
 }
