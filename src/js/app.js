@@ -1,23 +1,17 @@
-window.createUser = (email, password, repeatPassword) => {
+window.createUser = (email, password, repeatPassword, cb) => {
   if (password === repeatPassword) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        window.location.assign('index.html')
+      .then((user) => {
+        cb(null, user);
       })
       .catch(function (error) {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        if (errorCode == 'auth/weak-password') {
-          alert('The password is too weak.');
-        } else {
-          alert(errorMessage);
-        }
+        cb(error)
         console.log(error);
       });
   } else {
     console.log('Your password doesnt mach');
-    alert('Your password doesnt mach');
+    cb({ code: 'auth/password-mismatch' })
   }
 };
 
