@@ -92,8 +92,7 @@ const paintPost = (postKey, userId) => {
       button.addEventListener('click', () => {
         const postId = button.getAttribute('dataL-postId');
         let contador_click = document.querySelector('#' + postId + '.count_click_likes').innerHTML;
-        contador_click === "undefine
-        d" ? contador_click = 0 : "";
+        contador_click === "undefined" ? contador_click = 0 : "";
         contador_click = parseInt(contador_click, 10) + 1;
         document.querySelector('#' + postId + ' .count_click_likes').innerHTML = contador_click;
         document.querySelector('#' + postId + ' .countLikes').innerHTML = "A " + contador_click + " le gustan este post";
