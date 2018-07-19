@@ -289,8 +289,8 @@
   .contenidoPost{
     margin: 25px 2px;
   }
-  .contenidoPost .post-icon{
-    display: none;
+  .post-icon{
+    /* display: none; */
     margin: 10px;
     cursor: pointer;
   }
@@ -309,6 +309,9 @@
   }
   .wall{
     margin-left: 300px;
+  }
+  .col-md-3 {
+    width: 18%;
   }
 }
 

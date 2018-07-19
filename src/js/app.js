@@ -103,11 +103,12 @@ window.writeUserData = (userId, name, email, imageUrl) => {
   });
 };
 
-window.writeNewPost = (uid, body,countlike) => {
+window.writeNewPost = (uid, body,countlike, userName) => {
   // A post entry.
   var postData = {
     body: body,
     countlike:countlike,
+    userName:userName
   };
 
   // Get a key for a new Post.
