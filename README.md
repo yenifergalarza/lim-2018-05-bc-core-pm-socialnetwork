@@ -45,7 +45,7 @@ Los resultados de la primera encuesta
 
 ![2d5379fe-8057-4581-be03-95e3d0c7ec48](https://user-images.githubusercontent.com/39390011/42594950-576451fe-8516-11e8-824e-567b5c415674.jpg)
 
-Los resultados de la segunda entrevista
+Los resultados de la segunda encuesta
 
 Este cuestionario se orientó específicamente a la temática de redes sociales educativas
 
@@ -56,6 +56,23 @@ Este cuestionario se orientó específicamente a la temática de redes sociales 
 ![305f836c-68b6-4c16-9413-167440277fac](https://user-images.githubusercontent.com/39390011/42595990-b5c3e6b2-8519-11e8-8eb0-bed121f281bc.jpg)
 
 ![4c3e328e-fdb2-4b50-8e6c-706fa71ae48a](https://user-images.githubusercontent.com/39390011/42595988-b574dacc-8519-11e8-9ffb-732cad70dd46.jpg)
+
+hicimos entrevistas :
+![sujeto1](https://user-images.githubusercontent.com/39390011/42730646-12c6a6c2-87bf-11e8-9448-315417b00874.PNG)
+
+sujeto1 audio: https://drive.google.com/open?id=1GG1ploQzASs7DU7WKSx2Yntg8DE82QcG
+
+![sujeto2](https://user-images.githubusercontent.com/39390011/42730647-12f3a050-87bf-11e8-85cb-01d61a32880f.PNG)
+
+sujeto2 audio:https://drive.google.com/open?id=1M8tUYJ3igS1Fpu5itP-osQTrNRhJ6cQj
+
+![sujeto3](https://user-images.githubusercontent.com/39390011/42730648-130e529c-87bf-11e8-810b-db82233a94e5.PNG)
+
+![sujeto4](https://user-images.githubusercontent.com/39390011/42730644-1285f99c-87bf-11e8-84be-29e642733783.PNG)
+
+sujeto 4 audio: https://drive.google.com/open?id=1BCaby2FKH3ZP844y5vvlJHmxLOwRDFsm
+
+![sujeto5](https://user-images.githubusercontent.com/39390011/42730645-12ab0584-87bf-11e8-9211-ad980d787f96.PNG)
 
 
 ## SÍNTESIS Y DEFINICIÓN
@@ -96,23 +113,11 @@ Orientándonos a los estudiantes, tener una red social educativa  donde puedan c
 ---------------------------------------------------------
 
 
-Elaboramos 5 user personas
+Elaboramos 1 user persona:
 
-![sujeto1](https://user-images.githubusercontent.com/39390011/42730646-12c6a6c2-87bf-11e8-9448-315417b00874.PNG)
+![captura](https://user-images.githubusercontent.com/39390011/42973588-4f139ea6-8b79-11e8-9b4f-0501be87d210.PNG)
 
-sujeto1 audio: https://drive.google.com/open?id=1GG1ploQzASs7DU7WKSx2Yntg8DE82QcG
 
-![sujeto2](https://user-images.githubusercontent.com/39390011/42730647-12f3a050-87bf-11e8-85cb-01d61a32880f.PNG)
-
-sujeto2 audio:https://drive.google.com/open?id=1M8tUYJ3igS1Fpu5itP-osQTrNRhJ6cQj
-
-![sujeto3](https://user-images.githubusercontent.com/39390011/42730648-130e529c-87bf-11e8-810b-db82233a94e5.PNG)
-
-![sujeto4](https://user-images.githubusercontent.com/39390011/42730644-1285f99c-87bf-11e8-84be-29e642733783.PNG)
-
-sujeto 4 audio: https://drive.google.com/open?id=1BCaby2FKH3ZP844y5vvlJHmxLOwRDFsm
-
-![sujeto5](https://user-images.githubusercontent.com/39390011/42730645-12ab0584-87bf-11e8-9211-ad980d787f96.PNG)
 
 ## IDEACIÓN
 
