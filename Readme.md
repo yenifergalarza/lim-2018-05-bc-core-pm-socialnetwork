@@ -95,7 +95,9 @@ Orientándonos a los estudiantes, tener una red social educativa  donde puedan c
 * Sentimientos: Por lo general están satisfechos con las redes sociales actuales, además en el caso de ser estudiantes están preocupados por su rendimiento estudiantil.
 * Obstáculos: no tener apuntes de sus cursos, no entender un tema, conocer poca gente que sepa de un tema específico.
 ---------------------------------------------------------
+Elaboramos 1  user persona
 
+![captura](https://user-images.githubusercontent.com/39390011/43027530-6f9d78b4-8c40-11e8-9cb5-3e96c5435a1c.PNG)
 
 Elaboramos 5 entrevistas
 
@@ -181,8 +183,8 @@ Vista del login en en ordenador
 
 En esta etapa probamos nuestros prototipos con usuarios para obtener su feedback.
 
-#UI
-##Definicion de colores 
+# UI
+## Definicion de colores 
 
 Buscamos en diferentes recursos :como libros ,internet ,etc.
 De esta primera fuente (libro)
