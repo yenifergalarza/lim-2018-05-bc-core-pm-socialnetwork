@@ -40,11 +40,7 @@ Los resultados de la primera encuesta
 
 ![image](https://user-images.githubusercontent.com/36829304/42596011-c62df204-8519-11e8-98ba-ccfb888d5a38.png)
 
-![e9ba1a9f-4798-4527-91a8-8c59fa594c40](https://user-images.githubusercontent.com/39390011/42594953-57d3829a-8516-11e8-9b86-28fcfb0d2caa.jpg)
-
-![c033a62d-7239-4e60-8755-45ae6e3be0a2](https://user-images.githubusercontent.com/39390011/42594948-56a260da-8516-11e8-97bb-fa8ab46483dd.jpg)
-
-![2d5379fe-8057-4581-be03-95e3d0c7ec48](https://user-images.githubusercontent.com/39390011/42594950-576451fe-8516-11e8-824e-567b5c415674.jpg)
+![recorte form1](https://user-images.githubusercontent.com/39390011/43028052-29fd01e6-8c43-11e8-9331-886add557b30.PNG)
 
 Los resultados de la segunda entrevista
 
@@ -52,11 +48,7 @@ Este cuestionario se orientó específicamente a la temática de redes sociales 
 
 ![image 1](https://user-images.githubusercontent.com/36829304/42596145-4489e9f0-851a-11e8-853a-10c3e60a4cea.png)
 
-![a193a679-1cd0-4b4b-9cc7-286d6c6ae7e7](https://user-images.githubusercontent.com/39390011/42595989-b5949984-8519-11e8-912c-978b29df1f3b.jpg)
-
-![305f836c-68b6-4c16-9413-167440277fac](https://user-images.githubusercontent.com/39390011/42595990-b5c3e6b2-8519-11e8-8eb0-bed121f281bc.jpg)
-
-![4c3e328e-fdb2-4b50-8e6c-706fa71ae48a](https://user-images.githubusercontent.com/39390011/42595988-b574dacc-8519-11e8-9ffb-732cad70dd46.jpg)
+![recorte form2](https://user-images.githubusercontent.com/39390011/43028262-83d9a6fa-8c44-11e8-854c-40d11e6df1db.PNG)
 
 
 ## SÍNTESIS Y DEFINICIÓN
