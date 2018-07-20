@@ -294,6 +294,13 @@
     margin: 10px;
     cursor: pointer;
   }
+  .post-published{
+    margin: 40px 0;
+  }
+  .tools{
+    display: none;
+    margin: 10px 0;
+  }
 }
 
 @media only screen and (min-width: 480px) {
