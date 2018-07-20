@@ -47,8 +47,6 @@ firebase.auth().onAuthStateChanged(function (user) {
 
       dbRefPost.once('value', postKey => {
         paintPost(postKey);
-        // document.querySelector('data-postid').style.display = 'none';
-        // $('.post-icon').addClass('unshow');
       })
     }
   } else {
@@ -61,30 +59,19 @@ firebase.auth().onAuthStateChanged(function (user) {
                               </h5>'
                               <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
                             `;
-      // writingPost.innerHTML = `<img src="${user.photoURL}" alt="" class="profile-photo-md" />
-      //                         `;
       const imgProfile = document.querySelector('#img-profile');
       imgProfile.setAttribute('src', user.photoURL);
       let userId = firebase.auth().currentUser.uid;
       const dbRefPost = firebase.database().ref().child('user-posts').child(userId);
 
-      dbRefPost.on('value', postKey => {
+      dbRefPost.once('value', postKey => {
         paintPost(postKey, userId);
-        let hola = document.querySelectorAll('.tools');
-        hola.style.display = 'block';
-
-        // const displayIcon = document.querySelectorAll('.contenidoPost .post-icon');
-        // displayIcon.style.display = 'inline-block';
-
-        // console.log(document.querySelectorAll('.btn-delete'))
         const buttonsDelete = document.querySelectorAll('.btn-delete');
         buttonsDelete.forEach(button => {
           button.addEventListener('click', () => {
             const postId = button.getAttribute('data-postId')
             dbRefPost.child(postId).remove();
             firebase.database().ref().child('posts').child(postId).remove();
-
-            //   while(posts.firstChild) posts.removeChild(posts.firstChild);
 
             alert('The user is deleted successfully!');
             dbRefPost.on('value', postKey => {
@@ -105,45 +92,9 @@ firebase.auth().onAuthStateChanged(function (user) {
 const paintPost = (postKey, userId) => {
   postKey.forEach(keys => {
     let postId = keys.key;
-    // let user = keys.userName;
-    // console.log(user)
-    createPost(postId, keys);
 
-    let aux = 0;
-    const buttonsUpdate = document.querySelectorAll('.btn-update');
-    buttonsUpdate.forEach(button => {
-      // console.log(button);
-      let showButton = document.querySelector('.unshow');
-      button.addEventListener('click', () => {
-        const postId = button.getAttribute('dataU-postId')
-        if (aux === 0) {
-          document.getElementById(postId).disabled = false;
-          showButton.style.display = 'inline-block';
-          showButton.addEventListener('click', () => {
-            document.getElementById(postId).disabled = true;
-            showButton.style.display = 'none';
+    createPost(postId, keys,userId);
 
-            const newUpdate = document.getElementById(postId);
-            const nuevoPost = {
-              body: newUpdate.value,
-              countLike: count_click,
-              userName: firebase.auth().currentUser.displayName
-            };
-
-            const updatesUser = {};
-            const updatesPost = {};
-
-            updatesUser['/user-posts/' + userId + '/' + postId] = nuevoPost;
-            updatesPost['/posts/' + postId] = nuevoPost;
-            firebase.database().ref().update(updatesUser);
-            firebase.database().ref().update(updatesPost);
-          })
-        }
-        reload_page();
-      })
-
-    })
-    // const buttonsUpdate = document.querySelectorAll('.btn-like');
     const buttonsLike = document.querySelectorAll('.btn-like');
     buttonsLike.forEach(button => {
       button.addEventListener('click', () => {
@@ -165,22 +116,84 @@ const paintPost = (postKey, userId) => {
   })
 }
 
-const createPost = (postId, keys) => {
-  // console.log(user)
-  posts.innerHTML += `
-  <div class="post-published">
-    <div>
-      <h5>${keys.val().userName}</h5>
-    </div>      
-    <textarea class="form-control caja" id="${postId}" disabled>${keys.val().body}</textarea>
-    <div class="tools">
-    <i  dataU-postId="${postId}" class="far fa-edit post-icon btn-update"></i>
-    <i  data-postId="${postId}" class="far fa-trash-alt post-icon btn-delete"></i>
-    <i  dataL-postId="${postId}" class="far fa-heart post-icon btn-like"></i>
-    <span id="countLikes">${keys.val().countLike}</span>
-    <button id="buttonUpdate" class="btn btn-primary pull-right unshow">Publish</button>
-    <div>
-  </div>
-  `
+const test = (evt) => {
+  alert(evt);
+}
 
+const createPost = (postId, keys, userId) => {
+  // console.log(user)
+  let postPublished = document.createElement('div');
+  let userNameContainer = document.createElement('div');
+  let userName = document.createElement('h5');
+  let boxPost = document.createElement('textarea');
+  let toolsPublishContainer = document.createElement('div');
+  let iconEdit = document.createElement('i');
+  let iconDelete = document.createElement('i');
+  let iconLike = document.createElement('i');
+  let likesContainer = document.createElement('span');
+  // let contLike = document.createElement('span');
+  let buttonUpdate = document.createElement('button');
+
+  postPublished.setAttribute('class', 'post-published');
+  boxPost.setAttribute('class', 'form-control');
+  boxPost.setAttribute('id', postId);
+  boxPost.setAttribute('disabled', 'disabled');
+  toolsPublishContainer.setAttribute('class', 'tools-post');
+  iconEdit.setAttribute('class', 'far fa-edit post-icon btn-update');
+  iconEdit.setAttribute('dataU-postId', postId);
+  iconEdit.setAttribute('id', 'update' + postId);
+  iconDelete.setAttribute('class', 'far fa-trash-alt post-icon btn-delete');
+  iconDelete.setAttribute('data-postId', postId);
+  iconDelete.setAttribute('id', 'delete' + postId);
+  iconLike.setAttribute('class', 'far fa-heart post-icon btn-like');
+  iconLike.setAttribute('dataL-postId', postId);
+  iconLike.setAttribute('id', 'like' + postId);
+  likesContainer.setAttribute('id', 'countLikes');
+  buttonUpdate.setAttribute('class', 'btn btn-primary pull-right unshow');
+  buttonUpdate.setAttribute('id', 'bU' + postId);
+
+  userName.textContent = keys.val().userName;
+  boxPost.textContent = keys.val().body;
+
+  toolsPublishContainer.appendChild(iconEdit);
+  toolsPublishContainer.appendChild(iconDelete);
+  toolsPublishContainer.appendChild(iconLike);
+  toolsPublishContainer.appendChild(likesContainer);
+  toolsPublishContainer.appendChild(buttonUpdate);
+
+  userNameContainer.appendChild(userName);
+
+
+  postPublished.appendChild(userNameContainer);
+  postPublished.appendChild(boxPost);
+  postPublished.appendChild(toolsPublishContainer);
+
+  posts.appendChild(postPublished);
+
+  let editClick = document.getElementById('update' + postId);
+  let postDisable = document.getElementById(postId);
+  let showButton = document.getElementById('bU' + postId);
+  editClick.addEventListener('click', () => {
+    postDisable.disabled = false;
+    showButton.style.display = 'block';
+  });
+  showButton.addEventListener('click', () => {
+    postDisable.disabled = true;
+    showButton.style.display = 'none';
+
+    const newUpdate = document.getElementById(postId);
+    const nuevoPost = {
+      body: newUpdate.value,
+      countLike: count_click,
+      userName: firebase.auth().currentUser.displayName
+    };
+
+    const updatesUser = {};
+    const updatesPost = {};
+
+    updatesUser['/user-posts/' + userId + '/' + postId] = nuevoPost;
+    updatesPost['/posts/' + postId] = nuevoPost;
+    firebase.database().ref().update(updatesUser);
+    firebase.database().ref().update(updatesPost);
+  });
 }
