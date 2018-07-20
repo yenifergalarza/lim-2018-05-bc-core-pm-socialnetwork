@@ -29,6 +29,7 @@ El proceso de diseño tiene 5 fases. Estas 5 fases nos permiten crear productos 
 También vamos a tener en cuenta al negocio, sus objetivos y los stakeholders(involucrados)).
 ###  Entrevistas y encuestas
 
+
 Realizamos dos encuestas 
 La primera general y la segunda fue especifica para saber las necesidades del usuario 
 
@@ -55,7 +56,7 @@ Este cuestionario se orientó específicamente a la temática de redes sociales 
 
 ![305f836c-68b6-4c16-9413-167440277fac](https://user-images.githubusercontent.com/39390011/42595990-b5c3e6b2-8519-11e8-8eb0-bed121f281bc.jpg)
 
-![4c3e328e-fdb2-4b50-8e6c-706fa71ae48a](https://user-images.githubusercontent.com/39390011/42595988-b574dacc-8519-11e8-9ffb-732cad70dd46.jpg
+![4c3e328e-fdb2-4b50-8e6c-706fa71ae48a](https://user-images.githubusercontent.com/39390011/42595988-b574dacc-8519-11e8-9ffb-732cad70dd46.jpg)
 
 
 ## SÍNTESIS Y DEFINICIÓN
@@ -84,7 +85,7 @@ En esta fase usamos los datos coleccionados en la fase de investigación y descu
 * Cómo te asegurarás que estos usuarios usen este producto.
 ==> dandole una interfaz amigable y facil de usar 
 ---------------------------------------------------------------
- ahora tomaremos todos los datos  importantes y los transformaremos en información valiosa para comenzar a orientarse a la solución. También vamos a entender lo que la empresa quiere de ese producto y comenzar a entender ambas visiones con el fin de encontrar un punto armónico)
+ Ahora tomaremos todos los datos  importantes y los transformaremos en información valiosa para comenzar a orientarse a la solución. También vamos a entender lo que la empresa quiere de ese producto y comenzar a entender ambas visiones con el fin de encontrar un punto armónico)
 
 Como conclusión de las anteriores 2 encuestas 
 * Necesidades de los usuarios: poder compartir información, obtener nueva información, conocer gente con intereses afines y en el caso de que fueran estudiantes aprobar sus cursos
@@ -96,7 +97,7 @@ Orientándonos a los estudiantes, tener una red social educativa  donde puedan c
 ---------------------------------------------------------
 
 
-Elaboramos 5 user personas
+Elaboramos 5 entrevistas
 
 ![sujeto1](https://user-images.githubusercontent.com/39390011/42730646-12c6a6c2-87bf-11e8-9448-315417b00874.PNG)
 
@@ -118,7 +119,28 @@ sujeto 4 audio: https://drive.google.com/open?id=1BCaby2FKH3ZP844y5vvlJHmxLOwRDF
 
 En esta fase buscamos las mejores maneras para ejecutar/desarrollar las funcionalidades definidas en la fase de ideación. Se elaboran sketches y se decide qué propuesta se ejecutará.
 En esta etapa utilizaras herramientas como:
-Benchmarking
+### Benchmarking
+CLIPT 
+
+![clipit](https://user-images.githubusercontent.com/39390011/43026086-cce10a74-8c39-11e8-9bfd-44587c7c1f36.PNG)
+
+Es una red social educativa gratuitita que  utiliza  nuevas metodologías en las cuales el estudiante adquiere un rol activo en su proceso de aprendizaje, como flipped classroom, trabajo por proyectos, blended learning… el entorno es colaborativa principalmente se basa en videos además de tener la garantía de ser desarrollada por una universidad (la Universidad Rey Juan Carlos)
+
+
+BRAINLY 
+
+![ok](https://user-images.githubusercontent.com/39390011/43026096-d346b9fe-8c39-11e8-88b9-d9dad80133de.PNG)
+
+Es nuestra competencia directa ,ya que tiene muchas características en comunes con nuestra página web de educación ya que esta basada en el intercambio de ideas y en la ayuda mutua  ,de igual manera se puede preguntar por materias (tecnología, letras ,artes e idiomas) ,disponible en varios idiomas. Especializada en el ámbito del aprendizaje social y elearning ,así que tiene un amplio grupo de usuarios
+
+![oks](https://user-images.githubusercontent.com/39390011/43026095-d30f061c-8c39-11e8-8503-9fc41f55fd6e.PNG)
+
+SCHOOLOGY 
+![schoology-screen 1](https://user-images.githubusercontent.com/39390011/43026151-0b22c908-8c3a-11e8-9840-d8d6f3e12b91.png)
+
+Es una plataforma dirigida solamente a docentes y  estudiantes , permite foros de debate(considerándolo red social por eso), tablones de anuncios, libro de calificaciones, recompensas y una herramienta para realizar cuestionarios de evaluación pero es un lms (Learning Management System) . Esto explica la facilidad de poder visualizar tu desarrollo respecto al aprendizaje 
+![schooology funciones](https://user-images.githubusercontent.com/39390011/43026152-0b5e0324-8c3a-11e8-94e5-bcd89b741869.PNG)
+
 ## PROTOTIPADO
 En esta etapa elaboramos un prototipo que nos permita probar nuestras ideas con usuarios para saber si estamos resolviendo satisfaciendo sus necesidades con nuestro producto.
 
@@ -153,20 +175,30 @@ Vista del login en en ordenador
 
 ![loginmac](https://user-images.githubusercontent.com/39390011/42542360-3806d598-846c-11e8-9835-41b48bec27a3.PNG)
 
-TESTEO CON USUARIOS
+## TESTEO CON USUARIOS
 
 En esta etapa probamos nuestros prototipos con usuarios para obtener su feedback.
 
-Otras:
+#UI
+##Definicion de colores 
+Buscamos en diferentes recursos :como libros ,internet ,etc.
+De esta primera fuente (libro)
+![c5b5cb62-f9ff-4e04-bb39-4dc7f78a6bff](https://user-images.githubusercontent.com/39390011/43026439-5b8b9f40-8c3b-11e8-97d5-b1e90ef84afb.jpg)
+prestamos especial atención a este parrafo
+![f6d98ae5-6523-4019-8819-db87965e0198](https://user-images.githubusercontent.com/39390011/43026544-c089965e-8c3b-11e8-8cc4-1b6c961b6a34.jpg)
 
-* [Diseño web, responsive design y la importancia del mobile first - Media Click](https://www.mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/)
-* [Mobile First: el enfoque actual del diseño web móvil - 1and1](https://www.1and1.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/)
-* [Mobile First - desarrolloweb.com](https://desarrolloweb.com/articulos/mobile-first-responsive.html)
-* [Mobile First - ZURB](https://zurb.com/word/mobile-first)
-* [Mobile First Is NOT Mobile Only - Nielsen Norman Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
-* [Offline first manifesto](http://offlinefirst.org/)
- -->
-***
+Decidimos como color principal 
+el turquesa claro 
+
+![images](https://user-images.githubusercontent.com/39390011/43026604-0d3f7568-8c3c-11e8-953a-4133bfea9195.jpg)
+
+y la gama de colores frios 
+
+![images](https://user-images.githubusercontent.com/39390011/43026684-5fcb7b7e-8c3c-11e8-8e44-42e361955469.png)
+
+
+
+
 
 ## Checklist
 
