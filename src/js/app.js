@@ -1,7 +1,7 @@
 window.createUser = (email, password, repeatPassword) => {
   if (password === repeatPassword) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(() => {
+      .then((user) => {
         window.location.assign('index.html')
       })
       .catch(function (error) {
@@ -15,6 +15,7 @@ window.createUser = (email, password, repeatPassword) => {
         }
         console.log(error);
       });
+      
   } else {
     console.log('Your password doesnt mach');
     alert('Your password doesnt mach');
@@ -111,11 +112,12 @@ window.writeUserData = (userId, name, email, imageUrl) => {
   });
 };
 
-window.writeNewPost = (uid, body,countlike) => {
+window.writeNewPost = (uid, body,countlike,username) => {
   // A post entry.
   var postData = {
     body: body,
     countlike:countlike,
+    userName:username,
   };
 
   // Get a key for a new Post.
