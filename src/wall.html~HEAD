@@ -22,7 +22,8 @@
     crossorigin="anonymous">
   <link href="https://unpkg.com/ionicons@4.2.4/dist/css/ionicons.min.css" rel="stylesheet">
   <!-- Fonts -->
-  <!-- <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700' rel='stylesheet'> -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700'
+    rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -33,7 +34,8 @@
 
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -60,7 +62,7 @@
           <form class="navbar-form navbar-right hidden-sm">
             <div class="form-group">
               <i class="icon ion-ios-search"></i>
-              <input type="text" class="form-control" placeholder="Search friends, photos, videos">
+              <input type="text" class="form-control" placeholder="Search friends">
             </div>
           </form>
         </div>
@@ -74,50 +76,50 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3 static slide-bar-left">
-          <div class="profile-card" id="profile">
-           <!--  <img src="img/users/user-1.jpg" alt="user" class="profile-photo" />
+          <div class="profile-card">
+            <img src="img/users/user-1.jpg" alt="user" class="profile-photo" />
             <h5>
-              <a href="timeline.html" id="name"class="text-white">Valeria Biaggi</a>
-            </h5> -->
-            <!-- <a href="#" class="text-white">
-              <i class="ion ion-android-person-add"></i> 1,299 followers</a> -->
+              <a href="timeline.html" class="text-white">Valeria Biaggi</a>
+            </h5>
+            <a href="#" class="text-white">
+              <i class="ion ion-android-person-add"></i> 1,299 followers</a>
           </div>
           <!--profile card ends-->
           <ul class="nav-news-feed">
             <li>
               <i class="icon ion-ios-paper"></i>
               <div>
-                <a href="#">My Newsfeed</a>
+                <a href="newsfeed.html">My Newsfeed</a>
               </div>
             </li>
             <li>
               <i class="icon ion-ios-people"></i>
               <div>
-                <a href="#">People Nearby</a>
+                <a href="newsfeed-people-nearby.html">People Nearby</a>
               </div>
             </li>
             <li>
               <i class="icon ion-md-people"></i>
               <div>
-                <a href="#">Friends</a>
+                <a href="newsfeed-friends.html">Friends</a>
               </div>
             </li>
             <li>
               <i class="icon ion-md-chatboxes"></i>
               <div>
-                <a href="#">Messages</a>
+                <a href="newsfeed-messages.html">Messages</a>
               </div>
             </li>
             <li>
               <i class="icon ion-md-images"></i>
               <div>
-                <a href="#">Images</a>
+                <a href="newsfeed-images.html">Images</a>
               </div>
             </li>
             <li>
               <i class="icon ion-ios-videocam"></i>
               <div>
-                <a href="#">Videos</a>
+                <a href="newsfeed-videos.html">Videos</a>
               </div>
             </li>
           </ul>
@@ -131,8 +133,8 @@
           <div class="create-post">
             <div class="row">
               <div>
-                <div class="form-group" id="publicPost">
-                  <img alt="" class="profile-photo-md" id="img-profile"/>
+                <div class="form-group">
+                  <img src="img/users/user-1.jpg" alt="" class="profile-photo-md" />
                   <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
                 </div>
               </div>
@@ -175,6 +177,10 @@
     </div>
   </div>
 
+  <!--preloader-->
+  <div id="spinner-wrapper">
+    <div class="spinner"></div>
+  </div>
 
   <!-- Scripts -->
   <script src="js/fireBase.js"></script>
