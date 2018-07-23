@@ -103,12 +103,13 @@ window.writeUserData = (userId, name, email, imageUrl) => {
   });
 };
 
-window.writeNewPost = (uid, body, countlike, userName) => {
+window.writeNewPost = (uid, body, countlike, userName, privacy) => {
   // A post entry.
   var postData = {
     body: body,
     countlike: countlike,
-    userName: userName
+    userName: userName,
+    privacy: privacy
   };
 
   // Get a key for a new Post.
@@ -122,6 +123,23 @@ window.writeNewPost = (uid, body, countlike, userName) => {
   firebase.database().ref().update(updates);
   return newPostKey;
 };
+
+window.updatePostUser = (body, countlike, userName, privacy) => {
+    const newPost = {
+      body: body,
+      countlike: countlike,
+      userName: userName,
+      privacy: privacy
+    };
+
+    const updatesUser = {};
+    const updatesPost = {};
+
+    updatesUser['/user-posts/' + userId + '/' + postId] = newPost;
+    updatesPost['/posts/' + postId] = newPost;
+    firebase.database().ref().update(updatesUser);
+    firebase.database().ref().update(updatesPost);
+}
 
 window.loginWithAnonymous = () => {
   firebase.auth().signInAnonymously().then(function (result){
