@@ -2,12 +2,12 @@ const signUp = document.querySelector('#sign-up')
 const goLogin = document.querySelector('#go-login')
 
 signUp.addEventListener('click', () => {
-  const getEmail = document.querySelector('#email').value;
-  const getPassword = document.querySelector('#password').value;
-  const getRepeatPassword = document.querySelector('#repeat-password').value;
+  const getEmail = document.querySelector('#email');
+  const getPassword = document.querySelector('#password');
+  const getRepeatPassword = document.querySelector('#repeat-password');
   const callback = (error, response) => {
     if (!error) {
-      window.location.assign('index.html')
+      // window.location.assign('index.html')
     } else {
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -20,7 +20,7 @@ signUp.addEventListener('click', () => {
       }
     }
   }
-   createUser(getEmail, getPassword, getRepeatPassword, callback);
+   createUser(getEmail.value, getPassword.value, getRepeatPassword.value, callback);
 });
 
 goLogin.addEventListener('click', () => {

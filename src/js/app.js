@@ -1,46 +1,39 @@
-window.createUser = (email, password, repeatPassword) => {
+window.createUser = (email, password, repeatPassword, cb) => {
   if (password === repeatPassword) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        window.location.assign('index.html')
+      .then((user) => {
+        console.log(user)
+        cb(null, user);
       })
       .catch(function (error) {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        if (errorCode == 'auth/weak-password') {
-          alert('The password is too weak.');
-        } else {
-          alert(errorMessage);
-        }
+        cb(error)
         console.log(error);
       });
   } else {
-    console.log('Your password doesnt mach');
-    alert('Your password doesnt mach');
+    //console.log('Your password doesnt mach');
+    cb({ code: 'auth/password-mismatch' })
   }
 };
 
-window.signInUser = (email, password) => {
-  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-      window.location.assign('wall.html')
+// console.log(createUser('lulu@gmail.com','123','123',cb))
+
+window.signInUser = (email, password, cb) => {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((user) => {
+      cb(null, user);
+      return user;
+      // window.location.assign('wall.html')
     })
     .catch(function (error) {
+      cb(error)
       // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      if (errorCode == 'auth/weak-password') {
-        alert('The password is too weak.');
-      } else {
-        alert(errorMessage);
-      }
       console.log(error);
     });
 };
 
 window.resetPassword = (email, password) => {
-  firebase.auth().sendPasswordResetEmail(
-      getEmail.value)
+  firebase.auth().sendPasswordResetEmail(getEmail.value)
     .then(function () {
       firebase.auth.EmailAuthProvider.credential(email, password);
       alert("Password Reset Email Sent")
@@ -124,10 +117,9 @@ window.writeNewPost = (uid, body, countlike, userName) => {
 };
 
 window.loginWithAnonymous = () => {
-  firebase.auth().signInAnonymously().then(function (result){
-    console.log('hola')
+  firebase.auth().signInAnonymously().then(function () {
     window.location.assign('wall.html')
-  }).catch(function(error) {
+  }).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;

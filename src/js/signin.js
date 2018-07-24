@@ -28,7 +28,21 @@ register.addEventListener('click', (e) => {
 })
 
 logIn.addEventListener('click', () => {
-  signInUser(getEmail.value, getPassword.value);
+  const callback= (error,response)=>{
+    console.log(response);
+    if(!error){
+      window.location.assign('wall.html')
+    }else{
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      if (errorCode == 'auth/weak-password') {
+        alert('The password is too weak.');
+      } else {
+        alert(errorMessage);
+      }
+    }
+  }
+  signInUser(getEmail.value, getPassword.value,callback);
 })
 
 forgotPassword.addEventListener('click', () => {
