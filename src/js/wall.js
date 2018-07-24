@@ -185,7 +185,7 @@ const createPost = (postId, keys, userId) => {
     postDisable.disabled = true;
     updatePost.style.display = 'none';
     const newUpdate = document.getElementById(postId);
-    updatePostUser(userId, keys.val().userName, knewUpdate.value, keys.val().privacy, keys.val().countlike, postId);
+    updatePostUser(userId, keys.val().userName, newUpdate.value, keys.val().privacy, keys.val().countlike, postId);
   });
 
   likeClick.addEventListener('click', () => {

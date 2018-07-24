@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Agency FB";
-  src: url("../fonts/agency-fb.eot")/* EOT file for IE */
+  src: url("../fonts/agency-fb.ttf")/* TTF file for CSS3 browsers */
 }
 
 @font-face {
-  font-family: "Agency FB";
-  src: url("../fonts/agency-fb.ttf")/* TTF file for CSS3 browsers */
+  font-family: "Copperplate Gotic";
+  src: url("../fonts/copperplategothiclight.ttf");
 }
 
 @media only screen and (min-width: 320px) {
