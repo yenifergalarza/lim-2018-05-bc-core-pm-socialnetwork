@@ -24,7 +24,7 @@ De esta manera logramos establecer un objetivo claro ,aumentar la flexibilidad y
 ## Desarrollo del producto
 ## EL PROCESO DE DISEÑO
 El proceso de diseño tiene 5 fases. Estas 5 fases nos permiten crear productos centrados en el usuario que nos aseguren que estamos satisfaciendo sus necesidades. Para ello empezamos entendiendo al usuario en la primera fase y lo seguimos involucrando a lo largo del proceso para ir validando nuestras propuestas.
-##DESCUBRIMIENTO E INVESTIGACIÓN (RESEARCH)
+## DESCUBRIMIENTO E INVESTIGACIÓN (RESEARCH)
  (En esta fase es donde vamos a tener ese proceso de investigación y acercamiento con el usuario, es donde vamos a obtener el conocimiento para poder saber a quién vamos a llegar, pero de manera más profunda. Es tener la empatía y el acercamiento necesario para conocerlo.
 También vamos a tener en cuenta al negocio, sus objetivos y los stakeholders(involucrados)).
 ###  Entrevistas y encuestas
@@ -142,34 +142,12 @@ En esta etapa elaboramos un prototipo que nos permita probar nuestras ideas con 
 
 ## Sketch, mockup y prototipado
 ### 1) Diseño de la Interfaz de Usuario
- 
-#### 1.1) Prototipo de Baja fidelidad
-
-Sketch vista Mobile
-
-![dff03d09-71d0-413f-983d-1624c846069c](https://user-images.githubusercontent.com/39390011/42594190-145aaa68-8514-11e8-8b29-6a64441590d7.jpg)
-
-Sketch vista Desktop
-
-![1ddac442-6cd9-49a9-9836-756b9bc4343f](https://user-images.githubusercontent.com/39390011/42594192-14825eb4-8514-11e8-8032-d403902264a3.jpg)
-
-#### 2.2) Wireframe de alta fidelidad
+enlace a los documentos del proceso de diseño de la interfaz: https://docs.google.com/presentation/d/11hjq5UUVQjY1D_t0kCJMwKzwCorMkFWM4DO6hKsEKCQ/edit?usp=sharing
 
 Vista preliminar en dispositivo móvil (iphoneSE)
 
 ![cel](https://user-images.githubusercontent.com/39390011/42542344-25b73e0a-846c-11e8-920f-2ffbc8659434.PNG)
 
-Vista del login en dispositivo móvil 
-
-![loginiphone](https://user-images.githubusercontent.com/39390011/42542348-2c37d12c-846c-11e8-98c2-33aa3d7c6c61.PNG)
-
-Vista del login en dispositivo (ipad)
-
-![loginipad](https://user-images.githubusercontent.com/39390011/42542349-2c7b005a-846c-11e8-98d7-3a3b46e6e2ed.PNG)
-
-Vista del login en en ordenador
-
-![loginmac](https://user-images.githubusercontent.com/39390011/42542360-3806d598-846c-11e8-9835-41b48bec27a3.PNG)
 
 ## TESTEO CON USUARIOS
 
