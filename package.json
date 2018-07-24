@@ -9,7 +9,8 @@
     "pretest": "npm run eslint && npm run htmlhint",
     "test-browser": "opener ./test/index.html",
     "test-node": "nyc mocha ./test/headless.js && nyc report --reporter=html",
-    "test": "npm run test-node && npm run test-browser"
+    "test": "npm run test-node && npm run test-browser",
+    "tests": "jest"
   },
   "dependencies": {
     "chai": "^4.1.2",
@@ -23,6 +24,9 @@
     "server": "^1.0.18"
   },
   "devDependencies": {
-    "firebase-mock": "^2.2.4"
+    "@types/jest": "^23.3.0",
+    "firebase-mock": "^2.2.4",
+    "jest": "^23.4.1",
+    "ts-jest": "^23.0.1"
   }
 }

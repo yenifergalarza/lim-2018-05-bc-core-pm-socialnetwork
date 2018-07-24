@@ -1,13 +1,15 @@
-describe('auth', () => {
+/* describe('auth', () => {
   describe('createUser function', () => {
     it('createUser is a function', () => {
       assert.isFunction(createUser);
     });
     it('createUser crea usuario', () => {
       createUser('usuario1', '12345678', '12345678', (error, response) => {
-        console.log(response.username);
+        console.log(error,response);
         assert.equal(response.user.user.email, 'usrio1');
       })
+
+      // console.log(createUser('usuario1', '12345678', '12345678', ("No es un ", response)))
     });
   });
 
@@ -17,18 +19,15 @@ describe('auth', () => {
     });
 
     it('deberia retornar undefined cuando no se le pase el useremail', () => {
-      console.log(signInUser);
     });
   })
-
 })
+ */
 
-
-/* describe('auth', () => {
+describe('auth', () => {
   describe('createUser', () => {
     it('createUser is function', () => {
-      assert.isFunction(createUser);
-      console.log(createUser)
+      expect(createUser).toBeCalled();
     });
     it('createUser deberia retornar codigo de error cuando los password y su confimacion no son iguales', () => {
       createUser('', '123', '456', (error) => {
@@ -76,4 +75,4 @@ describe('auth', () => {
       })
     })
   })
-}); */
+});

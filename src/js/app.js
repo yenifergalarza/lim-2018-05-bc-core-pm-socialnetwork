@@ -1,6 +1,6 @@
 window.createUser = (email, password, repeatPassword, cb) => {
   if (password === repeatPassword) {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    return firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((user) => {
         console.log(user)
         cb(null, user);
