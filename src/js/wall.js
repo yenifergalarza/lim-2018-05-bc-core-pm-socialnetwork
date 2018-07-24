@@ -7,9 +7,8 @@ document.querySelector('#log-out').addEventListener('click', (e) => {
 
   });
 })
-// Desarrollo de La publicacion de Post
 
-const buttonPublish = document.querySelector('#buttonPublish')
+const buttonPublish = document.querySelector('#buttonPublish');
 const postEntrada = document.querySelector('#exampleTextarea');
 const dataBase = document.querySelector('#create-post');
 const posts = document.querySelector('#posts');
@@ -20,32 +19,6 @@ let count_click = 0;
 function reload_page() {
   window.location.reload();
 };
-
-buttonPublish.addEventListener('click', () => {
-
-  if (postEntrada.value !== '') {
-    const userId = firebase.auth().currentUser.uid;
-    const userName = firebase.auth().currentUser.displayName;
-    const privacy = 'public'
-    // writeNewPost(userId, postEntrada.value);
-    writeNewPost(userId, postEntrada.value, count_click, userName, privacy);
-    postEntrada.value = '';
-    reload_page();
-    // paintNewPost(userId, newPost);
-  } else {
-    alert('Ingresar texto a publicar')
-  }
-});
-
-
-const paintPost = (postKey, userId) => {
-  postKey.forEach(keys => {
-    let postId = keys.key;
-    let privacy = 'public';
-    createPost(postId, keys, userId, privacy);
-
-  })
-}
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (firebase.auth().currentUser.isAnonymous === true) {
@@ -58,6 +31,10 @@ firebase.auth().onAuthStateChanged(function (user) {
       })
     }
   } else {
+    const gettingPrivacy = document.querySelector('#privacyNewPost');
+    let privacy = gettingPrivacy.value;
+    publishPost(privacy)
+
     document.querySelector('.create-post').style.display = 'block';
     document.querySelector('.profile-card').style.display = 'block';
     if (user) {
@@ -70,11 +47,15 @@ firebase.auth().onAuthStateChanged(function (user) {
       const imgProfile = document.querySelector('#img-profile');
       imgProfile.setAttribute('src', user.photoURL);
       let userId = firebase.auth().currentUser.uid;
-      const dbRefPost = firebase.database().ref().child('user-posts').child(userId);
+      const dbRefPost = firebase.database().ref().child('posts');
+
+      // const dbRefPost = firebase.database().ref().child('user-posts').child(userId);
 
       dbRefPost.once('value', postKey => {
         paintPost(postKey, userId);
-        const buttonsDelete = document.querySelectorAll('.btn-delete');
+
+
+        /* const buttonsDelete = document.querySelectorAll('.btn-delete');
         buttonsDelete.forEach(button => {
           button.addEventListener('click', () => {
             if (confirm('Are you sure if you want to delete this post') === true) {
@@ -92,15 +73,43 @@ firebase.auth().onAuthStateChanged(function (user) {
               return false;
             }
           });
-        })
+        }) */
 
       })
     }
   }
 })
 
+const publishPost = (privacy) => {
+  buttonPublish.addEventListener('click', () => {
+    if (postEntrada.value !== '') {
+      const userId = firebase.auth().currentUser.uid;
+      const userName = firebase.auth().currentUser.displayName;
+      // const privacy = 'public';
+      writeNewPost(userId, userName, postEntrada.value, privacy, count_click);
+      postEntrada.value = '';
+      reload_page();
+    } else {
+      alert('Ingresar texto a publicar')
+    }
+  });
+};
+
+// const getPrivacy = () => {
+
+// }
+
+const paintPost = (postKey, userId) => {
+  postKey.forEach(keys => {
+    let postId = keys.key;
+
+    if (userId === keys.val().uid || keys.val().privacy === 'public') {
+      createPost(postId, keys, userId);
+    }
+  })
+};
+
 const createPost = (postId, keys, userId) => {
-  // console.log(user)
   let postPublished = document.createElement('div');
   let userNameContainer = document.createElement('div');
   let userName = document.createElement('h5');
@@ -127,6 +136,7 @@ const createPost = (postId, keys, userId) => {
   boxPost.setAttribute('disabled', 'disabled');
   boxPost.setAttribute('id', postId);
   toolsPublishContainer.setAttribute('class', 'tools-post');
+  toolsPublishContainer.setAttribute('id', 'tools-post' + postId);
   iconEdit.setAttribute('class', 'far fa-edit post-icon btn-update');
   iconEdit.setAttribute('dataU-postId', postId);
   iconEdit.setAttribute('id', 'update' + postId);
@@ -172,16 +182,15 @@ const createPost = (postId, keys, userId) => {
 
   let editClick = document.getElementById('update' + postId);
   let likeClick = document.getElementById('like' + postId);
-  let deleteClick = document.getElementById('delete' + postId)
+  let deleteClick = document.getElementById('delete' + postId);
   let postDisable = document.getElementById(postId);
   let updatePost = document.getElementById('bU' + postId);
   let selectedPrivacy = document.getElementById('privacy' + postId);
   let auxLike = 0;
 
-  console.log(selectedPrivacy.value)
-  if(keys.val().privacy === 'private'){
+  if (keys.val().privacy === 'private') {
     optionPrivate.setAttribute('selected', 'selected');
-  }else{
+  } else {
     optionPublic.setAttribute('selected', 'selected');
   }
 
@@ -195,28 +204,12 @@ const createPost = (postId, keys, userId) => {
     postDisable.disabled = true;
     updatePost.style.display = 'none';
     const newUpdate = document.getElementById(postId);
-    updatePostUser(userId, postId, newUpdate.value, keys.val().countlike, keys.val().userName, keys.val().privacy);
-
-
-    /* const newUpdate = document.getElementById(postId);
-    const newPost = {
-      body: newUpdate.value,
-      countlike: count_click,
-      userName: firebase.auth().currentUser.displayName,
-      privacy: 'public'
-    };
-
-    const updatesUser = {};
-    const updatesPost = {};
-
-    updatesUser['/user-posts/' + userId + '/' + postId] = newPost;
-    updatesPost['/posts/' + postId] = newPost;
-    firebase.database().ref().update(updatesUser);
-    firebase.database().ref().update(updatesPost); */
+    updatePostUser(userId, keys.val().userName, knewUpdate.value, keys.val().privacy, keys.val().countlike, postId);
   });
 
   likeClick.addEventListener('click', () => {
     if (auxLike === 0) {
+
       likeClick.style.color = "red";
       likeClick.disabled = true;
       let contador_click = document.querySelector('#post' + postId + ' .count_click_likes').innerHTML;
@@ -227,29 +220,16 @@ const createPost = (postId, keys, userId) => {
       if (contador_click === 0) {
         document.querySelector('#post' + postId + ' .countLikes').style.display = "none"
         document.querySelector('#post' + postId + ' .countLikes').innerHTML = "A " + contador_click + " le gustan este post";
-
       } else {
         document.querySelector('#post' + postId + ' .countLikes').style.display = "block"
         document.querySelector('#post' + postId + ' .countLikes').innerHTML = "A " + contador_click + " le gustan este post";
-
       }
-      updatePostUser(userId, postId, keys.val().body, contador_click, keys.val().userName, keys.val().privacy);
 
-      // const newPost = {
-      //   body: keys.val().body,
-      //   countlike: contador_click,
-      //   username: keys.val().userName,
-      // };
-
-      // const updatesUser = {};
-      // const updatesPost = {};
-
-      // updatesUser['/user-posts/' + userId + '/' + postId] = newPost;
-      // updatesPost['/posts/' + postId] = newPost;
-      // firebase.database().ref().update(updatesUser);
-      // firebase.database().ref().update(updatesPost); 
+      updatePostUser(userId, keys.val().userName, keys.val().body, keys.val().privacy, contador_click, postId);
       auxLike = 1;
+
     } else {
+
       likeClick.style.color = "#6d6e71";
       likeClick.disabled = false;
       let contador_click = document.querySelector('#post' + postId + ' .count_click_likes').innerHTML;
@@ -257,39 +237,27 @@ const createPost = (postId, keys, userId) => {
       contador_click === "undefined" ? contador_click = 0 : "";
       contador_click = parseInt(contador_click, 10) - 1;
       document.querySelector('#post' + postId + ' .count_click_likes').innerHTML = contador_click;
+
       if (contador_click === 0) {
         document.querySelector('#post' + postId + ' .countLikes').style.display = "none"
         document.querySelector('#post' + postId + ' .countLikes').innerHTML = "A " + contador_click + " le gustan este post";
-
       } else {
         document.querySelector('#post' + postId + ' .countLikes').style.display = "block"
         document.querySelector('#post' + postId + ' .countLikes').innerHTML = "A " + contador_click + " le gustan este post";
-
       }
-      updatePostUser(userId, postId, keys.val().body, contador_click, keys.val().userName, keys.val().privacy);
 
-      // const newPost = {
-      //   body: keys.val().body,
-      //   countlike: contador_click,
-      //   username: keys.val().userName,
-      // };
-
-      // const updatesUser = {};
-      // const updatesPost = {};
-
-      // updatesUser['/user-posts/' + userId + '/' + postId] = newPost;
-      // updatesPost['/posts/' + postId] = newPost;
-      // firebase.database().ref().update(updatesUser);
-      // firebase.database().ref().update(updatesPost);
+      updatePostUser(userId, keys.val().userName, keys.val().body, keys.val().privacy, contador_click, postId);
       auxLike = 0;
-    }
 
-  })
+    }
+  });
 
   deleteClick.addEventListener('click', () => {
     if (confirm('Are you sure if you want to delete this post') === true) {
 
       firebase.database().ref().child('posts').child(postId).remove();
+      firebase.database().ref().child('user-posts').child(userId).child(postId).remove();
+
 
       while (posts.firstChild) posts.removeChild(posts.firstChild);
 
@@ -300,12 +268,20 @@ const createPost = (postId, keys, userId) => {
     } else {
       return false;
     }
-  })
+  });
 
   selectedPrivacy.addEventListener('change', () => {
-    if (selectedPrivacy.value === 'private') {
-      updatePostUser(userId, postId, keys.val().body, keys.val().countlike, keys.val().userName, selectedPrivacy.value);
-    } else if (selectedPrivacy.value === 'public')
-      updatePostUser(userId, postId, keys.val().body, keys.val().countlike, keys.val().userName, selectedPrivacy.value);
-  })
-}
+    // if (selectedPrivacy.value === 'private')
+      // updatePostUser(userId, keys.val().userName, keys.val().body, selectedPrivacy.value, keys.val().countlike, postId);
+    // else if (selectedPrivacy.value === 'public')
+      updatePostUser(userId, keys.val().userName, keys.val().body, selectedPrivacy.value, keys.val().countlike, postId);
+  });
+
+  if (userId === keys.val().uid) {
+    const viewPrivacy = document.getElementById('privacy' + postId);
+    viewPrivacy.style.display = 'inline-block';
+    const viewToolsPost = document.getElementById('tools-post' + postId);
+    viewToolsPost.style.display = 'block';
+
+  }
+};

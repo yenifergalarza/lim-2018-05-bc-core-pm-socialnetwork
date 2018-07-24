@@ -103,13 +103,14 @@ window.writeUserData = (userId, name, email, imageUrl) => {
   });
 };
 
-window.writeNewPost = (uid, body, countlike, userName, privacy) => {
+window.writeNewPost = (uid, userName, body, privacy, countlike) => {
   // A post entry.
   var postData = {
-    body: body,
-    countlike: countlike,
+    uid:uid,
     userName: userName,
-    privacy: privacy
+    body: body,
+    privacy: privacy,
+    countlike: countlike,
   };
 
   // Get a key for a new Post.
@@ -124,28 +125,29 @@ window.writeNewPost = (uid, body, countlike, userName, privacy) => {
   return newPostKey;
 };
 
-window.updatePostUser = (uid, postId, body, countlike, userName, privacy) => {
-    const newPost = {
-      body: body,
-      countlike: countlike,
-      userName: userName,
-      privacy: privacy
-    };
+window.updatePostUser = (uid, userName, body, privacy, countlike, postId) => {
+  const newPost = {
+    uid:uid,
+    userName: userName,
+    body: body,
+    privacy: privacy,
+    countlike: countlike,
+  };
 
-    const updatesUser = {};
-    const updatesPost = {};
+  const updatesUser = {};
+  const updatesPost = {};
 
-    updatesUser['/user-posts/' + uid + '/' + postId] = newPost;
-    updatesPost['/posts/' + postId] = newPost;
-    firebase.database().ref().update(updatesUser);
-    firebase.database().ref().update(updatesPost);
+  updatesUser['/user-posts/' + uid + '/' + postId] = newPost;
+  updatesPost['/posts/' + postId] = newPost;
+  firebase.database().ref().update(updatesUser);
+  firebase.database().ref().update(updatesPost);
 }
 
 window.loginWithAnonymous = () => {
-  firebase.auth().signInAnonymously().then(function (result){
+  firebase.auth().signInAnonymously().then(function (result) {
     console.log('hola')
     window.location.assign('wall.html')
-  }).catch(function(error) {
+  }).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;

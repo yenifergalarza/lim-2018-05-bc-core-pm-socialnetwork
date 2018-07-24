@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>BYEDOUBT</title>
+  <title>BRAINNET</title>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="icon" type="image/png" href="img/icons/favicon.ico" />
@@ -61,7 +61,7 @@
           <form class="navbar-form navbar-right hidden-sm">
             <div class="form-group">
               <i class="icon ion-ios-search"></i>
-              <input type="text" class="form-control" placeholder="Search friends, photos, videos">
+              <input type="text" class="form-control" placeholder="Search friends">
             </div>
           </form>
         </div>
@@ -88,39 +88,39 @@
             <li>
               <i class="icon ion-ios-paper"></i>
               <div>
-                <a href="#">My Newsfeed</a>
+                <a href="#">Newsfeed</a>
               </div>
             </li>
-            <li>
+            <!-- <li>
               <i class="icon ion-ios-people"></i>
               <div>
                 <a href="#">People Nearby</a>
               </div>
-            </li>
+            </li> -->
             <li>
               <i class="icon ion-md-people"></i>
               <div>
                 <a href="#">Friends</a>
               </div>
             </li>
-            <li>
+            <!-- <li>
               <i class="icon ion-md-chatboxes"></i>
               <div>
                 <a href="#">Messages</a>
               </div>
-            </li>
+            </li> -->
             <li>
               <i class="icon ion-md-images"></i>
               <div>
                 <a href="#">Images</a>
               </div>
             </li>
-            <li>
+            <!-- <li>
               <i class="icon ion-ios-videocam"></i>
               <div>
                 <a href="#">Videos</a>
               </div>
-            </li>
+            </li> -->
           </ul>
           <!--chat block ends-->
         </div>
@@ -132,9 +132,14 @@
           <div class="create-post">
             <div class="row">
               <div>
+                  <select name="privacy" id="privacyNewPost" class="pull-right privacy-new-post">
+                      <option value="public">public</option>
+                      <option value="private">private</option>
+                    </select>
                 <div class="form-group" id="publicPost">
+                  
                   <img alt="" class="profile-photo-md" id="img-profile" />
-                  <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
+                  <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write an education post"></textarea>
                 </div>
               </div>
               <div>
