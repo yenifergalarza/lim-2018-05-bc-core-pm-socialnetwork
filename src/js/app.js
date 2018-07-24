@@ -124,7 +124,7 @@ window.writeNewPost = (uid, body, countlike, userName, privacy) => {
   return newPostKey;
 };
 
-window.updatePostUser = (body, countlike, userName, privacy) => {
+window.updatePostUser = (uid, postId, body, countlike, userName, privacy) => {
     const newPost = {
       body: body,
       countlike: countlike,
@@ -135,7 +135,7 @@ window.updatePostUser = (body, countlike, userName, privacy) => {
     const updatesUser = {};
     const updatesPost = {};
 
-    updatesUser['/user-posts/' + userId + '/' + postId] = newPost;
+    updatesUser['/user-posts/' + uid + '/' + postId] = newPost;
     updatesPost['/posts/' + postId] = newPost;
     firebase.database().ref().update(updatesUser);
     firebase.database().ref().update(updatesPost);

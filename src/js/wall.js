@@ -41,6 +41,7 @@ buttonPublish.addEventListener('click', () => {
 const paintPost = (postKey, userId) => {
   postKey.forEach(keys => {
     let postId = keys.key;
+    let privacy = 'public';
     createPost(postId, keys, userId, privacy);
 
   })
@@ -105,7 +106,7 @@ const createPost = (postId, keys, userId) => {
   let userName = document.createElement('h5');
   let selectPrivacy = document.createElement('select');
   let optionPrivate = document.createElement('option');
-  let optionPublish = document.createElement('option');
+  let optionPublic = document.createElement('option');
   let boxPost = document.createElement('textarea');
   let toolsPublishContainer = document.createElement('div');
   let iconEdit = document.createElement('i');
@@ -120,6 +121,8 @@ const createPost = (postId, keys, userId) => {
   userNameContainer.setAttribute('class', 'user-name-container');
   selectPrivacy.setAttribute('class', 'privacy');
   selectPrivacy.setAttribute('id', 'privacy' + postId);
+  optionPrivate.setAttribute('id', 'private');
+  optionPublic.setAttribute('id', 'public');
   boxPost.setAttribute('class', 'form-control');
   boxPost.setAttribute('disabled', 'disabled');
   boxPost.setAttribute('id', postId);
@@ -139,11 +142,12 @@ const createPost = (postId, keys, userId) => {
   buttonUpdate.setAttribute('id', 'bU' + postId);
 
   userName.textContent = keys.val().userName;
-  optionPublish.textContent = 'Public';
-  optionPrivate.textContent = 'Private';
+  optionPublic.textContent = 'public';
+  optionPrivate.textContent = 'private';
   boxPost.textContent = keys.val().body;
   likesContainer.textContent = keys.val().countlike;
   contLike.textContent = keys.val().countlike;
+  buttonUpdate.textContent = 'Update';
 
   toolsPublishContainer.appendChild(iconEdit);
   toolsPublishContainer.appendChild(iconDelete);
@@ -155,7 +159,7 @@ const createPost = (postId, keys, userId) => {
   userNameContainer.appendChild(userName);
 
   selectPrivacy.appendChild(optionPrivate);
-  selectPrivacy.appendChild(optionPublish);
+  selectPrivacy.appendChild(optionPublic);
 
   postPublished.appendChild(userNameContainer);
   postPublished.appendChild(selectPrivacy);
@@ -165,13 +169,22 @@ const createPost = (postId, keys, userId) => {
   posts.appendChild(postPublished);
 
   autosize(document.querySelectorAll('textarea'));
+
   let editClick = document.getElementById('update' + postId);
   let likeClick = document.getElementById('like' + postId);
   let deleteClick = document.getElementById('delete' + postId)
   let postDisable = document.getElementById(postId);
   let updatePost = document.getElementById('bU' + postId);
-  let selectedPrivacy = document.getElementById('privacy' + postId)
+  let selectedPrivacy = document.getElementById('privacy' + postId);
   let auxLike = 0;
+
+  console.log(selectedPrivacy.value)
+  if(keys.val().privacy === 'private'){
+    optionPrivate.setAttribute('selected', 'selected');
+  }else{
+    optionPublic.setAttribute('selected', 'selected');
+  }
+
 
   editClick.addEventListener('click', () => {
     postDisable.disabled = false;
@@ -181,13 +194,16 @@ const createPost = (postId, keys, userId) => {
   updatePost.addEventListener('click', () => {
     postDisable.disabled = true;
     updatePost.style.display = 'none';
-
     const newUpdate = document.getElementById(postId);
+    updatePostUser(userId, postId, newUpdate.value, keys.val().countlike, keys.val().userName, keys.val().privacy);
+
+
+    /* const newUpdate = document.getElementById(postId);
     const newPost = {
       body: newUpdate.value,
       countlike: count_click,
       userName: firebase.auth().currentUser.displayName,
-      privacy: 'Public'
+      privacy: 'public'
     };
 
     const updatesUser = {};
@@ -196,7 +212,7 @@ const createPost = (postId, keys, userId) => {
     updatesUser['/user-posts/' + userId + '/' + postId] = newPost;
     updatesPost['/posts/' + postId] = newPost;
     firebase.database().ref().update(updatesUser);
-    firebase.database().ref().update(updatesPost);
+    firebase.database().ref().update(updatesPost); */
   });
 
   likeClick.addEventListener('click', () => {
@@ -217,21 +233,21 @@ const createPost = (postId, keys, userId) => {
         document.querySelector('#post' + postId + ' .countLikes').innerHTML = "A " + contador_click + " le gustan este post";
 
       }
-      // updatePostUser(keys.val().body, contador_click, keys.val().userName, keys.val().privacy);
+      updatePostUser(userId, postId, keys.val().body, contador_click, keys.val().userName, keys.val().privacy);
 
-      const newPost = {
-        body: keys.val().body,
-        countlike: contador_click,
-        username: keys.val().userName,
-      };
+      // const newPost = {
+      //   body: keys.val().body,
+      //   countlike: contador_click,
+      //   username: keys.val().userName,
+      // };
 
-      const updatesUser = {};
-      const updatesPost = {};
+      // const updatesUser = {};
+      // const updatesPost = {};
 
-      updatesUser['/user-posts/' + userId + '/' + postId] = newPost;
-      updatesPost['/posts/' + postId] = newPost;
-      firebase.database().ref().update(updatesUser);
-      firebase.database().ref().update(updatesPost); 
+      // updatesUser['/user-posts/' + userId + '/' + postId] = newPost;
+      // updatesPost['/posts/' + postId] = newPost;
+      // firebase.database().ref().update(updatesUser);
+      // firebase.database().ref().update(updatesPost); 
       auxLike = 1;
     } else {
       likeClick.style.color = "#6d6e71";
@@ -250,21 +266,21 @@ const createPost = (postId, keys, userId) => {
         document.querySelector('#post' + postId + ' .countLikes').innerHTML = "A " + contador_click + " le gustan este post";
 
       }
-      // updatePostUser(keys.val().body, contador_click, keys.val().userName, keys.val().privacy);
+      updatePostUser(userId, postId, keys.val().body, contador_click, keys.val().userName, keys.val().privacy);
 
-      const newPost = {
-        body: keys.val().body,
-        countlike: contador_click,
-        username: keys.val().userName,
-      };
+      // const newPost = {
+      //   body: keys.val().body,
+      //   countlike: contador_click,
+      //   username: keys.val().userName,
+      // };
 
-      const updatesUser = {};
-      const updatesPost = {};
+      // const updatesUser = {};
+      // const updatesPost = {};
 
-      updatesUser['/user-posts/' + userId + '/' + postId] = newPost;
-      updatesPost['/posts/' + postId] = newPost;
-      firebase.database().ref().update(updatesUser);
-      firebase.database().ref().update(updatesPost);
+      // updatesUser['/user-posts/' + userId + '/' + postId] = newPost;
+      // updatesPost['/posts/' + postId] = newPost;
+      // firebase.database().ref().update(updatesUser);
+      // firebase.database().ref().update(updatesPost);
       auxLike = 0;
     }
 
@@ -278,7 +294,7 @@ const createPost = (postId, keys, userId) => {
       while (posts.firstChild) posts.removeChild(posts.firstChild);
 
       firebase.database().ref().child('posts').on('value', postKey => {
-        paintPost(postKey, userId)
+        paintPost(postKey, userId);
       })
       reload_page();
     } else {
@@ -287,9 +303,9 @@ const createPost = (postId, keys, userId) => {
   })
 
   selectedPrivacy.addEventListener('change', () => {
-    if (selectedPrivacy.value === 'Private') {
-      updatePostUser(keys.val().body, keys.val().countlike, keys.val().userName, selectedPrivacy.value);
-    } else if (selectedPrivacy.value === 'Public')
-      updatePostUser(keys.val().body, keys.val().countlike, keys.val().userName, selectedPrivacy.value);
+    if (selectedPrivacy.value === 'private') {
+      updatePostUser(userId, postId, keys.val().body, keys.val().countlike, keys.val().userName, selectedPrivacy.value);
+    } else if (selectedPrivacy.value === 'public')
+      updatePostUser(userId, postId, keys.val().body, keys.val().countlike, keys.val().userName, selectedPrivacy.value);
   })
 }
