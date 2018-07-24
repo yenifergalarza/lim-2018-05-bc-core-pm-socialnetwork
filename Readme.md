@@ -114,28 +114,8 @@ sujeto 4 audio: https://drive.google.com/open?id=1BCaby2FKH3ZP844y5vvlJHmxLOwRDF
 En esta fase buscamos las mejores maneras para ejecutar/desarrollar las funcionalidades definidas en la fase de ideación. Se elaboran sketches y se decide qué propuesta se ejecutará.
 En esta etapa utilizaras herramientas como:
 ### Benchmarking
-
-#### CLIPT 
-
-![clipit](https://user-images.githubusercontent.com/39390011/43026086-cce10a74-8c39-11e8-9bfd-44587c7c1f36.PNG)
-
-Es una red social educativa gratuitita que  utiliza  nuevas metodologías en las cuales el estudiante adquiere un rol activo en su proceso de aprendizaje, como flipped classroom, trabajo por proyectos, blended learning… el entorno es colaborativa principalmente se basa en videos además de tener la garantía de ser desarrollada por una universidad (la Universidad Rey Juan Carlos)
-
-
-##### BRAINLY 
-
-![ok](https://user-images.githubusercontent.com/39390011/43026096-d346b9fe-8c39-11e8-88b9-d9dad80133de.PNG)
-
-Es nuestra competencia directa ,ya que tiene muchas características en comunes con nuestra página web de educación ya que esta basada en el intercambio de ideas y en la ayuda mutua  ,de igual manera se puede preguntar por materias (tecnología, letras ,artes e idiomas) ,disponible en varios idiomas. Especializada en el ámbito del aprendizaje social y elearning ,así que tiene un amplio grupo de usuarios
-
-![oks](https://user-images.githubusercontent.com/39390011/43026095-d30f061c-8c39-11e8-8503-9fc41f55fd6e.PNG)
-
-#### SCHOOLOGY 
-
-![schoology-screen 1](https://user-images.githubusercontent.com/39390011/43026151-0b22c908-8c3a-11e8-9840-d8d6f3e12b91.png)
-
-Es una plataforma dirigida solamente a docentes y  estudiantes , permite foros de debate(considerándolo red social por eso), tablones de anuncios, libro de calificaciones, recompensas y una herramienta para realizar cuestionarios de evaluación pero es un lms (Learning Management System) . Esto explica la facilidad de poder visualizar tu desarrollo respecto al aprendizaje 
-![schooology funciones](https://user-images.githubusercontent.com/39390011/43026152-0b5e0324-8c3a-11e8-94e5-bcd89b741869.PNG)
+Presentacion de nuestro benchmark analizando a nuestros potenciales competidores:
+https://docs.google.com/presentation/d/18cNgMXuKCKRLZbtCCFAtvMGq78ls7pHTl8bXt8l7V8c/edit?usp=sharing
 
 ## PROTOTIPADO
 En esta etapa elaboramos un prototipo que nos permita probar nuestras ideas con usuarios para saber si estamos resolviendo satisfaciendo sus necesidades con nuestro producto.
