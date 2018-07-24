@@ -132,12 +132,13 @@
           <div class="create-post">
             <div class="row">
               <div>
-                  <select name="privacy" id="privacyNewPost" class="pull-right privacy-new-post">
-                      <option value="public">public</option>
-                      <option value="private">private</option>
-                    </select>
+                <select name="privacy" id="privacyNewPost" class="pull-right privacy-new-post">
+                  <option value="" selected disabled>Select privacy</option>
+                  <option value="public">public</option>
+                  <option value="private">private</option>
+                </select>
                 <div class="form-group" id="publicPost">
-                  
+
                   <img alt="" class="profile-photo-md" id="img-profile" />
                   <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write an education post"></textarea>
                 </div>

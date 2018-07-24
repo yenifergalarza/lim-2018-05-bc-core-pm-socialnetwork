@@ -31,9 +31,12 @@ firebase.auth().onAuthStateChanged(function (user) {
       })
     }
   } else {
-    const gettingPrivacy = document.querySelector('#privacyNewPost');
-    let privacy = gettingPrivacy.value;
-    publishPost(privacy)
+    let gettingPrivacy = document.getElementById('privacyNewPost');
+    gettingPrivacy.addEventListener('change', () => {
+      let privacy = gettingPrivacy.value;
+      publishPost(privacy); F
+    });
+
 
     document.querySelector('.create-post').style.display = 'block';
     document.querySelector('.profile-card').style.display = 'block';
@@ -53,28 +56,6 @@ firebase.auth().onAuthStateChanged(function (user) {
 
       dbRefPost.once('value', postKey => {
         paintPost(postKey, userId);
-
-
-        /* const buttonsDelete = document.querySelectorAll('.btn-delete');
-        buttonsDelete.forEach(button => {
-          button.addEventListener('click', () => {
-            if (confirm('Are you sure if you want to delete this post') === true) {
-              const postId = button.getAttribute('data-postId')
-              dbRefPost.child(postId).remove();
-              firebase.database().ref().child('posts').child(postId).remove();
-
-              while (posts.firstChild) posts.removeChild(posts.firstChild);
-
-              dbRefPost.on('value', postKey => {
-                paintPost(postKey)
-              })
-              reload_page();
-            } else {
-              return false;
-            }
-          });
-        }) */
-
       })
     }
   }
@@ -272,9 +253,9 @@ const createPost = (postId, keys, userId) => {
 
   selectedPrivacy.addEventListener('change', () => {
     // if (selectedPrivacy.value === 'private')
-      // updatePostUser(userId, keys.val().userName, keys.val().body, selectedPrivacy.value, keys.val().countlike, postId);
+    // updatePostUser(userId, keys.val().userName, keys.val().body, selectedPrivacy.value, keys.val().countlike, postId);
     // else if (selectedPrivacy.value === 'public')
-      updatePostUser(userId, keys.val().userName, keys.val().body, selectedPrivacy.value, keys.val().countlike, postId);
+    updatePostUser(userId, keys.val().userName, keys.val().body, selectedPrivacy.value, keys.val().countlike, postId);
   });
 
   if (userId === keys.val().uid) {

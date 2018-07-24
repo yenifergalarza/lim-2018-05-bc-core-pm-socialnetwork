@@ -23,8 +23,8 @@ window.createUser = (email, password, repeatPassword) => {
 
 window.signInUser = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-      window.location.assign('wall.html')
-    })
+    window.location.assign('wall.html')
+  })
     .catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -40,7 +40,7 @@ window.signInUser = (email, password) => {
 
 window.resetPassword = (email, password) => {
   firebase.auth().sendPasswordResetEmail(
-      getEmail.value)
+    getEmail.value)
     .then(function () {
       firebase.auth.EmailAuthProvider.credential(email, password);
       alert("Password Reset Email Sent")
@@ -106,7 +106,7 @@ window.writeUserData = (userId, name, email, imageUrl) => {
 window.writeNewPost = (uid, userName, body, privacy, countlike) => {
   // A post entry.
   var postData = {
-    uid:uid,
+    uid: uid,
     userName: userName,
     body: body,
     privacy: privacy,
@@ -127,7 +127,7 @@ window.writeNewPost = (uid, userName, body, privacy, countlike) => {
 
 window.updatePostUser = (uid, userName, body, privacy, countlike, postId) => {
   const newPost = {
-    uid:uid,
+    uid: uid,
     userName: userName,
     body: body,
     privacy: privacy,
