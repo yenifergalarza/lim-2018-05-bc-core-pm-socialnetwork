@@ -71,24 +71,6 @@ Elaboramos 1  user persona
 
 ![captura](https://user-images.githubusercontent.com/39390011/43027530-6f9d78b4-8c40-11e8-9cb5-3e96c5435a1c.PNG)
 
-Elaboramos 5 entrevistas
-
-![sujeto1](https://user-images.githubusercontent.com/39390011/42730646-12c6a6c2-87bf-11e8-9448-315417b00874.PNG)
-
-[sujeto1 audio](https://drive.google.com/open?id=1GG1ploQzASs7DU7WKSx2Yntg8DE82QcG)
-
-![sujeto2](https://user-images.githubusercontent.com/39390011/42730647-12f3a050-87bf-11e8-85cb-01d61a32880f.PNG)
-
-[sujeto2 audio:](https://drive.google.com/open?id=1M8tUYJ3igS1Fpu5itP-osQTrNRhJ6cQj)
-
-![sujeto3](https://user-images.githubusercontent.com/39390011/42730648-130e529c-87bf-11e8-810b-db82233a94e5.PNG)
-
-![sujeto4](https://user-images.githubusercontent.com/39390011/42730644-1285f99c-87bf-11e8-84be-29e642733783.PNG)
-
-[sujeto 4 audio:](https://drive.google.com/open?id=1BCaby2FKH3ZP844y5vvlJHmxLOwRDFsm)
-
-![sujeto5](https://user-images.githubusercontent.com/39390011/42730645-12ab0584-87bf-11e8-9211-ad980d787f96.PNG)
-
 ## IDEACIÓN
 
 En esta fase buscamos las mejores maneras para ejecutar/desarrollar las funcionalidades definidas en la fase de ideación. Se elaboran sketches y se decide qué propuesta se ejecutará.
@@ -100,39 +82,22 @@ Presentacion de nuestro benchmark analizando a nuestros potenciales competidores
 ## PROTOTIPADO
 En esta etapa elaboramos un prototipo que nos permita probar nuestras ideas con usuarios para saber si estamos resolviendo satisfaciendo sus necesidades con nuestro producto.
 
-## Sketch, mockup y prototipado
-### 1) Diseño de la Interfaz de Usuario
-enlace a los documentos del proceso de diseño de la interfaz
-[accede al sketching,mockup,protipado](https://docs.google.com/presentation/d/11hjq5UUVQjY1D_t0kCJMwKzwCorMkFWM4DO6hKsEKCQ/edit?usp=sharing)
+### Diseño de la Interfaz de Usuario (UI)
 
+[Accede al Diseño de la interfaz de usuario](https://docs.google.com/presentation/d/1Q61XF-bhpd0vnCGH50EXUuPClYRLmFtGRsyoKgXCtZU/edit?usp=sharing)
 Vista preliminar en dispositivo móvil (iphoneSE)
 
 ![cel](https://user-images.githubusercontent.com/39390011/42542344-25b73e0a-846c-11e8-920f-2ffbc8659434.PNG)
+
+#### Sketch, mockup y prototipado  
+enlace a los documentos del proceso de diseño de la interfaz
+[accede al sketching,mockup,protipado](https://docs.google.com/presentation/d/11hjq5UUVQjY1D_t0kCJMwKzwCorMkFWM4DO6hKsEKCQ/edit?usp=sharing)
+
 
 
 ## TESTEO CON USUARIOS
 
 En esta etapa probamos nuestros prototipos con usuarios para obtener su feedback.
-
-# UI
-## Definicion de colores 
-
-Buscamos en diferentes recursos :como libros ,internet ,etc.
-De esta primera fuente (libro)
-![c5b5cb62-f9ff-4e04-bb39-4dc7f78a6bff](https://user-images.githubusercontent.com/39390011/43026439-5b8b9f40-8c3b-11e8-97d5-b1e90ef84afb.jpg)
-prestamos especial atención a este parrafo
-![f6d98ae5-6523-4019-8819-db87965e0198](https://user-images.githubusercontent.com/39390011/43026544-c089965e-8c3b-11e8-8cc4-1b6c961b6a34.jpg)
-
-Decidimos como color principal 
-el turquesa claro 
-
-![images](https://user-images.githubusercontent.com/39390011/43026604-0d3f7568-8c3c-11e8-953a-4133bfea9195.jpg)
-
-y la gama de colores frios 
-
-![images](https://user-images.githubusercontent.com/39390011/43026684-5fcb7b7e-8c3c-11e8-8e44-42e361955469.png)
-
-
 
 
 
