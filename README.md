@@ -85,6 +85,7 @@ En esta etapa elaboramos un prototipo que nos permita probar nuestras ideas con 
 ### Diseño de la Interfaz de Usuario (UI)
 
 [Accede al Diseño de la interfaz de usuario](https://docs.google.com/presentation/d/1Q61XF-bhpd0vnCGH50EXUuPClYRLmFtGRsyoKgXCtZU/edit?usp=sharing)
+
 Vista preliminar en dispositivo móvil (iphoneSE)
 
 ![cel](https://user-images.githubusercontent.com/39390011/42542344-25b73e0a-846c-11e8-920f-2ffbc8659434.PNG)
