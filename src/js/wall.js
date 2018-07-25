@@ -55,7 +55,7 @@ firebase.auth().onAuthStateChanged(function (user) {
       // const dbRefPost = firebase.database().ref().child('user-posts').child(userId);
 
       dbRefPost.once('value', postKey => {
-        paintPost(postKey, userId);
+        paintPost(postKey, userId) ;
       })
     }
   }
@@ -75,10 +75,6 @@ const publishPost = (privacy) => {
     }
   });
 };
-
-// const getPrivacy = () => {
-
-// }
 
 const paintPost = (postKey, userId) => {
   postKey.forEach(keys => {
