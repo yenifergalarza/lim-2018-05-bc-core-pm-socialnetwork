@@ -29,27 +29,7 @@ El proceso de diseño tiene 5 fases. Estas 5 fases nos permiten crear productos 
 También vamos a tener en cuenta al negocio, sus objetivos y los stakeholders(involucrados)).
 ###  Entrevistas y encuestas
 
-
-Realizamos dos encuestas 
-La primera general y la segunda fue especifica para saber las necesidades del usuario 
-
-![3f614b86-d25f-4aea-bc49-c605ab832232](https://user-images.githubusercontent.com/39390011/42594951-57993a54-8516-11e8-94b6-8a81083883b3.jpg)
-![4e6414ff-005a-4c11-b5ed-e38842e33293](https://user-images.githubusercontent.com/39390011/42594949-57390116-8516-11e8-9d8f-db1154dd0520.jpg)
-
-Los resultados de la primera encuesta
-
-![image](https://user-images.githubusercontent.com/36829304/42596011-c62df204-8519-11e8-98ba-ccfb888d5a38.png)
-
-![recorte form1](https://user-images.githubusercontent.com/39390011/43028052-29fd01e6-8c43-11e8-9331-886add557b30.PNG)
-
-Los resultados de la segunda entrevista
-
-Este cuestionario se orientó específicamente a la temática de redes sociales educativas
-
-![image 1](https://user-images.githubusercontent.com/36829304/42596145-4489e9f0-851a-11e8-853a-10c3e60a4cea.png)
-
-![recorte form2](https://user-images.githubusercontent.com/39390011/43028262-83d9a6fa-8c44-11e8-854c-40d11e6df1db.PNG)
-
+[Accede a la info de las encuestas](https://docs.google.com/presentation/d/1JTG4YqP1rJIDhg_9rEm4WlM0iAs85rJpN2fqqdin7jo/edit?usp=sharing)
 
 ## SÍNTESIS Y DEFINICIÓN
 En esta fase usamos los datos coleccionados en la fase de investigación y descubrimiento buscando tendencias e insights valiosos para el desarrollo del producto, y entendemos los deseos y necesidades del público al que estará dirigido nuestro producto.
