@@ -24,10 +24,11 @@ De esta manera logramos establecer un objetivo claro ,aumentar la flexibilidad y
 ## Desarrollo del producto
 ## EL PROCESO DE DISEÑO
 El proceso de diseño tiene 5 fases. Estas 5 fases nos permiten crear productos centrados en el usuario que nos aseguren que estamos satisfaciendo sus necesidades. Para ello empezamos entendiendo al usuario en la primera fase y lo seguimos involucrando a lo largo del proceso para ir validando nuestras propuestas.
-##DESCUBRIMIENTO E INVESTIGACIÓN (RESEARCH)
+## DESCUBRIMIENTO E INVESTIGACIÓN (RESEARCH)
  (En esta fase es donde vamos a tener ese proceso de investigación y acercamiento con el usuario, es donde vamos a obtener el conocimiento para poder saber a quién vamos a llegar, pero de manera más profunda. Es tener la empatía y el acercamiento necesario para conocerlo.
 También vamos a tener en cuenta al negocio, sus objetivos y los stakeholders(involucrados)).
 ###  Entrevistas y encuestas
+
 
 Realizamos dos encuestas 
 La primera general y la segunda fue especifica para saber las necesidades del usuario 
@@ -39,11 +40,7 @@ Los resultados de la primera encuesta
 
 ![image](https://user-images.githubusercontent.com/36829304/42596011-c62df204-8519-11e8-98ba-ccfb888d5a38.png)
 
-![e9ba1a9f-4798-4527-91a8-8c59fa594c40](https://user-images.githubusercontent.com/39390011/42594953-57d3829a-8516-11e8-9b86-28fcfb0d2caa.jpg)
-
-![c033a62d-7239-4e60-8755-45ae6e3be0a2](https://user-images.githubusercontent.com/39390011/42594948-56a260da-8516-11e8-97bb-fa8ab46483dd.jpg)
-
-![2d5379fe-8057-4581-be03-95e3d0c7ec48](https://user-images.githubusercontent.com/39390011/42594950-576451fe-8516-11e8-824e-567b5c415674.jpg)
+![recorte form1](https://user-images.githubusercontent.com/39390011/43028052-29fd01e6-8c43-11e8-9331-886add557b30.PNG)
 
 Los resultados de la segunda entrevista
 
@@ -51,11 +48,7 @@ Este cuestionario se orientó específicamente a la temática de redes sociales 
 
 ![image 1](https://user-images.githubusercontent.com/36829304/42596145-4489e9f0-851a-11e8-853a-10c3e60a4cea.png)
 
-![a193a679-1cd0-4b4b-9cc7-286d6c6ae7e7](https://user-images.githubusercontent.com/39390011/42595989-b5949984-8519-11e8-912c-978b29df1f3b.jpg)
-
-![305f836c-68b6-4c16-9413-167440277fac](https://user-images.githubusercontent.com/39390011/42595990-b5c3e6b2-8519-11e8-8eb0-bed121f281bc.jpg)
-
-![4c3e328e-fdb2-4b50-8e6c-706fa71ae48a](https://user-images.githubusercontent.com/39390011/42595988-b574dacc-8519-11e8-9ffb-732cad70dd46.jpg
+![recorte form2](https://user-images.githubusercontent.com/39390011/43028262-83d9a6fa-8c44-11e8-854c-40d11e6df1db.PNG)
 
 
 ## SÍNTESIS Y DEFINICIÓN
@@ -84,7 +77,7 @@ En esta fase usamos los datos coleccionados en la fase de investigación y descu
 * Cómo te asegurarás que estos usuarios usen este producto.
 ==> dandole una interfaz amigable y facil de usar 
 ---------------------------------------------------------------
- ahora tomaremos todos los datos  importantes y los transformaremos en información valiosa para comenzar a orientarse a la solución. También vamos a entender lo que la empresa quiere de ese producto y comenzar a entender ambas visiones con el fin de encontrar un punto armónico)
+ Ahora tomaremos todos los datos  importantes y los transformaremos en información valiosa para comenzar a orientarse a la solución. También vamos a entender lo que la empresa quiere de ese producto y comenzar a entender ambas visiones con el fin de encontrar un punto armónico)
 
 Como conclusión de las anteriores 2 encuestas 
 * Necesidades de los usuarios: poder compartir información, obtener nueva información, conocer gente con intereses afines y en el caso de que fueran estudiantes aprobar sus cursos
@@ -94,79 +87,74 @@ Orientándonos a los estudiantes, tener una red social educativa  donde puedan c
 * Sentimientos: Por lo general están satisfechos con las redes sociales actuales, además en el caso de ser estudiantes están preocupados por su rendimiento estudiantil.
 * Obstáculos: no tener apuntes de sus cursos, no entender un tema, conocer poca gente que sepa de un tema específico.
 ---------------------------------------------------------
+Elaboramos 1  user persona
 
+![captura](https://user-images.githubusercontent.com/39390011/43027530-6f9d78b4-8c40-11e8-9cb5-3e96c5435a1c.PNG)
 
-Elaboramos 5 user personas
+Elaboramos 5 entrevistas
 
 ![sujeto1](https://user-images.githubusercontent.com/39390011/42730646-12c6a6c2-87bf-11e8-9448-315417b00874.PNG)
 
-sujeto1 audio: https://drive.google.com/open?id=1GG1ploQzASs7DU7WKSx2Yntg8DE82QcG
+[sujeto1 audio](https://drive.google.com/open?id=1GG1ploQzASs7DU7WKSx2Yntg8DE82QcG)
 
 ![sujeto2](https://user-images.githubusercontent.com/39390011/42730647-12f3a050-87bf-11e8-85cb-01d61a32880f.PNG)
 
-sujeto2 audio:https://drive.google.com/open?id=1M8tUYJ3igS1Fpu5itP-osQTrNRhJ6cQj
+[sujeto2 audio:](https://drive.google.com/open?id=1M8tUYJ3igS1Fpu5itP-osQTrNRhJ6cQj)
 
 ![sujeto3](https://user-images.githubusercontent.com/39390011/42730648-130e529c-87bf-11e8-810b-db82233a94e5.PNG)
 
 ![sujeto4](https://user-images.githubusercontent.com/39390011/42730644-1285f99c-87bf-11e8-84be-29e642733783.PNG)
 
-sujeto 4 audio: https://drive.google.com/open?id=1BCaby2FKH3ZP844y5vvlJHmxLOwRDFsm
+[sujeto 4 audio:](https://drive.google.com/open?id=1BCaby2FKH3ZP844y5vvlJHmxLOwRDFsm)
 
 ![sujeto5](https://user-images.githubusercontent.com/39390011/42730645-12ab0584-87bf-11e8-9211-ad980d787f96.PNG)
 
 ## IDEACIÓN
 
-En esta fase buscamos las mejores maneras para ejecutar/desarrollar las funcionalidades definidas en la fase de ideación. Se elaboran sketches y se decide qué propuesta se ejecutará.
+En esta fase buscamos las mejores maneras para ejecutar/desarrollar las funcionalidades definidas en la fase de ideación. Se elaboran sketches y se decide qué propuesta se ejecutará.
 En esta etapa utilizaras herramientas como:
-Benchmarking
+### Benchmarking
+Presentacion de nuestro benchmark analizando a nuestros potenciales competidores:
+[Accede al benchmark](https://docs.google.com/presentation/d/18cNgMXuKCKRLZbtCCFAtvMGq78ls7pHTl8bXt8l7V8c/edit?usp=sharing)
+
 ## PROTOTIPADO
 En esta etapa elaboramos un prototipo que nos permita probar nuestras ideas con usuarios para saber si estamos resolviendo satisfaciendo sus necesidades con nuestro producto.
 
 ## Sketch, mockup y prototipado
 ### 1) Diseño de la Interfaz de Usuario
- 
-#### 1.1) Prototipo de Baja fidelidad
-
-Sketch vista Mobile
-
-![dff03d09-71d0-413f-983d-1624c846069c](https://user-images.githubusercontent.com/39390011/42594190-145aaa68-8514-11e8-8b29-6a64441590d7.jpg)
-
-Sketch vista Desktop
-
-![1ddac442-6cd9-49a9-9836-756b9bc4343f](https://user-images.githubusercontent.com/39390011/42594192-14825eb4-8514-11e8-8032-d403902264a3.jpg)
-
-#### 2.2) Wireframe de alta fidelidad
+enlace a los documentos del proceso de diseño de la interfaz
+[accede al sketching,mockup,protipado](https://docs.google.com/presentation/d/11hjq5UUVQjY1D_t0kCJMwKzwCorMkFWM4DO6hKsEKCQ/edit?usp=sharing)
 
 Vista preliminar en dispositivo móvil (iphoneSE)
 
 ![cel](https://user-images.githubusercontent.com/39390011/42542344-25b73e0a-846c-11e8-920f-2ffbc8659434.PNG)
 
-Vista del login en dispositivo móvil 
 
-![loginiphone](https://user-images.githubusercontent.com/39390011/42542348-2c37d12c-846c-11e8-98c2-33aa3d7c6c61.PNG)
-
-Vista del login en dispositivo (ipad)
-
-![loginipad](https://user-images.githubusercontent.com/39390011/42542349-2c7b005a-846c-11e8-98d7-3a3b46e6e2ed.PNG)
-
-Vista del login en en ordenador
-
-![loginmac](https://user-images.githubusercontent.com/39390011/42542360-3806d598-846c-11e8-9835-41b48bec27a3.PNG)
-
-TESTEO CON USUARIOS
+## TESTEO CON USUARIOS
 
 En esta etapa probamos nuestros prototipos con usuarios para obtener su feedback.
 
-Otras:
+# UI
+## Definicion de colores 
 
-* [Diseño web, responsive design y la importancia del mobile first - Media Click](https://www.mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/)
-* [Mobile First: el enfoque actual del diseño web móvil - 1and1](https://www.1and1.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/)
-* [Mobile First - desarrolloweb.com](https://desarrolloweb.com/articulos/mobile-first-responsive.html)
-* [Mobile First - ZURB](https://zurb.com/word/mobile-first)
-* [Mobile First Is NOT Mobile Only - Nielsen Norman Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
-* [Offline first manifesto](http://offlinefirst.org/)
- -->
-***
+Buscamos en diferentes recursos :como libros ,internet ,etc.
+De esta primera fuente (libro)
+![c5b5cb62-f9ff-4e04-bb39-4dc7f78a6bff](https://user-images.githubusercontent.com/39390011/43026439-5b8b9f40-8c3b-11e8-97d5-b1e90ef84afb.jpg)
+prestamos especial atención a este parrafo
+![f6d98ae5-6523-4019-8819-db87965e0198](https://user-images.githubusercontent.com/39390011/43026544-c089965e-8c3b-11e8-8cc4-1b6c961b6a34.jpg)
+
+Decidimos como color principal 
+el turquesa claro 
+
+![images](https://user-images.githubusercontent.com/39390011/43026604-0d3f7568-8c3c-11e8-953a-4133bfea9195.jpg)
+
+y la gama de colores frios 
+
+![images](https://user-images.githubusercontent.com/39390011/43026684-5fcb7b7e-8c3c-11e8-8e44-42e361955469.png)
+
+
+
+
 
 ## Checklist
 
