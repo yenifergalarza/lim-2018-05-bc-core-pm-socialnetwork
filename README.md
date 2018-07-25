@@ -29,7 +29,7 @@ El proceso de diseño tiene 5 fases. Estas 5 fases nos permiten crear productos 
 También vamos a tener en cuenta al negocio, sus objetivos y los stakeholders(involucrados)).
 ###  Entrevistas y encuestas
 
-[Accede a la info de las encuestas](https://docs.google.com/presentation/d/1JTG4YqP1rJIDhg_9rEm4WlM0iAs85rJpN2fqqdin7jo/edit?usp=sharing)
+[Accede a la info de las encuestas y las entrevistas](https://docs.google.com/presentation/d/1JTG4YqP1rJIDhg_9rEm4WlM0iAs85rJpN2fqqdin7jo/edit?usp=sharing)
 
 ## SÍNTESIS Y DEFINICIÓN
 En esta fase usamos los datos coleccionados en la fase de investigación y descubrimiento buscando tendencias e insights valiosos para el desarrollo del producto, y entendemos los deseos y necesidades del público al que estará dirigido nuestro producto.
