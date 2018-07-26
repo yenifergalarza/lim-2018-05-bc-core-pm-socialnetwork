@@ -9,16 +9,30 @@ document.querySelector('#log-out').addEventListener('click', (e) => {
 })
 
 const buttonPublish = document.querySelector('#buttonPublish');
-const postEntrada = document.querySelector('#exampleTextarea');
+const postEntry = document.querySelector('#textarea-post');
 const dataBase = document.querySelector('#create-post');
 const posts = document.querySelector('#posts');
 const profile = document.getElementById('profile');
 const writingPost = document.querySelector('#publicPost');
+const writePost = document.querySelector('#write-post');
+const imagePost = document.querySelector('#image-post');
+const uploadImage = document.querySelector('#upload-image');
+
+
 let count_click = 0;
+
+writePost.addEventListener('click', () => {
+  uploadImage.style.display = 'none';
+})
+imagePost.addEventListener('click', () => {
+  uploadImage.style.display = 'block';
+})
 
 function reload_page() {
   window.location.reload();
 };
+
+
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (firebase.auth().currentUser.isAnonymous === true) {
@@ -34,7 +48,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     let gettingPrivacy = document.getElementById('privacyNewPost');
     gettingPrivacy.addEventListener('change', () => {
       let privacy = gettingPrivacy.value;
-      publishPost(privacy); F
+      publishPost(privacy);
     });
 
 
@@ -55,35 +69,36 @@ firebase.auth().onAuthStateChanged(function (user) {
       // const dbRefPost = firebase.database().ref().child('user-posts').child(userId);
 
       dbRefPost.once('value', postKey => {
-        paintPost(postKey, userId) ;
+        paintPost(postKey, userId);
       })
     }
   }
 })
 
-const publishPost = (privacy) => {
+/* const publishPost = (privacy) => {
   buttonPublish.addEventListener('click', () => {
-    if (postEntrada.value !== '') {
+    if (postEntry.value !== '') {
       const userId = firebase.auth().currentUser.uid;
       const userName = firebase.auth().currentUser.displayName;
       // const privacy = 'public';
-      writeNewPost(userId, userName, postEntrada.value, privacy, count_click);
-      postEntrada.value = '';
+      writeNewPost(userId, userName, postEntry.value, privacy, count_click);
+      postEntry.value = '';
       reload_page();
     } else {
       alert('Ingresar texto a publicar')
     }
   });
-};
+}; */
 
 const paintPost = (postKey, userId) => {
-  postKey.forEach(keys => {
+  const tourPostKey = postKey.forEach(keys => {
     let postId = keys.key;
 
     if (userId === keys.val().uid || keys.val().privacy === 'public') {
       createPost(postId, keys, userId);
     }
   })
+  return -1 * tourPostKey;
 };
 
 const createPost = (postId, keys, userId) => {
@@ -262,3 +277,44 @@ const createPost = (postId, keys, userId) => {
 
   }
 };
+
+const setImage = document.querySelector('#set-image');
+setImage.addEventListener('change', function (e) {
+  var file = e.target.files[0];
+  var storageRef = firebase.storage().ref('post-images/' + file.name);
+  var databaseRef = firebase.storage().ref('post-images/');
+  var task = storageRef.put(file);
+  task.on('state_changed',
+    function (snapshot) {},
+    function error(err) {},
+    function () {
+      console.log('holaa')
+      task.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+        holachao(file.name, downloadURL);
+
+        console.log('File available at', downloadURL);
+      });
+    }
+  )
+});
+const holachao = (name, url) => {
+  buttonPublish.addEventListener('click', (e) => {
+    writeNewPostWithImage(name, url);
+  })
+}
+
+// uploadToStorage = (storageRef, file) => {
+//   var task = storageRef.put(file);
+// 	task.on('state_changed',
+// 		function progress(snapshot) {
+// 		},
+// 		function error(err) {
+// 		},
+// 		function () {
+// 			uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+//         console.log('File available at', downloadURL);
+//         writeNewPostWithImage(file.name, downloadURL)
+// 			});
+// 		}
+// 	)
+// }

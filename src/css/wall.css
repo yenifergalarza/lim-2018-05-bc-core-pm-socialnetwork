@@ -267,6 +267,10 @@
   .create-post .privacy-new-post{
     margin-bottom: 10px;
   }
+  .create-post #upload-image{
+    display: none;
+    margin-left: 60px;
+  }
   .create-post .form-group {
     width: 100%;
     margin-bottom: 0;
@@ -274,6 +278,9 @@
   }
   .create-post .form-group img.profile-photo-md {
     margin-right: 10px;
+  }
+  .create-post .form-control{
+    resize: none;
   }
   .create-post .form-control::placeholder {
     color: #767676;

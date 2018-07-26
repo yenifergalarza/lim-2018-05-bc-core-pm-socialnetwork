@@ -21,7 +21,7 @@ window.createUser = (email, password, repeatPassword) => {
   }
 };
 
-window.signInUser = (email, password) => {
+window.signInUser = (email, password) => {  
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
     window.location.assign('wall.html')
   })
@@ -57,6 +57,7 @@ window.resetPassword = (email, password) => {
       console.log(error);
     });
 };
+
 window.loginWithGoogle = () => {
   // Using a popup.
   var provider = new firebase.auth.GoogleAuthProvider();
@@ -154,3 +155,22 @@ window.loginWithAnonymous = () => {
     // ...
   });
 }
+
+window.writeNewPostWithImage = (name, url) => {
+  // A post entry.
+  var postImageData = {
+    name: name,
+    url: url
+  };
+
+  // Get a key for a new Post.
+  var newPostKey = firebase.database().ref().child('post-images').push().key;
+
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  updates['/post-images/' + newPostKey] = postImageData;
+  // updates['/user-posts/' + uid + '/' + newPostKey] = postImageData;
+
+  firebase.database().ref().update(updates);
+  return newPostKey;
+};
