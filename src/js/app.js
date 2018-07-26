@@ -92,12 +92,13 @@ window.writeUserData = (userId, name, email, imageUrl) => {
   });
 };
 
-window.writeNewPost = (uid, userName, body, privacy, countlike) => {
+window.writeNewPost = (uid, userName, body,date, privacy, countlike) => {
   // A post entry.
   var postData = {
     uid: uid,
     userName: userName,
     body: body,
+    date: date,
     privacy: privacy,
     countlike: countlike,
   };

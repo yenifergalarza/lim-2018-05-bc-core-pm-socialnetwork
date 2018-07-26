@@ -24,9 +24,11 @@ firebase.auth().onAuthStateChanged(function (user) {
   if (firebase.auth().currentUser.isAnonymous === true) {
 
     if (user) {
-      const dbRefPost = firebase.database().ref().child('posts');
+      const rootRef = firebase.database().ref();
+      const dbRefPost = rootRef.child('posts');
+      const list = dbRefPost.orderByChild('date');
 
-      dbRefPost.once('value', postKey => {
+      list.once('value', postKey => {
         paintPost(postKey);
       })
     }
@@ -34,9 +36,8 @@ firebase.auth().onAuthStateChanged(function (user) {
     let gettingPrivacy = document.getElementById('privacyNewPost');
     gettingPrivacy.addEventListener('change', () => {
       let privacy = gettingPrivacy.value;
-      publishPost(privacy); F
+      publishPost(privacy);
     });
-
 
     document.querySelector('.create-post').style.display = 'block';
     document.querySelector('.profile-card').style.display = 'block';
@@ -49,12 +50,12 @@ firebase.auth().onAuthStateChanged(function (user) {
                             `;
       const imgProfile = document.querySelector('#img-profile');
       imgProfile.setAttribute('src', user.photoURL);
+
       let userId = firebase.auth().currentUser.uid;
-      const dbRefPost = firebase.database().ref().child('posts');
+      let rootRef = firebase.database().ref();
+      let list = rootRef.child('posts').orderByChild('date');
 
-      // const dbRefPost = firebase.database().ref().child('user-posts').child(userId);
-
-      dbRefPost.once('value', postKey => {
+      list.once('value', postKey => {
         paintPost(postKey, userId);
       })
     }
@@ -67,7 +68,9 @@ const publishPost = (privacy) => {
       const userId = firebase.auth().currentUser.uid;
       const userName = firebase.auth().currentUser.displayName;
       // const privacy = 'public';
-      writeNewPost(userId, userName, postEntrada.value, privacy, count_click);
+      const timestamp = new Date();
+      // let timestamp = new Date('2012-20-03'.split('-').join('/')).getTime();
+      writeNewPost(userId, userName, postEntrada.value, timestamp.toLocaleString(), privacy, count_click);
       postEntrada.value = '';
       reload_page();
     } else {
