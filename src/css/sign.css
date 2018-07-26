@@ -22,6 +22,11 @@
   src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
 }
 
+@font-face {
+  font-family: "Copperplate Gotic";
+  src: url("../fonts/copperplategothiclight.ttf");
+}
+
 @media only screen and (min-width: 320px) {
   /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
@@ -51,12 +56,12 @@
   }
 
   a:focus {
-    outline: none !important;
+    outline: none ;
   }
 
   a:hover {
     text-decoration: none;
-    color: #86fe25;
+    color: #FFC107;
   }
 
   /*---------------------------------------------*/
@@ -159,7 +164,7 @@
     height: 100vh;
     width: 100%;
     margin: 0 auto;
-    background: url("../img/brain.jpeg") center center no-repeat;
+    background: url("../img/wallpaper.jpeg") center center no-repeat;
     background-size: cover;
   }
 
@@ -338,14 +343,9 @@
     z-index: -1;
     width: 300%;
     height: 100%;
-    background: #a64bf4;
-    background: -webkit-linear-gradient(right, #065562, #86fe25, #065562, #89398a);
-    background: -o-linear-gradient(right, #065562, #86fe25, #065562, #89398a);
-    background: -moz-linear-gradient(right, #065562, #86fe25, #065562, #89398a);
-    background: linear-gradient(right, #065562, #86fe25, #065562, #89398a);
+    background: #FFC107;
     top: 0;
     left: -100%;
-
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
@@ -355,10 +355,9 @@
   .login-form-btn {
     font-family: Poppins-Medium;
     font-size: 16px;
-    color: #fff;
+    color: #fff ;
     line-height: 1.2;
     text-transform: uppercase;
-
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -370,6 +369,10 @@
     width: 100%;
     height: 35px;
     /* height: 50px; */
+  }
+  .login-form-btn:hover{
+    background: #FFECB3;
+    color: #212121;
   }
 
   .wrap-login-form-btn:hover .login-form-bgbtn {
@@ -482,16 +485,20 @@
     display: block;
     font-family: Poppins-Bold;
     font-size: 59px;
-    color: #ffffff;
+    color: #212121;
     line-height: 1.2;
   }
   .container-description{
     margin: 10px 0 0 20%;
   }
   .paragraph p{
-    color: #ffffff;
+    color: #212121;
     font-size: 24px;
     text-align: justify;
+  }
+  .login-anonymous-text{
+    font-size: 18px;
+    color: #757575;
   }
   .right{
     width: 50%;
