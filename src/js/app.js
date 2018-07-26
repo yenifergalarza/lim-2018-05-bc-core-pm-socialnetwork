@@ -104,12 +104,14 @@ window.writeUserData = (userId, name, email, imageUrl) => {
   });
 };
 
-window.writeNewPost = (uid, userName, body, privacy, countlike) => {
+window.writeNewPost = (uid, userName, body, imageName, imageUrl, privacy, countlike) => {
   // A post entry.
   var postData = {
     uid: uid,
     userName: userName,
     body: body,
+    imageName: imageName,
+    imageUrl: imageUrl,
     privacy: privacy,
     countlike: countlike,
   };

@@ -18,8 +18,10 @@ const writePost = document.querySelector('#write-post');
 const imagePost = document.querySelector('#image-post');
 const uploadImage = document.querySelector('#upload-image');
 
-
+/* let imageName = '';
+let imageUrl = ''; */
 let count_click = 0;
+let privacy = 'public'
 
 writePost.addEventListener('click', () => {
   uploadImage.style.display = 'none';
@@ -45,10 +47,14 @@ firebase.auth().onAuthStateChanged(function (user) {
       })
     }
   } else {
+    // console.log(setImage.value)
+
+
     let gettingPrivacy = document.getElementById('privacyNewPost');
     gettingPrivacy.addEventListener('change', () => {
-      let privacy = gettingPrivacy.value;
-      publishPost(privacy);
+      privacy = gettingPrivacy.value;
+      // settingImage(privacy);
+      publishPost(privacy, '', '');
     });
 
 
@@ -74,21 +80,42 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
   }
 })
+const setImage = document.querySelector('#set-image');
+const settingImage = (privacy) => {
+  setImage.addEventListener('change', function (e) {
+    var file = e.target.files[0];
+    var storageRef = firebase.storage().ref('post-images/' + file.name);
+    var databaseRef = firebase.storage().ref('post-images/');
+    var task = storageRef.put(file);
+    task.on('state_changed',
+      function (snapshot) { },
+      function error(err) { },
+      function () {
+        console.log('holaa')
+        task.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+          publishPost(privacy, file.name, downloadURL);
 
-/* const publishPost = (privacy) => {
+          console.log('File available at', downloadURL);
+        });
+      }
+    )
+  })
+};
+const publishPost = (privacy, imageName, imageUrl) => {
   buttonPublish.addEventListener('click', () => {
     if (postEntry.value !== '') {
       const userId = firebase.auth().currentUser.uid;
       const userName = firebase.auth().currentUser.displayName;
       // const privacy = 'public';
-      writeNewPost(userId, userName, postEntry.value, privacy, count_click);
+      // writeNewPost(userId, userName, postEntry.value, '', '',privacy, count_click);
+      writeNewPost(userId, userName, postEntry.value, imageName, imageUrl, privacy, count_click);
       postEntry.value = '';
       reload_page();
     } else {
       alert('Ingresar texto a publicar')
     }
   });
-}; */
+};
 
 const paintPost = (postKey, userId) => {
   const tourPostKey = postKey.forEach(keys => {
@@ -278,25 +305,7 @@ const createPost = (postId, keys, userId) => {
   }
 };
 
-const setImage = document.querySelector('#set-image');
-setImage.addEventListener('change', function (e) {
-  var file = e.target.files[0];
-  var storageRef = firebase.storage().ref('post-images/' + file.name);
-  var databaseRef = firebase.storage().ref('post-images/');
-  var task = storageRef.put(file);
-  task.on('state_changed',
-    function (snapshot) {},
-    function error(err) {},
-    function () {
-      console.log('holaa')
-      task.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-        holachao(file.name, downloadURL);
 
-        console.log('File available at', downloadURL);
-      });
-    }
-  )
-});
 const holachao = (name, url) => {
   buttonPublish.addEventListener('click', (e) => {
     writeNewPostWithImage(name, url);
