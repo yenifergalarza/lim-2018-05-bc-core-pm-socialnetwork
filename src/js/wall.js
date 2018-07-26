@@ -34,7 +34,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     let gettingPrivacy = document.getElementById('privacyNewPost');
     gettingPrivacy.addEventListener('change', () => {
       let privacy = gettingPrivacy.value;
-      publishPost(privacy); F
+      publishPost(privacy);
     });
 
 
