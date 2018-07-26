@@ -17,12 +17,9 @@ const writingPost = document.querySelector('#publicPost');
 const writePost = document.querySelector('#write-post');
 const imagePost = document.querySelector('#image-post');
 const uploadImage = document.querySelector('#upload-image');
+const gettingPrivacy = document.querySelector('#privacyNewPost');
 
-/* let imageName = '';
-let imageUrl = ''; */
 let count_click = 0;
-let privacy = 'public'
-
 writePost.addEventListener('click', () => {
   uploadImage.style.display = 'none';
 })
@@ -34,7 +31,15 @@ function reload_page() {
   window.location.reload();
 };
 
-
+/* let dataPost = {
+  uid: '',
+  userName: '',
+  body: '',
+  imageName: '',
+  imageUrl: '',
+  privacy: '',
+  countlike: '',
+} */
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (firebase.auth().currentUser.isAnonymous === true) {
@@ -47,15 +52,6 @@ firebase.auth().onAuthStateChanged(function (user) {
       })
     }
   } else {
-    // console.log(setImage.value)
-
-
-    let gettingPrivacy = document.getElementById('privacyNewPost');
-    gettingPrivacy.addEventListener('change', () => {
-      privacy = gettingPrivacy.value;
-      // settingImage(privacy);
-      publishPost(privacy, '', '');
-    });
 
 
     document.querySelector('.create-post').style.display = 'block';
@@ -75,7 +71,7 @@ firebase.auth().onAuthStateChanged(function (user) {
       // const dbRefPost = firebase.database().ref().child('user-posts').child(userId);
 
       dbRefPost.once('value', postKey => {
-        paintPost(postKey, userId);
+        // paintPost(postKey, userId);
       })
     }
   }
@@ -102,7 +98,12 @@ const settingImage = (privacy) => {
   })
 };
 const publishPost = (privacy, imageName, imageUrl) => {
-  buttonPublish.addEventListener('click', () => {
+  /* buttonPublish.addEventListener('click', () => {
+    if (gettingPrivacy.value !== '') {
+
+    } else {
+      alert('Please, choose privacy')
+    }
     if (postEntry.value !== '') {
       const userId = firebase.auth().currentUser.uid;
       const userName = firebase.auth().currentUser.displayName;
@@ -112,10 +113,27 @@ const publishPost = (privacy, imageName, imageUrl) => {
       postEntry.value = '';
       reload_page();
     } else {
-      alert('Ingresar texto a publicar')
+      alert('Please, enter text to public')
     }
-  });
+  }); */
 };
+const valor = (privacy, callback) => {
+  return callback(privacy);
+}
+
+const choosedPrivacy = () => {
+ gettingPrivacy.addEventListener('change', () => {
+    let privacy = gettingPrivacy.value;
+    const valor1 = valor(privacy, (result) => {
+      return result;
+    });
+    return valor1;
+  })
+  console.log(valor3);
+}
+
+console.log(choosedPrivacy());
+
 
 const paintPost = (postKey, userId) => {
   const tourPostKey = postKey.forEach(keys => {
@@ -305,13 +323,12 @@ const createPost = (postId, keys, userId) => {
   }
 };
 
-
-const holachao = (name, url) => {
+/* const holachao = (name, url) => {
   buttonPublish.addEventListener('click', (e) => {
     writeNewPostWithImage(name, url);
   })
 }
-
+ */
 // uploadToStorage = (storageRef, file) => {
 //   var task = storageRef.put(file);
 // 	task.on('state_changed',
