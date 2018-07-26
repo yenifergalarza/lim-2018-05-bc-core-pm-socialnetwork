@@ -27,7 +27,7 @@
 describe('auth', () => {
   describe('createUser', () => {
     it('createUser is function', () => {
-      expect(createUser).toBeCalled();
+      assert.isFunction(createUser)
     });
     it('createUser deberia retornar codigo de error cuando los password y su confimacion no son iguales', () => {
       createUser('', '123', '456', (error) => {
@@ -42,13 +42,12 @@ describe('auth', () => {
     });
     it('createUser crea usuario', () => {
       createUser('usuario1', '12345678', '12345678', (error, response) => {
-        //sconsole.log(response.username);
-        assert.equal(response.username, 'usuario1');
+        console.log('fail', response);
+        assert.equal(response.username, 'usario1');
       })
     });
     it('createUser no crea usuario con password cortos', () => {
       createUser('usuario2', '1234', '1234', (error, response) => {
-
         assert.equal(error.code, 'auth/weak-password');
       })
     });

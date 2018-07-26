@@ -49,8 +49,8 @@
   #page-contents {
     padding: 30px 0 50px;
   }
-  .btn-primary {
-    background: #4ca8a1;
+  .btn {
+    background: #FFC107;
     padding: 5px 20px;
     border: none;
     font-size: 14px;
@@ -60,9 +60,12 @@
     font-weight: 600;
     outline: none;
   }
-  .btn-primary::before {
+  .btn:hover{
+    background: #FFECB3;
+  }
+  .btn::before {
     content: "";
-    background: rgba(255, 255, 255, 0.2);
+    background: #FFC107;
     position: absolute;
     width: 95%;
     height: 1px;
@@ -100,7 +103,7 @@
     background: #fff;
   }
   .menu {
-    background: #4ca8a1;
+    background: #0097A7; 
     border: none;
     border-radius: 0;
     margin-bottom: 0;
@@ -129,7 +132,7 @@
     padding-left: 30px;
   }
   .form-control::placeholder {
-    color: #fafafa;
+    color: #dcdcdc;
   }
   .menu ul.main-menu li.dropdown a {
     color: #fff;
@@ -184,7 +187,7 @@
   }
   .profile-card {
     display: none;
-    background: linear-gradient(to bottom, rgba(39, 170, 225, .8), rgba(28, 117, 188, .8)), url(../images/covers/1.jpg) no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 187, 212, 0.685), rgba(0, 150, 167, 0.734));
     background-size: cover;
     width: 100%;
     min-height: 90px;
@@ -261,6 +264,9 @@
     margin-bottom: 20px;
     border-bottom: 1px solid #f1f2f2;
   }
+  .create-post .privacy-new-post{
+    margin-bottom: 10px;
+  }
   .create-post .form-group {
     width: 100%;
     margin-bottom: 0;
@@ -268,6 +274,9 @@
   }
   .create-post .form-group img.profile-photo-md {
     margin-right: 10px;
+  }
+  .create-post .form-control::placeholder {
+    color: #767676;
   }
   .create-post .tools {
     padding: 8px 0 10px;
@@ -297,14 +306,17 @@
   .post-published {
     margin: 40px 0;
   }
-  .tools-published {
+  .privacy{
+    display: none;
+  }
+  .tools-post {
     display: none;
     margin: 10px 0;
   }
   .user-name-container{
     display: inline-block;
   }
-  .privacity {
+  .privacy {
     float: right;
     margin-top: 10px;
     margin-bottom: 10px;

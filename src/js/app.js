@@ -7,8 +7,8 @@ window.createUser = (email, password, repeatPassword, cb) => {
       })
       .catch(function (error) {
         // Handle Errors here.
-        cb(error)
         console.log(error);
+        cb(error)
       });
   } else {
     //console.log('Your password doesnt mach');
@@ -16,15 +16,10 @@ window.createUser = (email, password, repeatPassword, cb) => {
   }
 };
 
-// console.log(createUser('lulu@gmail.com','123','123',cb))
-
-window.signInUser = (email, password, cb) => {
-    firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((user) => {
-      cb(null, user);
-      return user;
-      // window.location.assign('wall.html')
-    })
+window.signInUser = (email, password) => {
+  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+    window.location.assign('wall.html')
+  })
     .catch(function (error) {
       cb(error)
       // Handle Errors here.
@@ -33,7 +28,8 @@ window.signInUser = (email, password, cb) => {
 };
 
 window.resetPassword = (email, password) => {
-  firebase.auth().sendPasswordResetEmail(getEmail.value)
+  firebase.auth().sendPasswordResetEmail(
+    getEmail.value)
     .then(function () {
       firebase.auth.EmailAuthProvider.credential(email, password);
       alert("Password Reset Email Sent")
@@ -96,12 +92,14 @@ window.writeUserData = (userId, name, email, imageUrl) => {
   });
 };
 
-window.writeNewPost = (uid, body, countlike, userName) => {
+window.writeNewPost = (uid, userName, body, privacy, countlike) => {
   // A post entry.
   var postData = {
+    uid: uid,
+    userName: userName,
     body: body,
+    privacy: privacy,
     countlike: countlike,
-    userName: userName
   };
 
   // Get a key for a new Post.
@@ -116,8 +114,27 @@ window.writeNewPost = (uid, body, countlike, userName) => {
   return newPostKey;
 };
 
+window.updatePostUser = (uid, userName, body, privacy, countlike, postId) => {
+  const newPost = {
+    uid: uid,
+    userName: userName,
+    body: body,
+    privacy: privacy,
+    countlike: countlike,
+  };
+
+  const updatesUser = {};
+  const updatesPost = {};
+
+  updatesUser['/user-posts/' + uid + '/' + postId] = newPost;
+  updatesPost['/posts/' + postId] = newPost;
+  firebase.database().ref().update(updatesUser);
+  firebase.database().ref().update(updatesPost);
+}
+
 window.loginWithAnonymous = () => {
-  firebase.auth().signInAnonymously().then(function () {
+  firebase.auth().signInAnonymously().then(function (result) {
+    console.log('hola')
     window.location.assign('wall.html')
   }).catch(function (error) {
     // Handle Errors here.
