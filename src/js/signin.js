@@ -7,13 +7,17 @@ const loginFacebook = document.querySelector('#login-facebook');
 const loginTwitter = document.querySelector('#login-twitter');
 const username = document.querySelector("#text-white");
 const forgotPassword = document.querySelector('#forgot-Password');
-window.onload =()=>{
-  firebase.auth().onAuthStateChanged(function(user) {
+const loginAnonymous = document.querySelector('#login-anonymous');
+
+window.onload = () => {
+  firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       window.location.assign('wall.html')
+      // var isAnonymous = user.isAnonymous;
+      // var uid = user.uid;
     } else {
       console.log('No user is signed in.');
-      
+
     }
   });
 }
@@ -42,3 +46,7 @@ loginFacebook.addEventListener('click', () => {
 loginTwitter.addEventListener('click', () => {
   loginWithTwitter();
 });
+
+loginAnonymous.addEventListener('click', () => {
+  loginWithAnonymous();
+})
