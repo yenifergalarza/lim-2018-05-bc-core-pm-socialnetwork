@@ -9,51 +9,61 @@ document.querySelector('#log-out').addEventListener('click', (e) => {
 })
 
 const buttonPublish = document.querySelector('#buttonPublish');
-const postEntrada = document.querySelector('#exampleTextarea');
+const postEntry = document.querySelector('#textarea-post');
 const dataBase = document.querySelector('#create-post');
 const posts = document.querySelector('#posts');
 const profile = document.getElementById('profile');
 const writingPost = document.querySelector('#publicPost');
+const writePost = document.querySelector('#write-post');
+const imagePost = document.querySelector('#image-post');
+const uploadImage = document.querySelector('#upload-image');
+const gettingPrivacy = document.querySelector('#privacyNewPost');
+const setImage = document.querySelector('#set-image');
+
 let count_click = 0;
+writePost.addEventListener('click', () => {
+  uploadImage.style.display = 'none';
+})
+imagePost.addEventListener('click', () => {
+  uploadImage.style.display = 'block';
+})
 
 function reload_page() {
   window.location.reload();
 };
 
+/* let dataPost = {
+  uid: '',
+  userName: '',
+  body: '',
+  imageName: '',
+  imageUrl: '',
+  privacy: '',
+  countlike: '',
+} */
 firebase.auth().onAuthStateChanged(function (user) {
   if (firebase.auth().currentUser.isAnonymous === true) {
-
     if (user) {
       const dbRefPost = firebase.database().ref().child('posts');
-
       dbRefPost.once('value', postKey => {
         paintPost(postKey);
       })
     }
   } else {
-    let gettingPrivacy = document.getElementById('privacyNewPost');
-    gettingPrivacy.addEventListener('change', () => {
-      let privacy = gettingPrivacy.value;
-      publishPost(privacy); F
-    });
-
+    console.log(setImage.value)
+    settingImage()
 
     document.querySelector('.create-post').style.display = 'block';
     document.querySelector('.profile-card').style.display = 'block';
     if (user) {
-      profile.innerHTML = `<img src="${user.photoURL}" alt="user" class="profile-photo" />
-                              <h5>
-                                <a href="timeline.html" id="name"class="text-white">${user.displayName}</a>
-                              </h5>'
-                              <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
-                            `;
-      const imgProfile = document.querySelector('#img-profile');
-      imgProfile.setAttribute('src', user.photoURL);
+      if (user.displayName === null) {
+        userProfile(user.photoURL, user.email)
+      } else {
+        userProfile(user.photoURL, user.displayName)
+      }
       let userId = firebase.auth().currentUser.uid;
       const dbRefPost = firebase.database().ref().child('posts');
-
       // const dbRefPost = firebase.database().ref().child('user-posts').child(userId);
-
       dbRefPost.once('value', postKey => {
         paintPost(postKey, userId);
       })
@@ -61,29 +71,54 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
 })
 
-const publishPost = (privacy) => {
+const settingImage = () => {
+  setImage.addEventListener('change', function (e) {
+    if (setImage.value !== '') {
+      var file = e.target.files[0];
+      var storageRef = firebase.storage().ref('post-images/' + file.name);
+      // var databaseRef = firebase.storage().ref('post-images/');
+      var task = storageRef.put(file);
+      task.on('state_changed',
+        function (snapshot) {},
+        function error(err) {},
+        function () {
+
+          task.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+            publishPost(file.name, downloadURL);
+            console.log('File available at', downloadURL);
+          });
+        }
+      )
+    } else {
+      publishPost('', '');
+    }
+    console.log(setImage.value)
+
+
+  })
+};
+
+const publishPost = (imageName, imageUrl) => {
   buttonPublish.addEventListener('click', () => {
-    if (postEntrada.value !== '') {
+    if (postEntry.value !== '') {
       const userId = firebase.auth().currentUser.uid;
       const userName = firebase.auth().currentUser.displayName;
-      // const privacy = 'public';
-      writeNewPost(userId, userName, postEntrada.value, privacy, count_click);
-      postEntrada.value = '';
+      const privacy = gettingPrivacy.value;
+      // writeNewPost(userId, userName, postEntry.value, '', '',privacy, count_click);
+      writeNewPost(userId, userName, postEntry.value, imageName, imageUrl, privacy, count_click);
+      postEntry.value = '';
+      // setImage.value = '';
+
       reload_page();
     } else {
-      alert('Ingresar texto a publicar')
+      alert('Please, enter text to public')
     }
   });
 };
 
-// const getPrivacy = () => {
-
-// }
-
 const paintPost = (postKey, userId) => {
   postKey.forEach(keys => {
     let postId = keys.key;
-
     if (userId === keys.val().uid || keys.val().privacy === 'public') {
       createPost(postId, keys, userId);
     }
@@ -98,6 +133,7 @@ const createPost = (postId, keys, userId) => {
   let optionPrivate = document.createElement('option');
   let optionPublic = document.createElement('option');
   let boxPost = document.createElement('textarea');
+  let imagePost = document.createElement('img');
   let toolsPublishContainer = document.createElement('div');
   let iconEdit = document.createElement('i');
   let iconDelete = document.createElement('i');
@@ -106,16 +142,21 @@ const createPost = (postId, keys, userId) => {
   let contLike = document.createElement('span');
   let buttonUpdate = document.createElement('button');
 
-  postPublished.setAttribute('class', 'post-published');
+
+
+  postPublished.setAttribute('class', 'post-content');
   postPublished.setAttribute('id', 'post' + postId);
   userNameContainer.setAttribute('class', 'user-name-container');
   selectPrivacy.setAttribute('class', 'privacy');
   selectPrivacy.setAttribute('id', 'privacy' + postId);
   optionPrivate.setAttribute('id', 'private');
   optionPublic.setAttribute('id', 'public');
-  boxPost.setAttribute('class', 'form-control');
+  boxPost.setAttribute('class', 'form-control post-container');
   boxPost.setAttribute('disabled', 'disabled');
   boxPost.setAttribute('id', postId);
+  imagePost.setAttribute('class', 'post-image');
+  imagePost.setAttribute('src', keys.val().imageUrl);
+  imagePost.setAttribute('id', 'image-post' + postId);
   toolsPublishContainer.setAttribute('class', 'tools-post');
   toolsPublishContainer.setAttribute('id', 'tools-post' + postId);
   iconEdit.setAttribute('class', 'far fa-edit post-icon btn-update');
@@ -155,6 +196,9 @@ const createPost = (postId, keys, userId) => {
   postPublished.appendChild(userNameContainer);
   postPublished.appendChild(selectPrivacy);
   postPublished.appendChild(boxPost);
+  if (keys.val().imageName !== '') {
+    postPublished.appendChild(imagePost);
+  }
   postPublished.appendChild(toolsPublishContainer);
 
   posts.appendChild(postPublished);
@@ -185,7 +229,7 @@ const createPost = (postId, keys, userId) => {
     postDisable.disabled = true;
     updatePost.style.display = 'none';
     const newUpdate = document.getElementById(postId);
-    updatePostUser(userId, keys.val().userName, newUpdate.value, keys.val().privacy, keys.val().countlike, postId);
+    updatePostUser(userId, keys.val().userName, newUpdate.value, keys.val().imageName, keys.val().imageUrl, keys.val().privacy, keys.val().countlike, postId);
   });
 
   likeClick.addEventListener('click', () => {
@@ -206,7 +250,7 @@ const createPost = (postId, keys, userId) => {
         document.querySelector('#post' + postId + ' .countLikes').innerHTML = "A " + contador_click + " le gustan este post";
       }
 
-      updatePostUser(userId, keys.val().userName, keys.val().body, keys.val().privacy, contador_click, postId);
+      updatePostUser(userId, keys.val().userName, keys.val().body, keys.val().imageName, keys.val().imageUrl, keys.val().privacy, contador_click, postId);
       auxLike = 1;
 
     } else {
@@ -227,7 +271,7 @@ const createPost = (postId, keys, userId) => {
         document.querySelector('#post' + postId + ' .countLikes').innerHTML = "A " + contador_click + " le gustan este post";
       }
 
-      updatePostUser(userId, keys.val().userName, keys.val().body, keys.val().privacy, contador_click, postId);
+      updatePostUser(userId, keys.val().userName, keys.val().body, keys.val().imageName, keys.val().imageUrl, keys.val().privacy, contador_click, postId);
       auxLike = 0;
 
     }
@@ -252,10 +296,7 @@ const createPost = (postId, keys, userId) => {
   });
 
   selectedPrivacy.addEventListener('change', () => {
-    // if (selectedPrivacy.value === 'private')
-    // updatePostUser(userId, keys.val().userName, keys.val().body, selectedPrivacy.value, keys.val().countlike, postId);
-    // else if (selectedPrivacy.value === 'public')
-    updatePostUser(userId, keys.val().userName, keys.val().body, selectedPrivacy.value, keys.val().countlike, postId);
+    updatePostUser(userId, keys.val().userName, keys.val().body, keys.val().imageName, keys.val().imageUrl, selectedPrivacy.value, keys.val().countlike, postId);
   });
 
   if (userId === keys.val().uid) {
@@ -263,6 +304,37 @@ const createPost = (postId, keys, userId) => {
     viewPrivacy.style.display = 'inline-block';
     const viewToolsPost = document.getElementById('tools-post' + postId);
     viewToolsPost.style.display = 'block';
-
   }
 };
+
+const userProfile = (userPhoto, userName) => {
+  profile.innerHTML = `<img src="${userPhoto}" alt="user" class="profile-photo" />
+                        <h5>
+                          <a href="timeline.html" id="name"class="text-white">${userName}</a>
+                        </h5>'
+                        <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
+                      `;
+  const imgProfile = document.querySelector('#img-profile');
+  imgProfile.setAttribute('src', userPhoto);
+}
+/* const holachao = (name, url) => {
+  buttonPublish.addEventListener('click', (e) => {
+    writeNewPostWithImage(name, url);
+  })
+}
+ */
+// uploadToStorage = (storageRef, file) => {
+//   var task = storageRef.put(file);
+// 	task.on('state_changed',
+// 		function progress(snapshot) {
+// 		},
+// 		function error(err) {
+// 		},
+// 		function () {
+// 			uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+//         console.log('File available at', downloadURL);
+//         writeNewPostWithImage(file.name, downloadURL)
+// 			});
+// 		}
+// 	)
+// }

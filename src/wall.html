@@ -132,27 +132,39 @@
           <div class="create-post">
             <div class="row">
               <div>
+                <!-- <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Select privacy
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">public</a>
+                    <a class="dropdown-item" href="#">private</a>
+                  </div>
+                </div> -->
                 <select name="privacy" id="privacyNewPost" class="pull-right privacy-new-post">
-                  <option value="" selected disabled>Select privacy</option>
                   <option value="public">public</option>
                   <option value="private">private</option>
                 </select>
                 <div class="form-group" id="publicPost">
-
                   <img alt="" class="profile-photo-md" id="img-profile" />
-                  <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write an education post"></textarea>
+                  <textarea name="texts" id="textarea-post" cols="30" rows="1" class="form-control" placeholder="Write an education post"></textarea>
+
+                </div>
+                <div id="upload-image">
+                  <input type="file" name="file" value="" id="set-image">
                 </div>
               </div>
               <div>
                 <div class="tools">
                   <ul class="publishing-tools list-inline">
                     <li>
-                      <a href="#">
+                      <a href="#" id="write-post">
                         <i class="ion-ios-create"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="#" id="image-post">
                         <i class="ion-md-images"></i>
                       </a>
                     </li>
