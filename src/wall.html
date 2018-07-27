@@ -142,17 +142,18 @@
                     <a class="dropdown-item" href="#">private</a>
                   </div>
                 </div> -->
-                <select name="privacy" id="privacyNewPost" class="pull-right privacy-new-post">
+                <select name="privacy" id="privacyNewPost" class="pull-right privacy-new-post select-style">
                   <option value="public">public</option>
                   <option value="private">private</option>
                 </select>
                 <div class="form-group" id="publicPost">
                   <img alt="" class="profile-photo-md" id="img-profile" />
+                  <span id="select-option">Select an option 👇</span>
                   <textarea name="texts" id="textarea-post" cols="30" rows="1" class="form-control" placeholder="Write an education post"></textarea>
-
                 </div>
-                <div id="upload-image">
-                  <input type="file" name="file" value="" id="set-image">
+                <div id="upload-image" activated="desactivated">
+                  <progress value="0" max="100" id="uploader"></progress>
+                  <input type="file" name="file" value="" id="set-image" accept="image/*">
                 </div>
               </div>
               <div>

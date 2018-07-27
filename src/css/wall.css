@@ -49,6 +49,15 @@
   #page-contents {
     padding: 30px 0 50px;
   }
+  .select-style{
+    padding: 4px;
+    border: none;
+    background: #FFC107;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 5px;
+  }
   .btn {
     background: #FFC107;
     padding: 5px 20px;
@@ -60,7 +69,7 @@
     font-weight: 600;
     outline: none;
   }
-  .btn:hover{
+  .btn:hover {
     background: #FFECB3;
   }
   .btn::before {
@@ -104,7 +113,7 @@
     background: #fff;
   }
   .menu {
-    background: #0097A7; 
+    background: #0097A7;
     border: none;
     border-radius: 0;
     margin-bottom: 0;
@@ -265,10 +274,10 @@
     margin-bottom: 20px;
     border-bottom: 1px solid #f1f2f2;
   }
-  .create-post .privacy-new-post{
+  .create-post .privacy-new-post {
     margin-bottom: 10px;
   }
-  .create-post #upload-image{
+  .create-post #upload-image {
     display: none;
     margin-left: 60px;
   }
@@ -277,10 +286,13 @@
     margin-bottom: 0;
     display: inline-flex;
   }
+  .create-post #textarea-post {
+    display: none;
+  }
   .create-post .form-group img.profile-photo-md {
     margin-right: 10px;
   }
-  .create-post .form-control{
+  .create-post .form-control {
     resize: none;
   }
   .create-post .form-control::placeholder {
@@ -298,12 +310,20 @@
   }
   .create-post .tools ul.publishing-tools li a {
     color: #6d6e71;
-    font-size: 18px;
+    font-size: 22px;
   }
   .create-post .tools ul.publishing-tools li a:hover {
     color: #27aae1;
   }
-  .post-content{
+  .create-post input {
+    display: inline-block;
+  }
+  .create-post #select-option {
+    height: 30px;
+    margin: 10px 0;
+    font-size: 20px;
+  }
+  .post-content {
     background: #f8f8f8;
     border-radius: 4px;
     width: 100%;
@@ -313,13 +333,12 @@
     position: relative;
     padding: 10px;
   }
-  
-  .post-content img.post-image, video.post-video{
+  .post-content img.post-image,
+  video.post-video {
     width: 100%;
     height: auto;
   }
-  
-  .post-content .post-container:disabled{
+  .post-content .post-container:disabled {
     cursor: default;
     border: none;
     background: inherit;
@@ -333,20 +352,25 @@
   .post-published {
     margin: 40px 0;
   }
-  .privacy{
+  .privacy {
     display: none;
   }
   .tools-post {
     display: none;
     margin: 10px 0;
   }
-  .user-name-container{
+  .user-name-container {
     display: inline-block;
   }
   .privacy {
     float: right;
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+  #uploader {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
   }
 }
 

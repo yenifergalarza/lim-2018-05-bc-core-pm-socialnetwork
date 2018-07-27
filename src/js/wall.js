@@ -14,33 +14,33 @@ const dataBase = document.querySelector('#create-post');
 const posts = document.querySelector('#posts');
 const profile = document.getElementById('profile');
 const writingPost = document.querySelector('#publicPost');
+const selectOption = document.querySelector('#select-option');
 const writePost = document.querySelector('#write-post');
 const imagePost = document.querySelector('#image-post');
 const uploadImage = document.querySelector('#upload-image');
+const uploadingImage = document.querySelector('#uploading-image');
+const uploader = document.querySelector('#uploader');
 const gettingPrivacy = document.querySelector('#privacyNewPost');
 const setImage = document.querySelector('#set-image');
+setImage.value = '';
 
 let count_click = 0;
-writePost.addEventListener('click', () => {
-  uploadImage.style.display = 'none';
-})
-imagePost.addEventListener('click', () => {
-  uploadImage.style.display = 'block';
-})
+
 
 function reload_page() {
   window.location.reload();
 };
 
-/* let dataPost = {
-  uid: '',
-  userName: '',
-  body: '',
-  imageName: '',
-  imageUrl: '',
-  privacy: '',
-  countlike: '',
-} */
+let fileName = '';
+let fileUrl = '';
+hello = () => {
+  if (uploadImage.getAttribute('activated') === 'activated') {
+    settingImage()
+  } else if (uploadImage.getAttribute('activated') === 'desactivated') {
+    publishPost(fileName, fileUrl);
+  }
+}
+
 firebase.auth().onAuthStateChanged(function (user) {
   if (firebase.auth().currentUser.isAnonymous === true) {
     if (user) {
@@ -50,8 +50,22 @@ firebase.auth().onAuthStateChanged(function (user) {
       })
     }
   } else {
-    console.log(setImage.value)
-    settingImage()
+    writePost.addEventListener('click', () => {
+      uploadImage.style.display = 'none';
+      uploadImage.setAttribute('activated', 'desactivated')
+      selectOption.style.display = 'none';
+      postEntry.style.display = 'inline-flex';
+
+      hello();
+    })
+    imagePost.addEventListener('click', () => {
+      uploadImage.style.display = 'block';
+      uploadImage.setAttribute('activated', 'activated')
+      selectOption.style.display = 'none';
+      postEntry.style.display = 'inline-flex';
+
+      hello();
+    })
 
     document.querySelector('.create-post').style.display = 'block';
     document.querySelector('.profile-card').style.display = 'block';
@@ -69,32 +83,32 @@ firebase.auth().onAuthStateChanged(function (user) {
       })
     }
   }
-})
+});
 
 const settingImage = () => {
   setImage.addEventListener('change', function (e) {
-    if (setImage.value !== '') {
-      var file = e.target.files[0];
-      var storageRef = firebase.storage().ref('post-images/' + file.name);
-      // var databaseRef = firebase.storage().ref('post-images/');
-      var task = storageRef.put(file);
-      task.on('state_changed',
-        function (snapshot) {},
-        function error(err) {},
-        function () {
-
-          task.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-            publishPost(file.name, downloadURL);
-            console.log('File available at', downloadURL);
-          });
-        }
-      )
-    } else {
-      publishPost('', '');
-    }
-    console.log(setImage.value)
-
-
+    console.log(e.target.files)
+    // alert('Wait a minute please')
+    var file = e.target.files[0];
+    var storageRef = firebase.storage().ref('post-images/' + file.name);
+    // var databaseRef = firebase.storage().ref('post-images/');
+    var task = storageRef.put(file);
+    task.on('state_changed',
+      function (snapshot) {
+        var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        uploader.value = percentage;
+      },
+      function error(err) {},
+      function () {
+        task.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+          fileName = file.name;
+          fileUrl = downloadURL;
+          publishPost(fileName, fileUrl);
+          console.log('File available at', downloadURL);
+          alert('Now you can publish')
+        });
+      }
+    )
   })
 };
 
@@ -107,8 +121,6 @@ const publishPost = (imageName, imageUrl) => {
       // writeNewPost(userId, userName, postEntry.value, '', '',privacy, count_click);
       writeNewPost(userId, userName, postEntry.value, imageName, imageUrl, privacy, count_click);
       postEntry.value = '';
-      // setImage.value = '';
-
       reload_page();
     } else {
       alert('Please, enter text to public')
@@ -142,12 +154,10 @@ const createPost = (postId, keys, userId) => {
   let contLike = document.createElement('span');
   let buttonUpdate = document.createElement('button');
 
-
-
   postPublished.setAttribute('class', 'post-content');
   postPublished.setAttribute('id', 'post' + postId);
   userNameContainer.setAttribute('class', 'user-name-container');
-  selectPrivacy.setAttribute('class', 'privacy');
+  selectPrivacy.setAttribute('class', 'privacy select-style');
   selectPrivacy.setAttribute('id', 'privacy' + postId);
   optionPrivate.setAttribute('id', 'private');
   optionPublic.setAttribute('id', 'public');
@@ -218,7 +228,6 @@ const createPost = (postId, keys, userId) => {
   } else {
     optionPublic.setAttribute('selected', 'selected');
   }
-
 
   editClick.addEventListener('click', () => {
     postDisable.disabled = false;
@@ -317,24 +326,3 @@ const userProfile = (userPhoto, userName) => {
   const imgProfile = document.querySelector('#img-profile');
   imgProfile.setAttribute('src', userPhoto);
 }
-/* const holachao = (name, url) => {
-  buttonPublish.addEventListener('click', (e) => {
-    writeNewPostWithImage(name, url);
-  })
-}
- */
-// uploadToStorage = (storageRef, file) => {
-//   var task = storageRef.put(file);
-// 	task.on('state_changed',
-// 		function progress(snapshot) {
-// 		},
-// 		function error(err) {
-// 		},
-// 		function () {
-// 			uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-//         console.log('File available at', downloadURL);
-//         writeNewPostWithImage(file.name, downloadURL)
-// 			});
-// 		}
-// 	)
-// }
