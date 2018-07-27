@@ -128,11 +128,13 @@ window.writeNewPost = (uid, userName, body, imageName, imageUrl, privacy, countl
   return newPostKey;
 };
 
-window.updatePostUser = (uid, userName, body, privacy, countlike, postId) => {
+window.updatePostUser = (uid, userName, body, imageName, imageUrl, privacy, countlike, postId) => {
   const newPost = {
     uid: uid,
     userName: userName,
     body: body,
+    imageName: imageName,
+    imageUrl: imageUrl,
     privacy: privacy,
     countlike: countlike,
   };
@@ -157,22 +159,3 @@ window.loginWithAnonymous = () => {
     // ...
   });
 }
-
-window.writeNewPostWithImage = (name, url) => {
-  // A post entry.
-  var postImageData = {
-    name: name,
-    url: url
-  };
-
-  // Get a key for a new Post.
-  var newPostKey = firebase.database().ref().child('post-images').push().key;
-
-  // Write the new post's data simultaneously in the posts list and the user's post list.
-  var updates = {};
-  updates['/post-images/' + newPostKey] = postImageData;
-  // updates['/user-posts/' + uid + '/' + newPostKey] = postImageData;
-
-  firebase.database().ref().update(updates);
-  return newPostKey;
-};
