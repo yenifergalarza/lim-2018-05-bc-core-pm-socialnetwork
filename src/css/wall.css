@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Agency FB";
-  src: url("../fonts/agency-fb.eot")/* EOT file for IE */
+  src: url("../fonts/agency-fb.ttf")/* TTF file for CSS3 browsers */
 }
 
 @font-face {
-  font-family: "Agency FB";
-  src: url("../fonts/agency-fb.ttf")/* TTF file for CSS3 browsers */
+  font-family: "Copperplate Gotic";
+  src: url("../fonts/copperplategothiclight.ttf");
 }
 
 @media only screen and (min-width: 320px) {
@@ -49,8 +49,8 @@
   #page-contents {
     padding: 30px 0 50px;
   }
-  .btn-primary {
-    background: #4ca8a1;
+  .btn {
+    background: #FFC107;
     padding: 5px 20px;
     border: none;
     font-size: 14px;
@@ -60,9 +60,12 @@
     font-weight: 600;
     outline: none;
   }
-  .btn-primary::before {
+  .btn:hover{
+    background: #FFECB3;
+  }
+  .btn::before {
     content: "";
-    background: rgba(255, 255, 255, 0.2);
+    background: #FFC107;
     position: absolute;
     width: 95%;
     height: 1px;
@@ -84,6 +87,9 @@
   .static {
     position: static;
   }
+  .unshow {
+    display: none;
+  }
   textarea {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -93,11 +99,11 @@
   #header {
     min-height: 50px;
   }
-  .navbar-default .navbar-toggle .icon-bar{
+  .navbar-default .navbar-toggle .icon-bar {
     background: #fff;
   }
   .menu {
-    background: #4ca8a1;
+    background: #0097A7; 
     border: none;
     border-radius: 0;
     margin-bottom: 0;
@@ -115,7 +121,7 @@
     color: #fff;
   }
   .menu form .form-group input.form-control {
-    background: rgba(255, 255, 255, 0.42);
+    background: rgba(32, 32, 32, 0.4);
     border: 0;
     box-shadow: none;
     min-width: 235px;
@@ -124,6 +130,9 @@
     border-radius: 13px;
     font-size: 12px;
     padding-left: 30px;
+  }
+  .form-control::placeholder {
+    color: #dcdcdc;
   }
   .menu ul.main-menu li.dropdown a {
     color: #fff;
@@ -173,11 +182,12 @@
   .navbar-brand .logo {
     height: 48px;
   }
-  .slide-bar-left{
+  .slide-bar-left {
     display: none;
   }
   .profile-card {
-    background: linear-gradient(to bottom, rgba(39, 170, 225, .8), rgba(28, 117, 188, .8)), url(../images/covers/1.jpg) no-repeat;
+    display: none;
+    background: linear-gradient(to bottom, rgba(0, 187, 212, 0.685), rgba(0, 150, 167, 0.734));
     background-size: cover;
     width: 100%;
     min-height: 90px;
@@ -247,11 +257,15 @@
     color: #9e1f63;
   }
   .create-post {
+    display: none;
     width: 100%;
     min-height: 90px;
     padding: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid #f1f2f2;
+  }
+  .create-post .privacy-new-post{
+    margin-bottom: 10px;
   }
   .create-post .form-group {
     width: 100%;
@@ -260,6 +274,9 @@
   }
   .create-post .form-group img.profile-photo-md {
     margin-right: 10px;
+  }
+  .create-post .form-control::placeholder {
+    color: #767676;
   }
   .create-post .tools {
     padding: 8px 0 10px;
@@ -278,12 +295,31 @@
   .create-post .tools ul.publishing-tools li a:hover {
     color: #27aae1;
   }
-  .contenidoPost{
+  .contenidoPost {
     margin: 25px 2px;
   }
-  .post-icon{
+  .post-icon {
+    /* display: none; */
     margin: 10px;
     cursor: pointer;
+  }
+  .post-published {
+    margin: 40px 0;
+  }
+  .privacy{
+    display: none;
+  }
+  .tools-post {
+    display: none;
+    margin: 10px 0;
+  }
+  .user-name-container{
+    display: inline-block;
+  }
+  .privacy {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 
@@ -294,22 +330,20 @@
 }
 
 @media only screen and (min-width: 992px) {
-  .slide-bar-left{
+  .slide-bar-left {
     display: block;
     position: fixed;
   }
-  .wall{
+  .wall {
     margin-left: 300px;
   }
   .col-md-3 {
     width: 18%;
+  }
 }
-}
-/* @media only screen and (min-width: 1024px) {
-
-} */
 
 /* Estilos para los posts */
-#newPost{
+
+#newPost {
   border: 1px solid;
 }

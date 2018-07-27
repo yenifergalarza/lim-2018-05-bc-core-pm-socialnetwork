@@ -2,24 +2,208 @@
 <html>
 
 <head>
+<<<<<<< HEAD
     <title>BYEDOUBT</title>
+=======
+  <title>BYEDOUBT</title>
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="icon" type="image/png" href="img/icons/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+  <!-- Stylesheets -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link href="https://unpkg.com/ionicons@4.2.4/dist/css/ionicons.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="css/ionicons.min.css" /> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    cro ssorigin="anonymous">
+  <link href="css/emoji.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/wall.css" />
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700'
+    rel='stylesheet' type='text/css'>
 </head>
 
 <body>
+<<<<<<< HEAD
   <h1> Bienvenidx </h1>
   <button type="button" id="log-out">Log out</button>
 
 <!--   <button onclick="mainApp.logOut">Log Out</button> -->
   <script src="js/fireBase.js"></script>
   <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+=======
+
+  <header id="header">
+    <nav class="navbar navbar-default navbar-fixed-top menu">
+      <div class="container">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <img class="logo" src="img/logo.png" alt="logo" />
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right main-menu">
+            <li class="dropdown">
+              <a href="main.html">Home</a>
+            </li>
+            <li class="dropdown">
+              <a href="#">Profile</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" id="log-out">Sign out</a>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-right hidden-sm">
+            <div class="form-group">
+              <i class="icon ion-ios-search"></i>
+              <input type="text" class="form-control" placeholder="Search friends, photos, videos">
+            </div>
+          </form>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+  </header>
+
+  <div id="page-contents">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 static slide-bar-left">
+          <div class="profile-card">
+            <img src="img/users/user-1.jpg" alt="user" class="profile-photo" />
+            <h5>
+              <a href="timeline.html" class="text-white">Valeria Biaggi</a>
+            </h5>
+            <a href="#" class="text-white">
+              <i class="ion ion-android-person-add"></i> 1,299 followers</a>
+          </div>
+          <!--profile card ends-->
+          <ul class="nav-news-feed">
+            <li>
+              <i class="icon ion-ios-paper"></i>
+              <div>
+                <a href="newsfeed.html">My Newsfeed</a>
+              </div>
+            </li>
+            <li>
+              <i class="icon ion-ios-people"></i>
+              <div>
+                <a href="newsfeed-people-nearby.html">People Nearby</a>
+              </div>
+            </li>
+            <li>
+              <i class="icon ion-md-people"></i>
+              <div>
+                <a href="newsfeed-friends.html">Friends</a>
+              </div>
+            </li>
+            <li>
+              <i class="icon ion-md-chatboxes"></i>
+              <div>
+                <a href="newsfeed-messages.html">Messages</a>
+              </div>
+            </li>
+            <li>
+              <i class="icon ion-md-images"></i>
+              <div>
+                <a href="newsfeed-images.html">Images</a>
+              </div>
+            </li>
+            <li>
+              <i class="icon ion-ios-videocam"></i>
+              <div>
+                <a href="newsfeed-videos.html">Videos</a>
+              </div>
+            </li>
+          </ul>
+          <!--chat block ends-->
+        </div>
+
+        <div class="col-md-7">
+
+          <!-- Post Create Box
+              ================================================= -->
+          <div class="create-post">
+            <div class="row">
+              <div>
+                <div class="form-group">
+                  <img src="img/users/user-1.jpg" alt="" class="profile-photo-md" />
+                  <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
+                </div>
+              </div>
+              <div>
+                <div class="tools">
+                  <ul class="publishing-tools list-inline">
+                    <li>
+                      <a href="#">
+                        <i class="ion-ios-create"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="ion-md-images"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="ion-ios-videocam"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="ion-md-map"></i>
+                      </a>
+                    </li>
+                  </ul>
+                  <button class="btn btn-primary pull-right">Publish</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="js/fireBase.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
   <script src="js/main.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTMXfmDn0VlqWIyoOxK8997L-amWbUPiQ&callback=initMap"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <script src="js/jquery.sticky-kit.min.js"></script>
+  <script src="js/jquery.scrollbar.min.js"></script>
 </body>
 
 </html>
