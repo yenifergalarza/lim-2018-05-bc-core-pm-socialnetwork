@@ -18,16 +18,9 @@ describe('auth', () => {
         assert.equal(error.code, 'auth/password-mismatch');
       })
     });
-    it('createUser necesita password iguales', () => {
-      createUser('', '123', '123', (error) => {
-        console.log(error);
-        assert.equal(error.code, 'auth/password-mismatch');
-      })
-    });
     it('createUser crea usuario', () => {
       createUser('usuario1', '12345678', '12345678', (error, response) => {
-        console.log('fail', response);
-        assert.equal(response.username, 'usario1');
+        assert.equal(response.username, 'usuario1');
       })
     });
     it('createUser no crea usuario con password cortos', () => {

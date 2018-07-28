@@ -7,6 +7,50 @@ const loginFacebook = document.querySelector('#login-facebook');
 const loginTwitter = document.querySelector('#login-twitter');
 const username = document.querySelector("#text-white");
 const forgotPassword = document.querySelector('#forgot-Password');
+const loginAnonymous = document.querySelector('#login-anonymous');
+const displayLeft = document.querySelector('#display-left');
+const displayRight = document.querySelector('#display-right');
+const leftContainer = document.querySelector('#left-container');
+const rightContainer = document.querySelector('#right-container');
+let auxDisplayContainer = 0;
+
+displayOneContainer = () => {
+  displayLeft.addEventListener('click', () => {
+    if (auxDisplayContainer === 0) {
+      leftContainer.style.display = 'flex';
+      rightContainer.style.display = 'none';
+      auxDisplayContainer = 1;
+    } else {
+      leftContainer.style.display = 'none';
+      rightContainer.style.display = 'flex';
+      auxDisplayContainer = 0;
+    }
+  })
+  displayRight.addEventListener('click', () => {
+    if (auxDisplayContainer === 0) {
+      leftContainer.style.display = 'flex';
+      rightContainer.style.display = 'none';
+      auxDisplayContainer = 1;
+    } else {
+      leftContainer.style.display = 'none';
+      rightContainer.style.display = 'flex';
+      auxDisplayContainer = 0;
+    }
+  })
+}
+const widthWindow = window.matchMedia("(min-width: 768px)");
+displayContainers = (x) => {
+  if (x.matches) { // If media query matches
+    leftContainer.style.display = 'flex';
+    rightContainer.style.display = 'flex';
+  } else {
+    leftContainer.style.display = 'none';
+    displayOneContainer();
+  }
+}
+displayContainers(widthWindow) // Call listener function at run time
+widthWindow.addListener(displayContainers)
+
 window.onload = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
@@ -44,7 +88,6 @@ loginTwitter.addEventListener('click', () => {
   loginWithTwitter();
 });
 
-const loginAnonymous = document.querySelector('#login-anonymous');
 loginAnonymous.addEventListener('click', () => {
   loginWithAnonymous();
 })

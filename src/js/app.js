@@ -16,10 +16,10 @@ window.createUser = (email, password, repeatPassword, cb) => {
   }
 }
 
-window.signInUser = (email, password) => {
+window.signInUser = (email, password) => {  
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-      window.location.assign('wall.html')
-    })
+    window.location.assign('wall.html')
+  })
     .catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -35,7 +35,7 @@ window.signInUser = (email, password) => {
 
 window.resetPassword = (email, password) => {
   firebase.auth().sendPasswordResetEmail(
-      getEmail.value)
+    getEmail.value)
     .then(function () {
       firebase.auth.EmailAuthProvider.credential(email, password);
       alert("Password Reset Email Sent")
@@ -98,12 +98,16 @@ window.writeUserData = (userId, name, email, imageUrl) => {
   });
 };
 
-window.writeNewPost = (uid, body, countlike, userName) => {
+window.writeNewPost = (uid, userName, body, imageName, imageUrl, privacy, countlike) => {
   // A post entry.
   var postData = {
+    uid: uid,
+    userName: userName,
     body: body,
+    imageName: imageName,
+    imageUrl: imageUrl,
+    privacy: privacy,
     countlike: countlike,
-    userName: userName
   };
 
   // Get a key for a new Post.
@@ -118,11 +122,31 @@ window.writeNewPost = (uid, body, countlike, userName) => {
   return newPostKey;
 };
 
+window.updatePostUser = (uid, userName, body, imageName, imageUrl, privacy, countlike, postId) => {
+  const newPost = {
+    uid: uid,
+    userName: userName,
+    body: body,
+    imageName: imageName,
+    imageUrl: imageUrl,
+    privacy: privacy,
+    countlike: countlike,
+  };
+
+  const updatesUser = {};
+  const updatesPost = {};
+
+  updatesUser['/user-posts/' + uid + '/' + postId] = newPost;
+  updatesPost['/posts/' + postId] = newPost;
+  firebase.database().ref().update(updatesUser);
+  firebase.database().ref().update(updatesPost);
+}
+
 window.loginWithAnonymous = () => {
-  firebase.auth().signInAnonymously().then(function (result){
+  firebase.auth().signInAnonymously().then(function (result) {
     console.log('hola')
     window.location.assign('wall.html')
-  }).catch(function(error) {
+  }).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
