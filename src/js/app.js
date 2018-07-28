@@ -1,30 +1,37 @@
+<<<<<<< HEAD
+window.createUser = (email, password, repeatPassword, cb) => {
+  if (password === repeatPassword) {
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((user) => {
+        cb(null, user);
+=======
 window.createUser = (email, password, repeatPassword) => {
   if (password === repeatPassword) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(() => {
         window.location.assign('index.html')
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
       })
       .catch(function (error) {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        if (errorCode == 'auth/weak-password') {
-          alert('The password is too weak.');
-        } else {
-          alert(errorMessage);
-        }
+        cb(error)
         console.log(error);
       });
   } else {
     console.log('Your password doesnt mach');
-    alert('Your password doesnt mach');
+    cb({ code: 'auth/password-mismatch' })
   }
 };
 
 window.signInUser = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+<<<<<<< HEAD
       window.location.assign('main.html')
     })
+=======
+    window.location.assign('wall.html')
+  })
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
     .catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -57,6 +64,7 @@ window.resetPassword = (email, password) => {
       console.log(error);
     });
 };
+<<<<<<< HEAD
 window.writeUserData = (userId, name, email, imageUrl) => {
   firebase.database().ref('users/' + userId).set({
     username: name,
@@ -64,6 +72,8 @@ window.writeUserData = (userId, name, email, imageUrl) => {
     profile_picture : imageUrl
   });
 };
+=======
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
 window.loginWithGoogle = () => {
   // Using a popup.
   var provider = new firebase.auth.GoogleAuthProvider();
@@ -72,7 +82,11 @@ window.loginWithGoogle = () => {
   firebase.auth().signInWithPopup(provider).then(function (result) {
     var user = result.user;
     writeUserData(user.uid, user.displayName, user.email, user.photoURL);
+<<<<<<< HEAD
     window.location.assign('main.html')
+=======
+    window.location.assign('wall.html')
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
   });
 };
 
@@ -85,7 +99,7 @@ window.loginWithFacebook = () => {
     var token = result.provider.accessToken;
     // The signed-in user info.
     var user = result.user;
-    window.location.assign('main.html')
+    window.location.assign('wall.html')
   });
 };
 
@@ -98,10 +112,11 @@ window.loginWithTwitter = () => {
     var secret = result.provider.secret;
     // The signed-in user info.
     var user = result.user;
-    window.location.assign('main.html')
+    window.location.assign('wall.html')
   });
 };
 
+<<<<<<< HEAD
 
 window.writeUserData = (userId, name, email, imageUrl) => {
   firebase.database().ref('users/' + userId).set({
@@ -168,3 +183,64 @@ window.writeNewPost = (uid, body,countlike) => {
   // ...
 }); */
 // }
+=======
+window.writeUserData = (userId, name, email, imageUrl) => {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture: imageUrl
+  });
+};
+
+window.writeNewPost = (uid, userName, body, privacy, countlike) => {
+  // A post entry.
+  var postData = {
+    uid: uid,
+    userName: userName,
+    body: body,
+    privacy: privacy,
+    countlike: countlike,
+  };
+
+  // Get a key for a new Post.
+  var newPostKey = firebase.database().ref().child('posts').push().key;
+
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  updates['/posts/' + newPostKey] = postData;
+  updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+
+  firebase.database().ref().update(updates);
+  return newPostKey;
+};
+
+window.updatePostUser = (uid, userName, body, privacy, countlike, postId) => {
+  const newPost = {
+    uid: uid,
+    userName: userName,
+    body: body,
+    privacy: privacy,
+    countlike: countlike,
+  };
+
+  const updatesUser = {};
+  const updatesPost = {};
+
+  updatesUser['/user-posts/' + uid + '/' + postId] = newPost;
+  updatesPost['/posts/' + postId] = newPost;
+  firebase.database().ref().update(updatesUser);
+  firebase.database().ref().update(updatesPost);
+}
+
+window.loginWithAnonymous = () => {
+  firebase.auth().signInAnonymously().then(function (result) {
+    console.log('hola')
+    window.location.assign('wall.html')
+  }).catch(function (error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
+}
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
