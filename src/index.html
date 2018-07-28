@@ -26,14 +26,22 @@
 <body>
 
   <div class="limiter">
-    <div class="responsive-desktop">
-      <div class="left">
-        <div class="container-description">
-          <img src="img/logo.png" alt="" class="login-form-title-left p-b-49">
-
-          <div class="paragraph">
-            <p>Education is the most powerful weapon which you can use to change the world.</p>
-            <p class="text-right">-Nelson Mandela</p>
+    <i class="fas fa-angle-double-left fas-left" id="display-left"></i>
+    <div class="left" id="left-container">
+      <div class="container-description">
+        <img src="img/logo.png" alt="" class="login-form-title-left p-b-49">
+        <!-- <span class="login-form-title-left p-b-49">
+          BRAINNET
+        </span> -->
+        <div class="paragraph">
+          <p>Education is the most powerful weapon which you can use to change the world.</p>
+          <p class="text-right">-Nelson Mandela</p>
+        </div>
+        <div class="signin-anonymous">
+          <div class="txt1 text-center p-t-34 p-b-10 login-anonymous-text">
+            <span>
+              Do you wanna try?
+            </span>
           </div>
           <div class="signin-anonymous">
             <div class="txt1 text-center p-t-34 p-b-10 login-anonymous-text">
@@ -49,11 +57,25 @@
           </div>
         </div>
       </div>
-      <div class="right">
-        <div class="container-login">
-          <div class="wrap-login p-l-55 p-r-55 p-t-24 p-b-24">
-            <form class="login-form validate-form">
-              <img src="img/logo-blanco.png" alt="" class="login-form-title p-b-29 logo-unshow">
+    </div>
+    <div class="right" id="right-container">
+      <div class="container-login">
+        <div class="wrap-login p-l-55 p-r-55 p-t-24 p-b-24">
+          <form class="login-form validate-form">
+            <img src="img/logo-blanco.png" alt="" class="login-form-title p-b-29">
+            <!-- <span class="login-form-title p-b-29">
+              BYEDOUBT
+            </span> -->
+            <div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
+              <span class="label-input100">Email</span>
+              <input class="input100" type="email" name="username" placeholder="Type your email" id="email">
+              <span class="focus-input100" data-symbol="&#xf206;"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Password is required">
+              <span class="label-input100">Password</span>
+              <input class="input100" type="password" name="pass" placeholder="Type your password" id="password">
+              <span class="focus-input100" data-symbol="&#xf190;"></span>
+            </div>
 
               <div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
                 <span class="label-input100">Email</span>
@@ -221,7 +243,7 @@
         </a>
       </div>
     </div>
-
+    <i class="fas fa-angle-double-right fas-right" id="display-right"></i>
   </div>
 
 
