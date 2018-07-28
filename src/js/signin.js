@@ -45,7 +45,7 @@ displayContainers = (x) => {
     rightContainer.style.display = 'flex';
   } else {
     leftContainer.style.display = 'none';
-    displayContainers();
+    displayOneContainer();
   }
 }
 displayContainers(widthWindow) // Call listener function at run time
