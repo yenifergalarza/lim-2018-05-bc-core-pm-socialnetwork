@@ -49,11 +49,11 @@
   #page-contents {
     padding: 30px 0 50px;
   }
-  .select-style{
+  .select-style {
     padding: 4px;
     border: none;
-    background: #FFC107;
-    color: white;
+    background: #27a9e19d;
+    color: #fff;
     font-weight: bold;
     font-size: 12px;
     border-radius: 5px;
@@ -190,7 +190,8 @@
     padding: 1px 15px;
   }
   .navbar-brand .logo {
-    height: 48px;
+    height: 40px;
+    margin: 5px auto;
   }
   .slide-bar-left {
     display: none;

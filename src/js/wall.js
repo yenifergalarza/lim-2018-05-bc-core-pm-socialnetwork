@@ -116,10 +116,14 @@ const publishPost = (imageName, imageUrl) => {
   buttonPublish.addEventListener('click', () => {
     if (postEntry.value !== '') {
       const userId = firebase.auth().currentUser.uid;
-      const userName = firebase.auth().currentUser.displayName;
+      const userName = firebase.auth().currentUser;
       const privacy = gettingPrivacy.value;
+      if (userName.displayName === null) {
+        writeNewPost(userId, userName.email, postEntry.value, imageName, imageUrl, privacy, count_click);
+      } else {
+        writeNewPost(userId, userName.displayName, postEntry.value, imageName, imageUrl, privacy, count_click);
+      }
       // writeNewPost(userId, userName, postEntry.value, '', '',privacy, count_click);
-      writeNewPost(userId, userName, postEntry.value, imageName, imageUrl, privacy, count_click);
       postEntry.value = '';
       reload_page();
     } else {

@@ -207,7 +207,7 @@
     font-family: Poppins-Bold;
     font-size: 39px;
     color: #cecece;
-    line-height: 1.2;
+    width: 90%;
     text-align: center;
   }
 
@@ -354,6 +354,7 @@
 
   .login-form-btn {
     font-family: Poppins-Medium;
+    background: #FFC107;
     font-size: 16px;
     color: #fff ;
     line-height: 1.2;
@@ -481,7 +482,7 @@
     height: 100vh;
   }
   .login-form-title-left {
-    margin-top: 30%;
+    margin-top: 15%;
     display: block;
     font-family: Poppins-Bold;
     font-size: 59px;
@@ -499,6 +500,9 @@
   .login-anonymous-text{
     font-size: 18px;
     color: #757575;
+  }
+  .btn-anonymous{
+    width: 300px;
   }
   .right{
     width: 50%;
