@@ -49,6 +49,15 @@
   #page-contents {
     padding: 30px 0 50px;
   }
+  .select-style {
+    padding: 4px;
+    border: none;
+    background: #27a9e19d;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 5px;
+  }
   .btn {
     background: #FFC107;
     padding: 5px 20px;
@@ -60,7 +69,7 @@
     font-weight: 600;
     outline: none;
   }
-  .btn:hover{
+  .btn:hover {
     background: #FFECB3;
   }
   .btn::before {
@@ -95,6 +104,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
+    resize: none;
   }
   #header {
     min-height: 50px;
@@ -103,7 +113,7 @@
     background: #fff;
   }
   .menu {
-    background: #0097A7; 
+    background: #0097A7;
     border: none;
     border-radius: 0;
     margin-bottom: 0;
@@ -180,7 +190,8 @@
     padding: 1px 15px;
   }
   .navbar-brand .logo {
-    height: 48px;
+    height: 40px;
+    margin: 5px auto;
   }
   .slide-bar-left {
     display: none;
@@ -264,16 +275,26 @@
     margin-bottom: 20px;
     border-bottom: 1px solid #f1f2f2;
   }
-  .create-post .privacy-new-post{
+  .create-post .privacy-new-post {
     margin-bottom: 10px;
+  }
+  .create-post #upload-image {
+    display: none;
+    margin-left: 60px;
   }
   .create-post .form-group {
     width: 100%;
     margin-bottom: 0;
     display: inline-flex;
   }
+  .create-post #textarea-post {
+    display: none;
+  }
   .create-post .form-group img.profile-photo-md {
     margin-right: 10px;
+  }
+  .create-post .form-control {
+    resize: none;
   }
   .create-post .form-control::placeholder {
     color: #767676;
@@ -290,38 +311,56 @@
   }
   .create-post .tools ul.publishing-tools li a {
     color: #6d6e71;
-    font-size: 18px;
+    font-size: 22px;
   }
   .create-post .tools ul.publishing-tools li a:hover {
     color: #27aae1;
   }
-
-  .post-icon{
-    margin: 10px;
-    cursor: pointer;
+  .create-post input {
+    display: inline-block;
   }
-
-  .contenidoPost{
-
-    margin: 25px 2px;
+  .create-post #select-option {
+    height: 30px;
+    margin: 10px 0;
+    font-size: 20px;
+  }
+  .post-content {
+    background: #f8f8f8;
+    border-radius: 4px;
+    width: 100%;
+    border: 1px solid #f1f2f2;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+  }
+  .post-content img.post-image,
+  video.post-video {
+    width: 100%;
+    height: auto;
+  }
+  .post-content .post-container:disabled {
+    cursor: default;
+    border: none;
+    background: inherit;
+    box-shadow: none;
   }
   .post-icon {
     /* display: none; */
     margin: 10px;
     cursor: pointer;
   }
-
   .post-published {
     margin: 40px 0;
   }
-  .privacy{
+  .privacy {
     display: none;
   }
   .tools-post {
     display: none;
     margin: 10px 0;
   }
-  .user-name-container{
+  .user-name-container {
     display: inline-block;
   }
   .privacy {
@@ -329,7 +368,11 @@
     margin-top: 10px;
     margin-bottom: 10px;
   }
-
+  #uploader {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 480px) {
@@ -339,39 +382,15 @@
 }
 
 @media only screen and (min-width: 992px) {
-
-  .slide-bar-left{
-    display: block;
-    position: fixed;
-  }
-  .wall{
-
   .slide-bar-left {
     display: block;
-
-  }
-}
-
     position: fixed;
   }
   .wall {
-
     margin-left: 300px;
   }
   .col-md-3 {
     width: 18%;
-
-}
-}
-/* @media only screen and (min-width: 1024px) {
-
-} */
-
-/* Estilos para los posts */
-#newPost{
-  border: 1px solid;
-}
-
   }
 }
 
@@ -380,4 +399,3 @@
 #newPost {
   border: 1px solid;
 }
-
