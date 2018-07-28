@@ -27,9 +27,6 @@
 }
 
 @media only screen and (min-width: 320px) {
-  .responsive-desktop{
-    display: none;
-  }
   /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
   * {
@@ -215,7 +212,6 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
-    margin: 0 auto;
   }
   .wrap-login {
     width: auto;
@@ -553,6 +549,9 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  /* .container-login{
+    height: auto;
+  } */
   .paragraph p {
     font-size: 26px;
   }
