@@ -9,7 +9,6 @@
     "pretest": "npm run eslint && npm run htmlhint",
     "test-browser": "opener ./test/index.html",
     "test-node": "nyc mocha ./test/headless.js && nyc report --reporter=html",
-<<<<<<< HEAD
     "test": "npm run test-node && npm run test-browser",
     "tests": "jest"
   },
@@ -17,21 +16,12 @@
     "chai": "^4.1.2",
     "eslint": "^4.19.1",
     "firebase-admin": "^5.13.1",
-=======
-    "test": "npm run test-node && npm run test-browser"
-  },
-  "dependencies": {
-    "autosize": "^4.0.2",
-    "chai": "^4.1.2",
-    "eslint": "^4.19.1",
->>>>>>> 343cb40f1e25dcdf767d8a8388f8a6e64b938390
     "htmlhint": "^0.9.13",
     "http": "0.0.0",
     "jquery": "^3.3.1",
     "mocha": "^5.1.1",
     "nyc": "^11.7.1",
     "opener": "^1.4.3",
-<<<<<<< HEAD
     "request": "^2.87.0",
     "server": "^1.0.18"
   },
@@ -44,11 +34,5 @@
   "jest": {
     "verbose": true,
     "testURL": "http://localhost/"
-=======
-    "server": "^1.0.18"
-  },
-  "devDependencies": {
-    "firebase-mock": "^2.2.4"
->>>>>>> 343cb40f1e25dcdf767d8a8388f8a6e64b938390
   }
 }
