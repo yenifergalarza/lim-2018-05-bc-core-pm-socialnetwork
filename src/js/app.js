@@ -21,8 +21,14 @@ window.signInUser = (email, password) => {
     window.location.assign('wall.html')
   })
     .catch(function (error) {
-      cb(error)
       // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      if (errorCode == 'auth/weak-password') {
+        alert('The password is too weak.');
+      } else {
+        alert(errorMessage);
+      }
       console.log(error);
     });
 };
@@ -92,22 +98,14 @@ window.writeUserData = (userId, name, email, imageUrl) => {
   });
 };
 
-<<<<<<< HEAD
 window.writeNewPost = (uid, userName, body, imageName, imageUrl, privacy, countlike) => {
-=======
-window.writeNewPost = (uid, userName, body,date, privacy, countlike) => {
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
   // A post entry.
   var postData = {
     uid: uid,
     userName: userName,
     body: body,
-<<<<<<< HEAD
     imageName: imageName,
     imageUrl: imageUrl,
-=======
-    date: date,
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
     privacy: privacy,
     countlike: countlike,
   };
@@ -124,20 +122,13 @@ window.writeNewPost = (uid, userName, body,date, privacy, countlike) => {
   return newPostKey;
 };
 
-<<<<<<< HEAD
 window.updatePostUser = (uid, userName, body, imageName, imageUrl, privacy, countlike, postId) => {
-=======
-window.updatePostUser = (uid, userName, body, privacy, countlike, postId) => {
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
   const newPost = {
     uid: uid,
     userName: userName,
     body: body,
-<<<<<<< HEAD
     imageName: imageName,
     imageUrl: imageUrl,
-=======
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
     privacy: privacy,
     countlike: countlike,
   };
