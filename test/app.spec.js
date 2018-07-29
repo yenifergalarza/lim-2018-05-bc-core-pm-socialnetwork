@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 const admin = require('firebase-admin');
 const serviceAccount = require('./serviceAccountKey.json');
@@ -7,6 +8,33 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: 'https://my-social-red.firebaseio.com'
 });
+=======
+/* describe('auth', () => {
+  describe('createUser function', () => {
+    it('createUser is a function', () => {
+      assert.isFunction(createUser);
+    });
+    it('createUser crea usuario', () => {
+      createUser('usuario1', '12345678', '12345678', (error, response) => {
+        console.log(error,response);
+        assert.equal(response.user.user.email, 'usrio1');
+      })
+
+      // console.log(createUser('usuario1', '12345678', '12345678', ("No es un ", response)))
+    });
+  });
+
+  describe('signInUser function', ()=>{
+    it('signInUser is a function' , ()=>{
+      assert.isFunction(signInUser)
+    });
+
+    it('deberia retornar undefined cuando no se le pase el useremail', () => {
+    });
+  })
+})
+ */
+>>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
 
 describe('auth', () => {
   describe('createUser', () => {
@@ -18,9 +46,16 @@ describe('auth', () => {
         assert.equal(error.code, 'auth/password-mismatch');
       })
     });
+    it('createUser necesita password iguales', () => {
+      createUser('', '123', '123', (error) => {
+        console.log(error);
+        assert.equal(error.code, 'auth/password-mismatch');
+      })
+    });
     it('createUser crea usuario', () => {
       createUser('usuario1', '12345678', '12345678', (error, response) => {
-        assert.equal(response.username, 'usuario1');
+        console.log('fail', response);
+        assert.equal(response.username, 'usario1');
       })
     });
     it('createUser no crea usuario con password cortos', () => {
@@ -51,6 +86,7 @@ describe('auth', () => {
       })
     })
   })
+<<<<<<< HEAD
   describe('resetPassword', () => {
     it('createUser is function', () => {
       assert.isFunction(resetPassword)
@@ -97,4 +133,6 @@ describe('auth', () => {
     
   })
   
+=======
+>>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
 });

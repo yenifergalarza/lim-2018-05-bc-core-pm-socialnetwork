@@ -52,7 +52,11 @@
     -moz-transition: all 0.4s;
   }
   a:focus {
+<<<<<<< HEAD
     outline: none;
+=======
+    outline: none ;
+>>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
   }
   a:hover {
     text-decoration: none;
@@ -360,7 +364,7 @@
     font-family: Poppins-Medium;
     background: #FFC107;
     font-size: 16px;
-    color: #fff;
+    color: #fff ;
     line-height: 1.2;
     text-transform: uppercase;
     display: -webkit-box;
@@ -375,10 +379,18 @@
     height: 35px;
     /* height: 50px; */
   }
+<<<<<<< HEAD
   .login-form-btn:hover {
     background: #FFECB3;
     color: #212121;
   }
+=======
+  .login-form-btn:hover{
+    background: #FFECB3;
+    color: #212121;
+  }
+
+>>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
   .wrap-login-form-btn:hover .login-form-bgbtn {
     left: 0;
   }
@@ -504,18 +516,38 @@
   }
   .left {
     display: block;
+<<<<<<< HEAD
     width: 50%;
+=======
+    font-family: Poppins-Bold;
+    font-size: 59px;
+    color: #212121;
+    line-height: 1.2;
+>>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
   }
   .container-description {
     margin: 10px 0 0 20%;
   }
+<<<<<<< HEAD
   .paragraph p {
+=======
+  .paragraph p{
+    color: #212121;
+>>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
     font-size: 24px;
   }
+<<<<<<< HEAD
   .btn-anonymous {
     width: 300px;
   }
   .right {
+=======
+  .login-anonymous-text{
+    font-size: 18px;
+    color: #757575;
+  }
+  .right{
+>>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
     width: 50%;
     display: flex;
     justify-content: center;

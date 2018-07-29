@@ -28,11 +28,16 @@
   "devDependencies": {
     "@types/jest": "^23.3.0",
     "firebase-mock": "^2.2.4",
+<<<<<<< HEAD
     "jest": "^23.4.2",
     "ts-jest": "^23.0.1"
   },
   "jest": {
     "verbose": true,
     "testURL": "http://localhost/"
+=======
+    "jest": "^23.4.1",
+    "ts-jest": "^23.0.1"
+>>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
   }
 }
