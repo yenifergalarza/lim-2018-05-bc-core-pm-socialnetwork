@@ -18,6 +18,7 @@ window.onload =()=>{
 =======
 const loginAnonymous = document.querySelector('#login-anonymous');
 
+
 window.onload = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
