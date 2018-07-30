@@ -373,6 +373,125 @@
     appearance: none;
     width: 100%;
   }
+  .timeline-cover{
+    background: url("../img/background.jpeg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 360px;
+    border-radius: 0 0 4px 4px;
+    position: relative;
+  }
+  
+  .timeline #page-contents{margin-top: 185px !important;}
+  
+  .timeline-cover .timeline-nav-bar{
+    background: rgba(0,0,0, .7);
+    width: 100%;
+    position: absolute;
+    bottom: 25px;
+  }
+  
+  .timeline-cover .timeline-nav-bar .profile-info{
+    position: absolute;
+    text-align: center;
+    padding: 0 20px;
+    top: -100px;
+    z-index: 999;
+  }
+  
+  .timeline-cover .timeline-nav-bar .profile-info img.profile-photo{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 10px solid #fff;
+  }
+  
+  .timeline-cover .timeline-nav-bar ul.profile-menu{
+    margin: 0;
+    display: table;
+  }
+  
+  .timeline-cover .timeline-nav-bar .profile-menu li{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 15px 0;
+  }
+  
+  .timeline-cover .timeline-nav-bar .profile-menu li a{
+    color: #fff;
+    padding: 15px;
+    text-decoration: none;
+  }
+  
+  .timeline-cover .timeline-nav-bar .profile-menu li a.active{
+    color: #27aae1;
+  }
+  
+  .timeline-cover .timeline-nav-bar .profile-menu li a:hover{
+    color: #27aae1;
+  }
+  
+  .timeline-cover .timeline-nav-bar ul.follow-me{
+    margin: 0;
+    position: absolute;
+    right: 15px;
+    top: 0;
+  }
+  
+  .timeline-cover .timeline-nav-bar .follow-me li{
+    padding: 8px 15px;
+    color: #fff;
+  }
+  
+  /*Timeline Menu for Small Screens*/
+  
+  .timeline-cover .navbar-mobile{
+    bottom: -185px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+  }
+  
+  .timeline-cover .navbar-mobile .profile-info img.profile-photo{
+    border: 10px solid #fff;
+    border-radius: 50%;
+    height: 200px;
+    margin: auto;
+    width: 200px;
+  }
+  
+  .timeline-cover .navbar-mobile .mobile-menu ul{
+    margin: 0 0 20px;
+  }
+  
+  .timeline-cover .navbar-mobile .mobile-menu ul li{
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+  }
+  
+  .timeline-cover .navbar-mobile .mobile-menu ul li::after{
+    content: "";
+    height: 20px;
+    background: none;
+    border-right: 1px solid #f1f2f2;
+    position: absolute;
+    right: 0;
+  }
+  
+  .timeline-cover .navbar-mobile .mobile-menu ul li:nth-child(4)::after{
+    content: none;
+  }
+  
+  .timeline-cover .navbar-mobile .mobile-menu ul li a{
+    color: #4d4d4d;
+  }
+  
+  .timeline-cover .navbar-mobile .mobile-menu ul li a.active{
+    color: #27aae1;
+  }
+
 }
 
 @media only screen and (min-width: 480px) {
@@ -392,6 +511,7 @@
   .col-md-3 {
     width: 18%;
   }
+  .timeline #page-contents{margin-top: 0px !important;}
 }
 
 /* Estilos para los posts */

@@ -104,6 +104,7 @@ window.writeNewPost = (uid, userName, body, imageName, imageUrl, privacy, countl
     imageUrl: imageUrl,
     privacy: privacy,
     countlike: countlike,
+    timestamp: firebase.database.ServerValue.TIMESTAMP
   };
 
   // Get a key for a new Post.
@@ -148,4 +149,12 @@ window.loginWithAnonymous = () => {
     var errorMessage = error.message;
     // ...
   });
+}
+
+window.deletePost = (postId, userId) =>{
+    firebase.database().ref().child('posts').child(postId).remove();
+    firebase.database().ref().child('user-posts').child(userId).child(postId).remove();
+    while (posts.firstChild) posts.removeChild(posts.firstChild);
+    
+
 }

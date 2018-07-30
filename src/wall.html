@@ -49,10 +49,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right main-menu">
             <li class="dropdown">
-              <a href="main.html">Home</a>
+              <a href="wall.html">Home</a>
             </li>
             <li class="dropdown">
-              <a href="#">Profile</a>
+              <a href="profile.html" id="user-profile">Profile</a>
             </li>
             <li class="dropdown">
               <a href="#" id="log-out">Sign out</a>
@@ -76,72 +76,28 @@
       <div class="row">
         <div class="col-md-3 static slide-bar-left">
           <div class="profile-card" id="profile">
-            <!--  <img src="img/users/user-1.jpg" alt="user" class="profile-photo" />
-            <h5>
-              <a href="timeline.html" id="name"class="text-white">Valeria Biaggi</a>
-            </h5> -->
-            <!-- <a href="#" class="text-white">
-              <i class="ion ion-android-person-add"></i> 1,299 followers</a> -->
           </div>
           <!--profile card ends-->
           <ul class="nav-news-feed">
             <li>
               <i class="icon ion-ios-paper"></i>
               <div>
-                <a href="#">Newsfeed</a>
+                <a href="wall.html">Newsfeed</a>
               </div>
             </li>
-            <!-- <li>
-              <i class="icon ion-ios-people"></i>
-              <div>
-                <a href="#">People Nearby</a>
-              </div>
-            </li> -->
             <li>
               <i class="icon ion-md-people"></i>
               <div>
                 <a href="#">Friends</a>
               </div>
             </li>
-            <!-- <li>
-              <i class="icon ion-md-chatboxes"></i>
-              <div>
-                <a href="#">Messages</a>
-              </div>
-            </li> -->
-            <li>
-              <i class="icon ion-md-images"></i>
-              <div>
-                <a href="#">Images</a>
-              </div>
-            </li>
-            <!-- <li>
-              <i class="icon ion-ios-videocam"></i>
-              <div>
-                <a href="#">Videos</a>
-              </div>
-            </li> -->
           </ul>
-          <!--chat block ends-->
         </div>
 
         <div class="col-md-7 wall">
-
-          <!-- Post Create Box
-              ================================================= -->
           <div class="create-post">
             <div class="row">
               <div>
-                <!-- <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    Select privacy
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">public</a>
-                    <a class="dropdown-item" href="#">private</a>
-                  </div>
-                </div> -->
                 <select name="privacy" id="privacyNewPost" class="pull-right privacy-new-post select-style">
                   <option value="public">public</option>
                   <option value="private">private</option>
@@ -153,7 +109,7 @@
                 </div>
                 <div id="upload-image" activated="desactivated">
                   <progress value="0" max="100" id="uploader"></progress>
-                  <input type="file" name="file" value="" id="set-image" accept="image/*">
+                  <input type="file" name="file" value="" id="set-file">
                 </div>
               </div>
               <div>
@@ -170,13 +126,8 @@
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="#" id="video-post">
                         <i class="ion-ios-videocam"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="ion-md-map"></i>
                       </a>
                     </li>
                   </ul>
@@ -210,6 +161,8 @@
   <script src="js/fireBase.js"></script>
   <script src="js/app.js"></script>
   <script src="js/wall.js"></script>
+  <script src="js/posts.js"></script>
+
 </body>
 
 </html>

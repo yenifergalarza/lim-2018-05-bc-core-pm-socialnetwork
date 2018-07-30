@@ -1,31 +1,3 @@
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
-@font-face {
-  font-family: Poppins-Regular;
-  src: url('../fonts/poppins/Poppins-Regular.ttf');
-}
-
-@font-face {
-  font-family: Poppins-Medium;
-  src: url('../fonts/poppins/Poppins-Medium.ttf');
-}
-
-@font-face {
-  font-family: Poppins-Bold;
-  src: url('../fonts/poppins/Poppins-Bold.ttf');
-}
-
-@font-face {
-  font-family: Poppins-SemiBold;
-  src: url('../fonts/poppins/Poppins-SemiBold.ttf');
-}
-
-@font-face {
-  font-family: "Copperplate Gotic";
-  src: url("../fonts/copperplategothiclight.ttf");
-}
-
 @media only screen and (min-width: 320px) {
   /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
@@ -37,11 +9,10 @@
   body,
   html {
     height: 100%;
-    font-family: Poppins-Regular, sans-serif;
+    font-family: 'Raleway', sans-serif;
   }
   /*---------------------------------------------*/
   a {
-    font-family: Poppins-Regular;
     font-size: 14px;
     line-height: 1.7;
     color: #9b9b9b;
@@ -52,11 +23,7 @@
     -moz-transition: all 0.4s;
   }
   a:focus {
-<<<<<<< HEAD
-    outline: none;
-=======
     outline: none ;
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
   }
   a:hover {
     text-decoration: none;
@@ -72,7 +39,6 @@
     margin: 0px;
   }
   p {
-    font-family: Poppins-Regular;
     font-size: 14px;
     line-height: 1.7;
     color: #cecece;
@@ -170,13 +136,11 @@
     right: 0;
   }
   .txt1 {
-    font-family: Poppins-Regular;
     font-size: 14px;
     line-height: 1.5;
     color: #9e9e9e;
   }
   .txt2 {
-    font-family: Poppins-Regular;
     font-size: 14px;
     line-height: 1.5;
     color: #cecece;
@@ -234,7 +198,7 @@
   }
   .login-form-title {
     display: block;
-    font-family: Poppins-Bold;
+    font-weight: bolder;
     font-size: 39px;
     color: #cecece;
     width: 90%;
@@ -248,14 +212,13 @@
     border-bottom: 2px solid #d9d9d9;
   }
   .label-input100 {
-    font-family: Poppins-Regular;
     font-size: 14px;
     color: #cecece;
     line-height: 1.5;
     padding-left: 7px;
   }
   .input100 {
-    font-family: Poppins-Medium;
+    font-weight: bold;
     font-size: 12px;
     /* font-size: 16px; */
     color: #cecece;
@@ -361,7 +324,7 @@
     transition: all 0.4s;
   }
   .login-form-btn {
-    font-family: Poppins-Medium;
+    font-weight: bold;
     background: #FFC107;
     font-size: 16px;
     color: #fff ;
@@ -379,18 +342,11 @@
     height: 35px;
     /* height: 50px; */
   }
-<<<<<<< HEAD
-  .login-form-btn:hover {
-    background: #FFECB3;
-    color: #212121;
-  }
-=======
   .login-form-btn:hover{
     background: #FFECB3;
     color: #212121;
   }
 
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
   .wrap-login-form-btn:hover .login-form-bgbtn {
     left: 0;
   }
@@ -415,7 +371,6 @@
     transform: translateY(50%);
     right: 2px;
     pointer-events: none;
-    font-family: Poppins-Regular;
     color: #c80000;
     font-size: 13px;
     line-height: 1.4;
@@ -482,7 +437,7 @@
   .login-form-title-left {
     margin-top: 15%;
     display: block;
-    font-family: Poppins-Bold;
+    font-weight: bolder;
     width: 100%;
     color: #212121;
     line-height: 1.2;
@@ -516,42 +471,34 @@
   }
   .left {
     display: block;
-<<<<<<< HEAD
-    width: 50%;
-=======
     font-family: Poppins-Bold;
     font-size: 59px;
     color: #212121;
     line-height: 1.2;
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
   }
   .container-description {
     margin: 10px 0 0 20%;
   }
-<<<<<<< HEAD
-  .paragraph p {
-=======
+
   .paragraph p{
     color: #212121;
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
-    font-size: 24px;
+    font-size: 20px;
   }
-<<<<<<< HEAD
-  .btn-anonymous {
-    width: 300px;
-  }
-  .right {
-=======
   .login-anonymous-text{
     font-size: 18px;
     color: #757575;
   }
   .right{
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .wrap-login{
+    width: 320px;
+  }
+  .login-form-title-left{
+    width: 90%;
   }
   .limiter {
     justify-content: right;
