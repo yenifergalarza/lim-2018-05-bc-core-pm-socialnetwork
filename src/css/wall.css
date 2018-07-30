@@ -374,7 +374,7 @@
     width: 100%;
   }
   .timeline-cover{
-    background: url("../img/background.jpg") no-repeat;
+    background: url("../img/background.jpeg") no-repeat;
     background-position: center;
     background-size: cover;
     min-height: 360px;

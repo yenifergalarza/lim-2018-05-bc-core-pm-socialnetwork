@@ -159,3 +159,11 @@ window.loginWithAnonymous = () => {
     // ...
   });
 }
+
+window.deletePost = (postId, userId) =>{
+    firebase.database().ref().child('posts').child(postId).remove();
+    firebase.database().ref().child('user-posts').child(userId).child(postId).remove();
+    while (posts.firstChild) posts.removeChild(posts.firstChild);
+    
+
+}
