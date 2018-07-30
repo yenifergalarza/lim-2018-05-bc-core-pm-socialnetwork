@@ -510,7 +510,7 @@
     margin: 10px 0 0 20%;
   }
   .paragraph p {
-    font-size: 24px;
+    font-size: 20px;
   }
   .btn-anonymous {
     width: 300px;
@@ -520,6 +520,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .wrap-login{
+    width: 320px;
+  }
+  .login-form-title-left{
+    width: 90%;
   }
   .limiter {
     justify-content: right;

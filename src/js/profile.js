@@ -1,3 +1,4 @@
+document.querySelector('#create-post').style.display = 'block';
 document.querySelector('#log-out').addEventListener('click', (e) => {
   firebase.auth().signOut().then(function () {
     if (e.preventDefault) {
@@ -12,12 +13,13 @@ const buttonPublish = document.querySelector('#buttonPublish');
 const postEntry = document.querySelector('#textarea-post');
 const dataBase = document.querySelector('#create-post');
 const posts = document.querySelector('#posts');
-const profile = document.getElementById('profile');
+const profileInfo = document.getElementById('profile-info');
+const profileInfoResponsive = document.getElementById('profile-info-responsive');
 const writingPost = document.querySelector('#publicPost');
 const selectOption = document.querySelector('#select-option');
 const writePost = document.querySelector('#write-post');
-const videoPost = document.querySelector('#video-post');
 const imagePost = document.querySelector('#image-post');
+const videoPost = document.querySelector('#video-post');
 const uploadImage = document.querySelector('#upload-image');
 const uploadingImage = document.querySelector('#uploading-image');
 const uploader = document.querySelector('#uploader');
@@ -43,15 +45,6 @@ uploadPostWithImage = () => {
 }
 
 firebase.auth().onAuthStateChanged(function (user) {
-  if (firebase.auth().currentUser.isAnonymous === true) {
-    if (user) {
-      document.querySelector('#user-profile').style.display='none';
-      const dbRefPost = firebase.database().ref().child('posts');
-      dbRefPost.once('value', postKey => {
-        paintPost(postKey);
-      })
-    }
-  } else {
     writePost.addEventListener('click', () => {
       uploadImage.style.display = 'none';
       uploadImage.setAttribute('activated', 'desactivated')
@@ -66,7 +59,6 @@ firebase.auth().onAuthStateChanged(function (user) {
       selectOption.style.display = 'none';
       postEntry.style.display = 'inline-flex';
       setFile.setAttribute('accept', 'image/*');
-
       uploadPostWithImage();
     })
     videoPost.addEventListener('click', () => {
@@ -75,12 +67,11 @@ firebase.auth().onAuthStateChanged(function (user) {
       selectOption.style.display = 'none';
       postEntry.style.display = 'inline-flex';
       setFile.setAttribute('accept', 'video/*');
-
       uploadPostWithImage();
     })
 
-    document.querySelector('.create-post').style.display = 'block';
-    document.querySelector('.profile-card').style.display = 'block';
+    // document.querySelector('.create-post').style.display = 'block';
+    // document.querySelector('.profile-card').style.display = 'block';
     if (user) {
       if (user.displayName === null) {
         userProfile(user.photoURL, user.email)
@@ -94,8 +85,20 @@ firebase.auth().onAuthStateChanged(function (user) {
         paintPost(postKey, userId);
       })
     }
-  }
+ 
 });
+const userProfile = (userPhoto, userName) => {
+  profileInfo.innerHTML = `
+  <img src="${userPhoto}" id="profile-photo" alt="" class="img-responsive profile-photo" />
+  <h3>${userName}</h3>
+  `;
+  profileInfoResponsive.innerHTML = `
+  <img src="${userPhoto}" id="profile-photo" alt="" class="img-responsive profile-photo" />
+  <h3>${userName}</h3>
+  `;
+  const imgProfile = document.querySelector('#img-profile');
+  imgProfile.setAttribute('src', userPhoto);
+}
 
 const settingImage = () => {
   setFile.addEventListener('change', function (e) {
@@ -147,7 +150,7 @@ const publishPost = (imageName, imageUrl) => {
 const paintPost = (postKey, userId) => {
   postKey.forEach(keys => {
     let postId = keys.key;
-    if (userId === keys.val().uid || keys.val().privacy === 'public') {
+    if (userId === keys.val().uid) {
       createPost(postId, keys, userId);
     }
   })
@@ -331,14 +334,3 @@ const createPost = (postId, keys, userId) => {
     viewToolsPost.style.display = 'block';
   }
 };
-
-const userProfile = (userPhoto, userName) => {
-  profile.innerHTML = `<img src="${userPhoto}" alt="user" class="profile-photo" />
-                        <h5>
-                          <a href="#" id="name" class="text-white">${userName}</a>
-                        </h5>'
-                        <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
-                      `;
-  const imgProfile = document.querySelector('#img-profile');
-  imgProfile.setAttribute('src', userPhoto);
-}
