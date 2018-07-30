@@ -21,7 +21,7 @@ window.createUser = (email, password, repeatPassword) => {
   }
 };
 
-window.signInUser = (email, password) => {
+window.signInUser = (email, password) => {  
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
     window.location.assign('wall.html')
   })
@@ -103,12 +103,14 @@ window.writeUserData = (userId, name, email, imageUrl) => {
   });
 };
 
-window.writeNewPost = (uid, userName, body, privacy, countlike) => {
+window.writeNewPost = (uid, userName, body, imageName, imageUrl, privacy, countlike) => {
   // A post entry.
   var postData = {
     uid: uid,
     userName: userName,
     body: body,
+    imageName: imageName,
+    imageUrl: imageUrl,
     privacy: privacy,
     countlike: countlike,
   };
@@ -125,11 +127,13 @@ window.writeNewPost = (uid, userName, body, privacy, countlike) => {
   return newPostKey;
 };
 
-window.updatePostUser = (uid, userName, body, privacy, countlike, postId) => {
+window.updatePostUser = (uid, userName, body, imageName, imageUrl, privacy, countlike, postId) => {
   const newPost = {
     uid: uid,
     userName: userName,
     body: body,
+    imageName: imageName,
+    imageUrl: imageUrl,
     privacy: privacy,
     countlike: countlike,
   };
