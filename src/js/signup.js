@@ -2,9 +2,9 @@ const signUp = document.querySelector('#sign-up')
 const goLogin = document.querySelector('#go-login')
 
 signUp.addEventListener('click', () => {
-  const getEmail = document.querySelector('#email');
-  const getPassword = document.querySelector('#password');
-  const getRepeatPassword = document.querySelector('#repeat-password');
+  const getEmail = document.querySelector('#email').value;
+  const getPassword = document.querySelector('#password').value;
+  const getRepeatPassword = document.querySelector('#repeat-password').value;
   const callback = (error, response) => {
     if (!error) {
       // window.location.assign('index.html')
@@ -20,7 +20,7 @@ signUp.addEventListener('click', () => {
       }
     }
   }
-   createUser(getEmail.value, getPassword.value, getRepeatPassword.value, callback);
+   createUser(getEmail, getPassword, getRepeatPassword, callback);
 });
 
 goLogin.addEventListener('click', () => {

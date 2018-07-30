@@ -15,24 +15,43 @@
   "dependencies": {
     "chai": "^4.1.2",
     "eslint": "^4.19.1",
-    "firebase-admin": "^5.13.1",
+    "firebase": "^5.3.0",
+    "firebase-admin": "5.4.0",
+    "firebase-functions": "0.7.0",
     "htmlhint": "^0.9.13",
     "http": "0.0.0",
+    "install": "0.12.1",
     "jquery": "^3.3.1",
     "mocha": "^5.1.1",
+    "npm": "6.2.0",
     "nyc": "^11.7.1",
     "opener": "^1.4.3",
     "request": "^2.87.0",
-    "server": "^1.0.18"
+    "server": "^1.0.18",
+    "sinon": "^6.1.4"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.0",
+    "@types/jest": "^23.3.1",
     "firebase-mock": "^2.2.4",
     "jest": "^23.4.2",
-    "ts-jest": "^23.0.1"
+    "ts-jest": "^23.0.1",
+    "webpack": "^4.16.3"
   },
   "jest": {
     "verbose": true,
     "testURL": "http://localhost/"
-  }
+  },
+  "description": "Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes\r sociales han invadido nuestras vidas. Las amamos u odiamos, y muchxs no podemos\r vivir sin ellas.",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NatalyPorras/lim-2018-05-bc-core-pm-socialnetwork.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/NatalyPorras/lim-2018-05-bc-core-pm-socialnetwork/issues"
+  },
+  "homepage": "https://github.com/NatalyPorras/lim-2018-05-bc-core-pm-socialnetwork#readme"
 }

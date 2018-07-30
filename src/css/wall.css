@@ -49,7 +49,6 @@
   #page-contents {
     padding: 30px 0 50px;
   }
-<<<<<<< HEAD
   .select-style {
     padding: 4px;
     border: none;
@@ -59,8 +58,6 @@
     font-size: 12px;
     border-radius: 5px;
   }
-=======
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
   .btn {
     background: #FFC107;
     padding: 5px 20px;
@@ -72,11 +69,7 @@
     font-weight: 600;
     outline: none;
   }
-<<<<<<< HEAD
   .btn:hover {
-=======
-  .btn:hover{
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
     background: #FFECB3;
   }
   .btn::before {
@@ -120,11 +113,7 @@
     background: #fff;
   }
   .menu {
-<<<<<<< HEAD
     background: #0097A7;
-=======
-    background: #0097A7; 
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
     border: none;
     border-radius: 0;
     margin-bottom: 0;
@@ -286,7 +275,6 @@
     margin-bottom: 20px;
     border-bottom: 1px solid #f1f2f2;
   }
-<<<<<<< HEAD
   .create-post .privacy-new-post {
     margin-bottom: 10px;
   }
@@ -294,11 +282,6 @@
     display: none;
     margin-left: 60px;
   }
-=======
-  .create-post .privacy-new-post{
-    margin-bottom: 10px;
-  }
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
   .create-post .form-group {
     width: 100%;
     margin-bottom: 0;
@@ -310,12 +293,9 @@
   .create-post .form-group img.profile-photo-md {
     margin-right: 10px;
   }
-<<<<<<< HEAD
   .create-post .form-control {
     resize: none;
   }
-=======
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
   .create-post .form-control::placeholder {
     color: #767676;
   }
@@ -373,11 +353,7 @@
   .post-published {
     margin: 40px 0;
   }
-<<<<<<< HEAD
   .privacy {
-=======
-  .privacy{
->>>>>>> 24880ca1a7c61496d2f70333c3d88931d31ce563
     display: none;
   }
   .tools-post {

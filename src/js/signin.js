@@ -7,7 +7,7 @@ const loginFacebook = document.querySelector('#login-facebook');
 const loginTwitter = document.querySelector('#login-twitter');
 const username = document.querySelector("#text-white");
 const forgotPassword = document.querySelector('#forgot-Password');
-const loginAnonymous = document.querySelector('#login-anonymous');
+const loginAnonymous = document.querySelector('#login-anonymous-btn');
 const displayLeft = document.querySelector('#display-left');
 const displayRight = document.querySelector('#display-right');
 const leftContainer = document.querySelector('#left-container');
@@ -59,6 +59,7 @@ window.onload = () => {
       // var uid = user.uid;
     } else {
       console.log('No user is signed in.');
+
     }
   });
 }
@@ -69,11 +70,10 @@ register.addEventListener('click', (e) => {
 })
 
 logIn.addEventListener('click', () => {
-  const callback= (error,response)=>{
-    console.log(response);
-    if(!error){
+  const callback = (error, response) => {
+    if (!error) {
       window.location.assign('wall.html')
-    }else{
+    } else {
       var errorCode = error.code;
       var errorMessage = error.message;
       if (errorCode == 'auth/weak-password') {

@@ -1,34 +1,29 @@
 window.createUser = (email, password, repeatPassword, cb) => {
-  if (password === repeatPassword) {
-    return firebase.auth().createUserWithEmailAndPassword(email, password)
+  let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+  if (emailRegex.test(email) && password === repeatPassword) {
+    firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((user) => {
-        console.log(user)
+        console.log(user);
         cb(null, user);
       })
       .catch(function (error) {
         // Handle Errors here.
-        console.log(error);
         cb(error)
+        console.log(error);
       });
   } else {
-    //console.log('Your password doesnt mach');
+    console.log('Your password doesnt mach');
     cb({ code: 'auth/password-mismatch' })
   }
-}
+};
 
 window.signInUser = (email, password) => {  
-  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-    window.location.assign('wall.html')
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((user) => {
+    cb(null, user);
   })
     .catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      if (errorCode == 'auth/weak-password') {
-        alert('The password is too weak.');
-      } else {
-        alert(errorMessage);
-      }
+      cb(error)
       console.log(error);
     });
 };
@@ -52,6 +47,7 @@ window.resetPassword = (email, password) => {
       console.log(error);
     });
 };
+
 window.loginWithGoogle = () => {
   // Using a popup.
   var provider = new firebase.auth.GoogleAuthProvider();
