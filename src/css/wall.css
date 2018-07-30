@@ -1,11 +1,20 @@
 @font-face {
   font-family: "Agency FB";
+<<<<<<< HEAD
   src: url("../fonts/agency-fb.eot")/* EOT file for IE */
 }
 
 @font-face {
   font-family: "Agency FB";
   src: url("../fonts/agency-fb.ttf")/* TTF file for CSS3 browsers */
+=======
+  src: url("../fonts/agency-fb.ttf")/* TTF file for CSS3 browsers */
+}
+
+@font-face {
+  font-family: "Copperplate Gotic";
+  src: url("../fonts/copperplategothiclight.ttf");
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
 }
 
 @media only screen and (min-width: 320px) {
@@ -49,8 +58,13 @@
   #page-contents {
     padding: 30px 0 50px;
   }
+<<<<<<< HEAD
   .btn-primary {
     background: #4ca8a1;
+=======
+  .btn {
+    background: #FFC107;
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
     padding: 5px 20px;
     border: none;
     font-size: 14px;
@@ -60,9 +74,18 @@
     font-weight: 600;
     outline: none;
   }
+<<<<<<< HEAD
   .btn-primary::before {
     content: "";
     background: rgba(255, 255, 255, 0.2);
+=======
+  .btn:hover{
+    background: #FFECB3;
+  }
+  .btn::before {
+    content: "";
+    background: #FFC107;
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
     position: absolute;
     width: 95%;
     height: 1px;
@@ -84,6 +107,12 @@
   .static {
     position: static;
   }
+<<<<<<< HEAD
+=======
+  .unshow {
+    display: none;
+  }
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
   textarea {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -93,11 +122,19 @@
   #header {
     min-height: 50px;
   }
+<<<<<<< HEAD
   .navbar-default .navbar-toggle .icon-bar{
     background: #fff;
   }
   .menu {
     background: #4ca8a1;
+=======
+  .navbar-default .navbar-toggle .icon-bar {
+    background: #fff;
+  }
+  .menu {
+    background: #0097A7; 
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
     border: none;
     border-radius: 0;
     margin-bottom: 0;
@@ -115,7 +152,11 @@
     color: #fff;
   }
   .menu form .form-group input.form-control {
+<<<<<<< HEAD
     background: rgba(255, 255, 255, 0.42);
+=======
+    background: rgba(32, 32, 32, 0.4);
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
     border: 0;
     box-shadow: none;
     min-width: 235px;
@@ -125,6 +166,12 @@
     font-size: 12px;
     padding-left: 30px;
   }
+<<<<<<< HEAD
+=======
+  .form-control::placeholder {
+    color: #dcdcdc;
+  }
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
   .menu ul.main-menu li.dropdown a {
     color: #fff;
     font-size: 12px;
@@ -173,11 +220,20 @@
   .navbar-brand .logo {
     height: 48px;
   }
+<<<<<<< HEAD
   .slide-bar-left{
     display: none;
   }
   .profile-card {
     background: linear-gradient(to bottom, rgba(39, 170, 225, .8), rgba(28, 117, 188, .8)), url(../images/covers/1.jpg) no-repeat;
+=======
+  .slide-bar-left {
+    display: none;
+  }
+  .profile-card {
+    display: none;
+    background: linear-gradient(to bottom, rgba(0, 187, 212, 0.685), rgba(0, 150, 167, 0.734));
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
     background-size: cover;
     width: 100%;
     min-height: 90px;
@@ -247,12 +303,22 @@
     color: #9e1f63;
   }
   .create-post {
+<<<<<<< HEAD
+=======
+    display: none;
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
     width: 100%;
     min-height: 90px;
     padding: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid #f1f2f2;
   }
+<<<<<<< HEAD
+=======
+  .create-post .privacy-new-post{
+    margin-bottom: 10px;
+  }
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
   .create-post .form-group {
     width: 100%;
     margin-bottom: 0;
@@ -261,6 +327,12 @@
   .create-post .form-group img.profile-photo-md {
     margin-right: 10px;
   }
+<<<<<<< HEAD
+=======
+  .create-post .form-control::placeholder {
+    color: #767676;
+  }
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
   .create-post .tools {
     padding: 8px 0 10px;
   }
@@ -278,6 +350,7 @@
   .create-post .tools ul.publishing-tools li a:hover {
     color: #27aae1;
   }
+<<<<<<< HEAD
   .contenidoPost{
     margin: 25px 2px;
   }
@@ -285,6 +358,44 @@
     margin: 10px;
     cursor: pointer;
   }
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  .contenidoPost{
+=======
+  .contenidoPost {
+>>>>>>> 7494b3da674914adadd4fe25ef36a1ec1e3d8111
+    margin: 25px 2px;
+  }
+  .post-icon {
+    /* display: none; */
+    margin: 10px;
+    cursor: pointer;
+  }
+<<<<<<< HEAD
+>>>>>>> 4d10930aaeec1a2bbb2087f4d7e8063270196a52
+=======
+  .post-published {
+    margin: 40px 0;
+  }
+  .privacy{
+    display: none;
+  }
+  .tools-post {
+    display: none;
+    margin: 10px 0;
+  }
+  .user-name-container{
+    display: inline-block;
+  }
+  .privacy {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+>>>>>>> 7494b3da674914adadd4fe25ef36a1ec1e3d8111
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
 }
 
 @media only screen and (min-width: 480px) {
@@ -294,15 +405,28 @@
 }
 
 @media only screen and (min-width: 992px) {
+<<<<<<< HEAD
   .slide-bar-left{
     display: block;
     position: fixed;
   }
   .wall{
+=======
+  .slide-bar-left {
+    display: block;
+<<<<<<< HEAD
+  }
+}
+=======
+    position: fixed;
+  }
+  .wall {
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
     margin-left: 300px;
   }
   .col-md-3 {
     width: 18%;
+<<<<<<< HEAD
 }
 }
 /* @media only screen and (min-width: 1024px) {
@@ -313,3 +437,14 @@
 #newPost{
   border: 1px solid;
 }
+=======
+  }
+}
+
+/* Estilos para los posts */
+
+#newPost {
+  border: 1px solid;
+}
+>>>>>>> 4d10930aaeec1a2bbb2087f4d7e8063270196a52
+>>>>>>> 34facf06f23b3f9530b4b7abf5ab63e4c8e4964b
