@@ -233,9 +233,14 @@ describe('auth', () => {
   })
 
   describe('loginWithTwitter',()=>{
+    var auth = new firebase.auth.TwitterAuthProvider();
+
     it('signInUser is function',()=>{
       assert.isFunction(loginWithTwitter)
     })
+      it('sets provider id', function () {
+        assert.isOk(auth.hasOwnProperty('providerId'));
+      });
     
   })
   describe('writeUserData',()=>{
