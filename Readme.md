@@ -84,8 +84,8 @@ La red social BRAINNET cuenta con los siguientes elementos:
 
 ¿Qué problema resuelve el producto para estos usuarios?
 
-* Simplifica procesos de aprendizaje y distribucion de datos
-* Reduce el tiempo para adquirir información.
+* Simplifica procesos de aprendizaje y distribución de datos
+* Reduce el tiempo de adquirir información y resolver dudas.
 
 -------------------------------------------------------------
 
@@ -139,7 +139,7 @@ Perfil (profile)
 
 ¿Cómo verificaste que el producto les está resolviendo sus problemas?
 
-* A través de entrevistas personales con distintos usuarios del público en general y observando como éste se desarrollaba en el aplicativo.
+* Testeo a través de entrevistas personales con distintos usuarios del público en general y observando como éste se desarrollaba en el aplicativo.
 
 -------------------------------------------------------------
 
