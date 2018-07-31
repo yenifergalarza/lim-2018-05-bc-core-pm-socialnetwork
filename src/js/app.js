@@ -1,39 +1,29 @@
-window.createUser = (email, password, repeatPassword) => {
-  if (password === repeatPassword) {
+window.createUser = (email, password, repeatPassword, cb) => {
+  let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+  if (emailRegex.test(email) && password === repeatPassword) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        window.location.assign('index.html')
+      .then((user) => {
+        console.log(user);
+        cb(null, user);
       })
       .catch(function (error) {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        if (errorCode == 'auth/weak-password') {
-          alert('The password is too weak.');
-        } else {
-          alert(errorMessage);
-        }
+        cb(error)
         console.log(error);
       });
   } else {
     console.log('Your password doesnt mach');
-    alert('Your password doesnt mach');
+    cb({ code: 'auth/password-mismatch' })
   }
 };
 
 window.signInUser = (email, password) => {  
-  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-    window.location.assign('wall.html')
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((user) => {
+    cb(null, user);
   })
     .catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      if (errorCode == 'auth/weak-password') {
-        alert('The password is too weak.');
-      } else {
-        alert(errorMessage);
-      }
+      cb(error)
       console.log(error);
     });
 };
@@ -114,6 +104,7 @@ window.writeNewPost = (uid, userName, body, imageName, imageUrl, privacy, countl
     imageUrl: imageUrl,
     privacy: privacy,
     countlike: countlike,
+    timestamp: firebase.database.ServerValue.TIMESTAMP
   };
 
   // Get a key for a new Post.

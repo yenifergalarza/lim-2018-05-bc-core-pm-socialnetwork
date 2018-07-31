@@ -7,7 +7,7 @@ signUp.addEventListener('click', () => {
   const getRepeatPassword = document.querySelector('#repeat-password').value;
   const callback = (error, response) => {
     if (!error) {
-      window.location.assign('index.html')
+      // window.location.assign('index.html')
     } else {
       var errorCode = error.code;
       var errorMessage = error.message;
