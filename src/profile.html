@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <title>BRAINNET</title>
@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Stylesheets -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
-    crossorigin="anonymous"> -->
+          crossorigin="anonymous"> -->
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link href="css/emoji.css" rel="stylesheet">
   <!-- Firebase -->
@@ -27,6 +27,8 @@
 
 <body>
 
+  <!-- Header
+    ================================================= -->
   <header id="header">
     <nav class="navbar navbar-default navbar-fixed-top menu">
       <div class="container">
@@ -52,7 +54,7 @@
               <a href="wall.html">Home</a>
             </li>
             <li class="dropdown">
-              <a href="profile.html" id="user-profile">Profile</a>
+              <a href="#" id="user-profile">Profile</a>
             </li>
             <li class="dropdown">
               <a href="#" id="log-out">Sign out</a>
@@ -70,82 +72,128 @@
       <!-- /.container -->
     </nav>
   </header>
+  <!--Header End-->
 
-  <div id="page-contents">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 static slide-bar-left">
-          <div class="profile-card" id="profile">
+  <div class="container">
+
+    <!-- Timeline
+      ================================================= -->
+    <div class="timeline">
+      <div class="timeline-cover">
+
+        <!--Timeline Menu for Large Screens-->
+        <div class="timeline-nav-bar hidden-sm hidden-xs">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="profile-info" id="profile-info">
+              </div>
+            </div>
+            <div class="col-md-9">
+              <ul class="list-inline profile-menu">
+                <li>
+                  <a href="profile.html" class="active">Profile</a>
+                </li>
+                <li>
+                  <a href="#">About</a>
+                </li>
+                <li>
+                  <a href="#">Album</a>
+                </li>
+                <li>
+                  <a href="#">Friends</a>
+                </li>
+              </ul>
+              <ul class="follow-me list-inline">
+                <li>1,299 people following</li>
+                <li>
+                  <button class="btn">Add Friend</button>
+                </li>
+              </ul>
+            </div>
           </div>
-          <!--profile card ends-->
-          <ul class="nav-news-feed">
-            <li>
-              <i class="icon ion-ios-paper"></i>
-              <div>
-                <a href="wall.html">Newsfeed</a>
-              </div>
-            </li>
-            <li>
-              <i class="icon ion-md-people"></i>
-              <div>
-                <a href="#">Friends</a>
-              </div>
-            </li>
-          </ul>
         </div>
+        <!--Timeline Menu for Large Screens End-->
 
-        <div class="col-md-7 wall">
-          <div class="create-post">
-            <div class="row">
-              <div>
-                <select name="privacy" id="privacyNewPost" class="pull-right privacy-new-post select-style">
-                  <option value="public">public</option>
-                  <option value="private">private</option>
-                </select>
-                <div class="form-group" id="publicPost">
-                  <img alt="" class="profile-photo-md" id="img-profile" />
-                  <span id="select-option">👇 Select an option 👇</span>
-                  <textarea name="texts" id="textarea-post" cols="30" rows="1" class="form-control" placeholder="Write an education post"></textarea>
+        <!--Timeline Menu for Small Screens-->
+        <div class="navbar-mobile hidden-lg hidden-md">
+          <div class="profile-info" id="profile-info-responsive">
+          </div>
+          <div class="mobile-menu">
+            <ul class="list-inline">
+              <li>
+                <a href="profile.html" class="active">Timeline</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Album</a>
+              </li>
+              <li>
+                <a href="#">Friends</a>
+              </li>
+            </ul>
+            <button class="btn">Add Friend</button>
+          </div>
+        </div>
+        <!--Timeline Menu for Small Screens End-->
+
+      </div>
+      <div id="page-contents">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-7">
+
+            <div class="create-post" id="create-post">
+              <div class="row">
+                <div>
+                  <select name="privacy" id="privacyNewPost" class="pull-right privacy-new-post select-style">
+                    <option value="public">public</option>
+                    <option value="private">private</option>
+                  </select>
+                  <div class="form-group" id="publicPost">
+                    <img alt="" class="profile-photo-md" id="img-profile" />
+                    <span id="select-option">👇 Select an option 👇</span>
+                    <textarea name="texts" id="textarea-post" cols="30" rows="1" class="form-control" placeholder="Write an education post"></textarea>
+                  </div>
+                  <div id="upload-image" activated="desactivated">
+                    <progress value="0" max="100" id="uploader"></progress>
+                    <input type="file" name="file" value="" id="set-file">
+                  </div>
                 </div>
-                <div id="upload-image" activated="desactivated">
-                  <progress value="0" max="100" id="uploader"></progress>
-                  <input type="file" name="file" value="" id="set-file">
-                </div>
-              </div>
-              <div>
-                <div class="tools">
-                  <ul class="publishing-tools list-inline">
-                    <li>
-                      <a href="#" id="write-post">
-                        <i class="ion-ios-create"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" id="image-post">
-                        <i class="ion-md-images"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" id="video-post">
-                        <i class="ion-ios-videocam"></i>
-                      </a>
-                    </li>
-                  </ul>
-                  <button id="buttonPublish" class="btn pull-right">Publish</button>
+                <div>
+                  <div class="tools">
+                    <ul class="publishing-tools list-inline">
+                      <li>
+                        <a href="#" id="write-post">
+                          <i class="ion-ios-create"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" id="image-post">
+                          <i class="ion-md-images"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" id="video-post">
+                          <i class="ion-ios-videocam"></i>
+                        </a>
+                      </li>
+                    </ul>
+                    <button id="buttonPublish" class="btn pull-right">Publish</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div id="posts">
-            <h3>Posts</h3>
-            <div id="loadedPost"></div>
+            <div id="posts">
+              <h3>Posts</h3>
+              <div id="loadedPost"></div>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -160,7 +208,7 @@
   <script src="js/autosize.min.js"></script>
   <script src="js/fireBase.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/wall.js"></script>
+  <script src="js/profile.js"></script>
   <script src="js/posts.js"></script>
 
 </body>

@@ -9,6 +9,7 @@ const username = document.querySelector("#text-white");
 const forgotPassword = document.querySelector('#forgot-Password');
 const loginAnonymous = document.querySelector('#login-anonymous');
 
+
 window.onload = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
