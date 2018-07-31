@@ -84,9 +84,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         userProfile(user.photoURL, user.displayName)
       }
       let userId = firebase.auth().currentUser.uid;
-      const dbRefPost = firebase.database().ref().child('posts');
-      // const dbRefPost = firebase.database().ref().child('user-posts').child(userId);
-      dbRefPost.once('value', postKey => {
+     firebase.database().ref().child('posts').orderByChild('timestamp').once('value', postKey => {
         paintPost(postKey, userId);
       })
     }
