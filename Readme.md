@@ -186,15 +186,22 @@ Vista preliminar en dispositivo móvil (iphoneSE)
 
 #### Sketch, mockup y prototipado  
 enlace a los documentos del proceso de diseño de la interfaz
+
 [accede al sketching,mockup,protipado](https://docs.google.com/presentation/d/11hjq5UUVQjY1D_t0kCJMwKzwCorMkFWM4DO6hKsEKCQ/edit?usp=sharing)
+
+[Link del figma vista mobile](https://www.figma.com/proto/RYoQPx3xIHg5uBSn0PdqjjpQ/BYEDOUBT?node-id=1%3A8&scaling=scale-down)
+
+[vista tablet o ipad](https://www.figma.com/proto/RYoQPx3xIHg5uBSn0PdqjjpQ/BYEDOUBT?scaling=min-zoom&node-id=52%3A182&redirected=1)
+
+[vista desktop](https://www.figma.com/proto/RYoQPx3xIHg5uBSn0PdqjjpQ/BYEDOUBT?scaling=min-zoom&node-id=52%3A16&redirected=1)
+
 
 
 
 ## TESTEO CON USUARIOS
 
 En esta etapa probamos nuestros prototipos con usuarios para obtener su feedback.
-
-
+[Accede a la info del testeo (diapositivas 10 y 12 de la presentación)](https://docs.google.com/presentation/d/1JTG4YqP1rJIDhg_9rEm4WlM0iAs85rJpN2fqqdin7jo/edit?usp=sharing)
 
 ## Checklist
 
@@ -204,18 +211,18 @@ En esta etapa probamos nuestros prototipos con usuarios para obtener su feedback
 
 ### `README.md`
 
-* [ ] Definición del producto:
-  * [ ] Cuáles son los elementos básicos que tiene una red social.
-  * [ ] Quiénes son los principales usuarios de producto.
-  * [ ] Cómo descubriste las necesidades de los usuarios.
-  * [ ] Qué problema resuelve el producto para estos usuarios.
-  * [ ] Cuáles son los objetivos de estos usuarios en relación con el producto.
-  * [ ] Cuáles son las principales funcionalidades del producto y cuál es su prioridad.
-  * [ ] Cómo verificaste que el producto les está resolviendo sus problemas.
-  * [ ] Cómo te asegurarás que estos usuarios usen este producto.
-* [ ] Benchmark de las principales redes sociales.
-* [ ] Resumen de entrevistas con usuarios.
-* [ ] Link/screenshots del prototipo de alta fidelidad.
+* [x] Definición del producto:
+  * [x] Cuáles son los elementos básicos que tiene una red social.
+  * [x] Quiénes son los principales usuarios de producto.
+  * [x] Cómo descubriste las necesidades de los usuarios.
+  * [x] Qué problema resuelve el producto para estos usuarios.
+  * [x] Cuáles son los objetivos de estos usuarios en relación con el producto.
+  * [x] Cuáles son las principales funcionalidades del producto y cuál es su prioridad.
+  * [x] Cómo verificaste que el producto les está resolviendo sus problemas.
+  * [x] Cómo te asegurarás que estos usuarios usen este producto.
+* [x] Benchmark de las principales redes sociales.
+* [x] Resumen de entrevistas con usuarios.
+* [x] Link/screenshots del prototipo de alta fidelidad.
 * [ ] Conclusiones de testing con el prototipo de alta fidelidad con usuarios.
 * [ ] Conclusiones de testing con el producto en HTML.
 
