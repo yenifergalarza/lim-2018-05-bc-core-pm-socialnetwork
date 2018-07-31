@@ -99,7 +99,7 @@ enlace a los documentos del proceso de diseño de la interfaz
 ## TESTEO CON USUARIOS
 
 En esta etapa probamos nuestros prototipos con usuarios para obtener su feedback.
-
+[Accede a la info del testing (ingresa a la diapositiva10 y 12)](https://docs.google.com/presentation/d/1JTG4YqP1rJIDhg_9rEm4WlM0iAs85rJpN2fqqdin7jo/edit?usp=sharing)
 
 
 ## Checklist
