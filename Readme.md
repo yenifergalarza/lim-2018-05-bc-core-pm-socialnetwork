@@ -203,11 +203,15 @@ enlace a los documentos del proceso de diseño de la interfaz
 En esta etapa probamos nuestros prototipos con usuarios para obtener su feedback.
 [Accede a la info del testeo (diapositivas 10 y 12 de la presentación)](https://docs.google.com/presentation/d/1JTG4YqP1rJIDhg_9rEm4WlM0iAs85rJpN2fqqdin7jo/edit?usp=sharing)
 
+[Accede a la conclusion de testing con el prototipo de alta fidelidad con usuarios (diapositiva 13 de la presentación)](https://docs.google.com/presentation/d/1JTG4YqP1rJIDhg_9rEm4WlM0iAs85rJpN2fqqdin7jo/edit?usp=sharing)
+
+[Accede a la conclusion de testing con el producto en HTML(diapositiva 14 de la presentación)](https://docs.google.com/presentation/d/1JTG4YqP1rJIDhg_9rEm4WlM0iAs85rJpN2fqqdin7jo/edit?usp=sharing)
+
 ## Checklist
 
 ### General
 
-* [ ] Producto final sigue los lineamientos del diseño.
+* [x] Producto final sigue los lineamientos del diseño.
 
 ### `README.md`
 
@@ -223,8 +227,8 @@ En esta etapa probamos nuestros prototipos con usuarios para obtener su feedback
 * [x] Benchmark de las principales redes sociales.
 * [x] Resumen de entrevistas con usuarios.
 * [x] Link/screenshots del prototipo de alta fidelidad.
-* [ ] Conclusiones de testing con el prototipo de alta fidelidad con usuarios.
-* [ ] Conclusiones de testing con el producto en HTML.
+* [x] Conclusiones de testing con el prototipo de alta fidelidad con usuarios.
+* [x] Conclusiones de testing con el producto en HTML.
 
 ### Pruebas / tests
 
