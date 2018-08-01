@@ -1,29 +1,39 @@
 window.createUser = (email, password, repeatPassword, cb) => {
-  let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-  if (emailRegex.test(email) && password === repeatPassword) {
+  if (password === repeatPassword) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then((user) => {
-        console.log(user);
-        cb(null, user);
+      .then(() => {
+        window.location.assign('index.html')
       })
       .catch(function (error) {
         // Handle Errors here.
-        cb(error)
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          alert(errorMessage);
+        }
         console.log(error);
       });
   } else {
     console.log('Your password doesnt mach');
-    cb({ code: 'auth/password-mismatch' })
+    alert('Your password doesnt mach');
   }
 };
 
-window.signInUser = (email, password) => {  
-  firebase.auth().signInWithEmailAndPassword(email, password)
-  .then((user) => {
-    cb(null, user);
+window.signInUser = (email, password) => {
+  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+    window.location.assign('wall.html')
   })
     .catch(function (error) {
-      cb(error)
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      if (errorCode == 'auth/weak-password') {
+        alert('The password is too weak.');
+      } else {
+        alert(errorMessage);
+      }
       console.log(error);
     });
 };
@@ -151,10 +161,10 @@ window.loginWithAnonymous = () => {
   });
 }
 
-window.deletePost = (postId, userId) =>{
-    firebase.database().ref().child('posts').child(postId).remove();
-    firebase.database().ref().child('user-posts').child(userId).child(postId).remove();
-    while (posts.firstChild) posts.removeChild(posts.firstChild);
-    
+window.deletePost = (postId, userId) => {
+  firebase.database().ref().child('posts').child(postId).remove();
+  firebase.database().ref().child('user-posts').child(userId).child(postId).remove();
+  while (posts.firstChild) posts.removeChild(posts.firstChild);
+
 
 }
