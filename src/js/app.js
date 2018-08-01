@@ -1,4 +1,4 @@
-window.createUser = (email, password, repeatPassword) => {
+window.createUser = (email, password, repeatPassword, cb) => {
   if (password === repeatPassword) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(() => {
@@ -21,7 +21,7 @@ window.createUser = (email, password, repeatPassword) => {
   }
 };
 
-window.signInUser = (email, password) => {  
+window.signInUser = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
     window.location.assign('wall.html')
   })
@@ -114,6 +114,7 @@ window.writeNewPost = (uid, userName, body, imageName, imageUrl, privacy, countl
     imageUrl: imageUrl,
     privacy: privacy,
     countlike: countlike,
+    timestamp: firebase.database.ServerValue.TIMESTAMP
   };
 
   // Get a key for a new Post.
@@ -160,10 +161,10 @@ window.loginWithAnonymous = () => {
   });
 }
 
-window.deletePost = (postId, userId) =>{
-    firebase.database().ref().child('posts').child(postId).remove();
-    firebase.database().ref().child('user-posts').child(userId).child(postId).remove();
-    while (posts.firstChild) posts.removeChild(posts.firstChild);
-    
+window.deletePost = (postId, userId) => {
+  firebase.database().ref().child('posts').child(postId).remove();
+  firebase.database().ref().child('user-posts').child(userId).child(postId).remove();
+  while (posts.firstChild) posts.removeChild(posts.firstChild);
+
 
 }

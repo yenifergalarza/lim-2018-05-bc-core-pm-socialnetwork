@@ -23,7 +23,7 @@
     -moz-transition: all 0.4s;
   }
   a:focus {
-    outline: none;
+    outline: none ;
   }
   a:hover {
     text-decoration: none;
@@ -327,7 +327,7 @@
     font-weight: bold;
     background: #FFC107;
     font-size: 16px;
-    color: #fff;
+    color: #fff ;
     line-height: 1.2;
     text-transform: uppercase;
     display: -webkit-box;
@@ -342,10 +342,11 @@
     height: 35px;
     /* height: 50px; */
   }
-  .login-form-btn:hover {
+  .login-form-btn:hover{
     background: #FFECB3;
     color: #212121;
   }
+
   .wrap-login-form-btn:hover .login-form-bgbtn {
     left: 0;
   }
@@ -470,18 +471,24 @@
   }
   .left {
     display: block;
-    width: 50%;
+    font-family: Poppins-Bold;
+    font-size: 59px;
+    color: #212121;
+    line-height: 1.2;
   }
   .container-description {
     margin: 10px 0 0 20%;
   }
-  .paragraph p {
+
+  .paragraph p{
+    color: #212121;
     font-size: 20px;
   }
-  .btn-anonymous {
-    width: 300px;
+  .login-anonymous-text{
+    font-size: 18px;
+    color: #757575;
   }
-  .right {
+  .right{
     width: 50%;
     display: flex;
     justify-content: center;
